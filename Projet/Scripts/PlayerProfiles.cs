@@ -9,7 +9,7 @@ namespace Com.IsartDigital.Hackaton
 
 	public partial class PlayerProfiles
 	{
-		public bool meds { get; set; }
+		public Meds meds { get; set; }
 		public bool creditCard { get; set; }
 		public bool tent { get; set; }
 		public bool clothes { get; set; }

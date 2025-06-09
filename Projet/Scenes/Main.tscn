@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjtjkwm3iy7cb"]
+[gd_scene load_steps=3 format=3 uid="uid://bjtjkwm3iy7cb"]
 
 [ext_resource type="Script" path="res://Scripts/Main.cs" id="1_3dioo"]
+[ext_resource type="Texture2D" uid="uid://crhrqonea4tja" path="res://Assets/icon.svg" id="2_vvamr"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("socialBar", "lifeBar", "moneyBar", "firstChoiceButton", "secondChoiceButton", "thirdChoiceButton", "contextLabel")]
 script = ExtResource("1_3dioo")
@@ -40,6 +41,7 @@ offset_right = -62.0
 offset_bottom = 109.0
 grow_horizontal = 0
 max_value = 10.0
+value = 5.0
 
 [node name="LifeBar" type="ProgressBar" parent="CanvasLayer"]
 anchors_preset = 1
@@ -51,6 +53,7 @@ offset_right = -61.0
 offset_bottom = 201.0
 grow_horizontal = 0
 max_value = 10.0
+value = 5.0
 
 [node name="MoneyBar" type="ProgressBar" parent="CanvasLayer"]
 anchors_preset = 1
@@ -62,6 +65,7 @@ offset_right = -62.0
 offset_bottom = 292.0
 grow_horizontal = 0
 max_value = 10.0
+value = 5.0
 
 [node name="SocialLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = 1
@@ -185,3 +189,61 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 31
 text = "CHOIX 3
 SANS RIEN"
+
+[node name="Items" type="Node" parent="CanvasLayer"]
+
+[node name="Meds" type="TextureRect" parent="CanvasLayer/Items"]
+offset_left = 78.0
+offset_top = 47.0
+offset_right = 158.0
+offset_bottom = 127.0
+texture = ExtResource("2_vvamr")
+expand_mode = 1
+
+[node name="Creditcard" type="TextureRect" parent="CanvasLayer/Items"]
+offset_left = 202.0
+offset_top = 45.0
+offset_right = 282.0
+offset_bottom = 125.0
+texture = ExtResource("2_vvamr")
+expand_mode = 1
+
+[node name="Tent" type="TextureRect" parent="CanvasLayer/Items"]
+offset_left = 328.0
+offset_top = 49.0
+offset_right = 408.0
+offset_bottom = 129.0
+texture = ExtResource("2_vvamr")
+expand_mode = 1
+
+[node name="Cloths" type="TextureRect" parent="CanvasLayer/Items"]
+offset_left = 446.0
+offset_top = 49.0
+offset_right = 526.0
+offset_bottom = 129.0
+texture = ExtResource("2_vvamr")
+expand_mode = 1
+
+[node name="Passport" type="TextureRect" parent="CanvasLayer/Items"]
+offset_left = 571.0
+offset_top = 48.0
+offset_right = 651.0
+offset_bottom = 128.0
+texture = ExtResource("2_vvamr")
+expand_mode = 1
+
+[node name="ChargingPhone" type="TextureRect" parent="CanvasLayer/Items"]
+offset_left = 700.0
+offset_top = 48.0
+offset_right = 780.0
+offset_bottom = 128.0
+texture = ExtResource("2_vvamr")
+expand_mode = 1
+
+[node name="Food" type="TextureRect" parent="CanvasLayer/Items"]
+offset_left = 828.0
+offset_top = 49.0
+offset_right = 908.0
+offset_bottom = 129.0
+texture = ExtResource("2_vvamr")
+expand_mode = 1

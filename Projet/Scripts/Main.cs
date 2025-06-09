@@ -36,6 +36,10 @@ namespace Com.IsartDigital.ProjectName
 
 		[Export] Node Items;
 
+		private Dilemma currentDilemma;
+
+		RandomNumberGenerator rand = new RandomNumberGenerator();
+
 		public override void _Ready()
 		{
 			#region Singleton Ready
@@ -49,12 +53,39 @@ namespace Com.IsartDigital.ProjectName
 			instance = this;
 			#endregion
 
+			rand.Randomize();
+
 			List<Dilemma> dilemma = FileManager.GetDilemmaFromJson("res://Jsons/Choices.json");
 			List<PlayerProfiles> players = FileManager.GetPlayersProfilesFromJson("res://Jsons/PlayerProfiles.json");
 
+			currentDilemma = dilemma[rand.RandiRange(0, dilemma.Count-1)];
+
+			contextLabel.Text = currentDilemma.dilemma;
+
+			firstChoiceButton.Text = currentDilemma.choices[0].name;
+			secondChoiceButton.Text = currentDilemma.choices[1].name;
+			thirdChoiceButton.Text = currentDilemma.choices[2].name;
+
+            firstChoiceButton.Pressed += FirstChoiceButtonPressed;
+            secondChoiceButton.Pressed += SecondChoiceButtonPressed;
+            thirdChoiceButton.Pressed += ThirdChoiceButtonPressed;
 		}
 
-		public override void _Process(double pDelta)
+        private void FirstChoiceButtonPressed()
+        {
+            
+        }
+        private void SecondChoiceButtonPressed()
+        {
+
+        }
+
+        private void ThirdChoiceButtonPressed()
+        {
+
+        }
+
+        public override void _Process(double pDelta)
 		{
 			float lDelta = (float)pDelta;
 
@@ -68,7 +99,7 @@ namespace Com.IsartDigital.ProjectName
 
 		private void UpdateItems()
 		{
-
+			
 		}
 	}
 }

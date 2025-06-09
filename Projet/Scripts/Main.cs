@@ -1,4 +1,5 @@
 using Com.IsartDigital.Hackaton;
+using Com.IsartDigital.Hackaton.Libraries;
 using Godot;
 using System;
 using System.Collections.Generic;
@@ -56,8 +57,8 @@ namespace Com.IsartDigital.ProjectName
 
 			rand.Randomize();
 
-			List<Dilemma> dilemma = FileManager.GetDilemmaFromJson("res://Jsons/Choices.json");
-			List<PlayerProfiles> players = FileManager.GetPlayersProfilesFromJson("res://Jsons/PlayerProfiles.json");
+			List<Dilemma> dilemma = FileManager.GetDilemmaFromJson(Path.DILEMMA);
+			List<PlayerProfiles> players = FileManager.GetPlayersProfilesFromJson(Path.PLAYER_PROFILES);
 
 			currentDilemma = dilemma[rand.RandiRange(0, dilemma.Count-1)];
 			currentPlayer = players[0];

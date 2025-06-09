@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsiqjkf07afj0"]
+
+[ext_resource type="Script" path="res://Scripts/TitleCard.cs" id="1_wlk7u"]
+[ext_resource type="Script" path="res://Scripts/Utils/ButtonEffect.cs" id="1_x3vfi"]
+
+[node name="TitleCard" type="Control" node_paths=PackedStringArray("button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wlk7u")
+button = NodePath("Button")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 238.0
+offset_right = 1525.0
+offset_bottom = 835.0
+pivot_offset = Vector2(606, 348)
+theme_override_font_sizes/font_size = 400
+text = "PLAY"
+script = ExtResource("1_x3vfi")

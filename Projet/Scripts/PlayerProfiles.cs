@@ -16,6 +16,7 @@ namespace Com.IsartDigital.Hackaton
 		public Passport passport { get; set; }
 		public Phone phone { get; set; }
 		public Food food { get; set; }
+		
 
 		public int socialTies { get; set; }
 		public int healthCondition { get; set; }

@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Hackaton Croix Rouge"
-config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/features=PackedStringArray("4.2", "C#", "Forward Plus")
+config/icon="res://Assets/icon.svg"
 
 [dotnet]
 

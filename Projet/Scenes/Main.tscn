@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjtjkwm3iy7cb"]
+[gd_scene load_steps=3 format=3 uid="uid://bjtjkwm3iy7cb"]
 
 [ext_resource type="Script" path="res://Scripts/Main.cs" id="1_3dioo"]
+[ext_resource type="Script" path="res://Scripts/Utils/ButtonEffect.cs" id="2_ny0hx"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("socialBar", "lifeBar", "moneyBar")]
 script = ExtResource("1_3dioo")
@@ -144,9 +145,11 @@ offset_right = -573.0
 offset_bottom = 86.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(147, 62)
 theme_override_font_sizes/font_size = 31
 text = "CHOIX 1 
 AVEC OBJETS"
+script = ExtResource("2_ny0hx")
 
 [node name="Choix2Button" type="Button" parent="CanvasLayer/ColorRect"]
 layout_mode = 1
@@ -161,9 +164,11 @@ offset_right = -240.0
 offset_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(147, 62)
 theme_override_font_sizes/font_size = 31
 text = "CHOIX 2
 AVEC STATS"
+script = ExtResource("2_ny0hx")
 
 [node name="Choix3Button" type="Button" parent="CanvasLayer/ColorRect"]
 layout_mode = 1
@@ -178,6 +183,8 @@ offset_right = 106.0
 offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(147, 62)
 theme_override_font_sizes/font_size = 31
 text = "CHOIX 3
 SANS RIEN"
+script = ExtResource("2_ny0hx")

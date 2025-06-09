@@ -159,9 +159,11 @@ offset_right = -573.0
 offset_bottom = 86.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(147, 62)
 theme_override_font_sizes/font_size = 31
 text = "CHOIX 1 
 AVEC OBJETS"
+script = ExtResource("2_ny0hx")
 
 [node name="Choix2Button" type="Button" parent="CanvasLayer/BackGroundChoice"]
 layout_mode = 1
@@ -176,9 +178,11 @@ offset_right = -240.0
 offset_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(147, 62)
 theme_override_font_sizes/font_size = 31
 text = "CHOIX 2
 AVEC STATS"
+script = ExtResource("2_ny0hx")
 
 [node name="Choix3Button" type="Button" parent="CanvasLayer/BackGroundChoice"]
 layout_mode = 1
@@ -193,6 +197,7 @@ offset_right = 106.0
 offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(147, 62)
 theme_override_font_sizes/font_size = 31
 text = "CHOIX 3
 SANS RIEN"

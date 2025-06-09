@@ -1,17 +1,183 @@
 [gd_scene load_steps=2 format=3 uid="uid://bjtjkwm3iy7cb"]
 
-[ext_resource type="Script" path="res://Scripts/Main.cs" id="1_qb3e1"]
+[ext_resource type="Script" path="res://Scripts/Main.cs" id="1_3dioo"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("socialBar", "lifeBar", "moneyBar")]
+script = ExtResource("1_3dioo")
+socialBar = NodePath("CanvasLayer/SocialBar")
+lifeBar = NodePath("CanvasLayer/LifeBar")
+moneyBar = NodePath("CanvasLayer/MoneyBar")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
-anchors_preset = 5
+[node name="Line2D" type="Line2D" parent="CanvasLayer"]
+position = Vector2(111.34, 53.84)
+points = PackedVector2Array(330, 394, 329, 396)
+width = 227.84
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D2" type="Line2D" parent="CanvasLayer"]
+position = Vector2(120.34, 278.84)
+points = PackedVector2Array(330, 394, 329, 693)
+width = 291.34
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="SocialBar" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -651.0
+offset_top = 61.0
+offset_right = -62.0
+offset_bottom = 109.0
+grow_horizontal = 0
+max_value = 10.0
+
+[node name="LifeBar" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -650.0
+offset_top = 153.0
+offset_right = -61.0
+offset_bottom = 201.0
+grow_horizontal = 0
+max_value = 10.0
+
+[node name="MoneyBar" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -651.0
+offset_top = 244.0
+offset_right = -62.0
+offset_bottom = 292.0
+grow_horizontal = 0
+max_value = 10.0
+
+[node name="SocialLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -745.0
+offset_top = 51.0
+offset_right = -668.0
+offset_bottom = 114.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 21
+text = "Lien
+Social"
+horizontal_alignment = 1
+
+[node name="LifeLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -757.0
+offset_top = 146.0
+offset_right = -659.0
+offset_bottom = 209.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 21
+text = "Condition 
+de Vie"
+horizontal_alignment = 1
+
+[node name="MoneyLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -758.0
+offset_top = 232.0
+offset_right = -660.0
+offset_bottom = 295.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 21
+text = "Pouvoir
+D'achat"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-offset_left = -552.0
-offset_top = 88.0
-offset_right = 552.0
-offset_bottom = 152.0
+anchor_bottom = 1.0
+offset_left = -1006.0
+offset_top = -292.0
+offset_right = 982.0
+offset_bottom = 36.0
 grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.329412, 0.329412, 0.329412, 0.752941)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -874.0
+offset_top = -148.0
+offset_right = 444.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "Vous rencontrez cette personne. Faites ce choix :"
+
+[node name="Choix1Button" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -868.0
+offset_top = -38.0
+offset_right = -573.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 31
+text = "CHOIX 1 
+AVEC OBJETS"
+
+[node name="Choix2Button" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -535.0
+offset_top = -35.0
+offset_right = -240.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 31
+text = "CHOIX 2
+AVEC STATS"
+
+[node name="Choix3Button" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.0
+offset_top = -34.0
+offset_right = 106.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 31
+text = "CHOIX 3
+SANS RIEN"

@@ -44,6 +44,7 @@ namespace Com.IsartDigital.ProjectName
 			List<Dilemma> dilemma = FileManager.GetDilemmaFromJson("res://Jsons/Choices.json");
 			List<PlayerProfiles> players = FileManager.GetPlayersProfilesFromJson("res://Jsons/PlayerProfiles.json");
 
+			GD.Print(players[0].meds.owned);
 		}
 
 		public override void _Process(double pDelta)

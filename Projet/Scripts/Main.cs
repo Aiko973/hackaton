@@ -1,5 +1,7 @@
+using Com.IsartDigital.Hackaton;
 using Godot;
 using System;
+using System.Collections.Generic;
 
 // Author : Tran Thomas
 
@@ -39,7 +41,8 @@ namespace Com.IsartDigital.ProjectName
 			instance = this;
 			#endregion
 
-
+			List<Dilemma> dilemma = FileManager.GetClientsFromJson("res://Jsons/Choices.json");
+			
 		}
 
 		public override void _Process(double pDelta)

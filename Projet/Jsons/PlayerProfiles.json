@@ -1,0 +1,41 @@
+[
+  {
+	"meds": false,
+	"creditCard": false,
+	"tent": false,
+	"clothes": false,
+	"passport": false,
+	"phone": false,
+	"food": false,
+	
+	"socialTies": 1,
+	"healthCondition": 2,
+	"purchasingPower": 3
+  },
+  {
+	"meds": true,
+	"creditCard": false,
+	"tent": false,
+	"clothes": false,
+	"passport": false,
+	"phone": false,
+	"food": false,
+	
+	"socialTies": 1,
+	"healthCondition": 7,
+	"purchasingPower": 3
+  },
+  {
+	"meds": false,
+	"creditCard": true,
+	"tent": false,
+	"clothes": false,
+	"passport": false,
+	"phone": false,
+	"food": false,
+	
+	"socialTies": -4,
+	"healthCondition": 2,
+	"purchasingPower": 3
+  }
+]

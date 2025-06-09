@@ -49,8 +49,9 @@ namespace Com.IsartDigital.ProjectName
 			instance = this;
 			#endregion
 
-			List<Dilemma> dilemma = FileManager.GetClientsFromJson("res://Jsons/Choices.json");
-			
+			List<Dilemma> dilemma = FileManager.GetDilemmaFromJson("res://Jsons/Choices.json");
+			List<PlayerProfiles> players = FileManager.GetPlayersProfilesFromJson("res://Jsons/PlayerProfiles.json");
+
 		}
 
 		public override void _Process(double pDelta)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjtjkwm3iy7cb"]
+[gd_scene load_steps=11 format=3 uid="uid://bjtjkwm3iy7cb"]
 
 [ext_resource type="Script" path="res://Scripts/Main.cs" id="1_3dioo"]
+[ext_resource type="Script" path="res://Scripts/Utils/ButtonEffect.cs" id="2_6hsv3"]
 [ext_resource type="Texture2D" uid="uid://crhrqonea4tja" path="res://Assets/icon.svg" id="2_vvamr"]
 [ext_resource type="Script" path="res://Scripts/Items/Meds.cs" id="3_qhlhc"]
 [ext_resource type="Script" path="res://Scripts/Items/CreditCard.cs" id="4_oanvu"]
@@ -163,7 +164,7 @@ pivot_offset = Vector2(147, 62)
 theme_override_font_sizes/font_size = 31
 text = "CHOIX 1 
 AVEC OBJETS"
-script = ExtResource("2_ny0hx")
+script = ExtResource("2_6hsv3")
 
 [node name="Choix2Button" type="Button" parent="CanvasLayer/BackGroundChoice"]
 layout_mode = 1
@@ -182,7 +183,7 @@ pivot_offset = Vector2(147, 62)
 theme_override_font_sizes/font_size = 31
 text = "CHOIX 2
 AVEC STATS"
-script = ExtResource("2_ny0hx")
+script = ExtResource("2_6hsv3")
 
 [node name="Choix3Button" type="Button" parent="CanvasLayer/BackGroundChoice"]
 layout_mode = 1
@@ -201,6 +202,7 @@ pivot_offset = Vector2(147, 62)
 theme_override_font_sizes/font_size = 31
 text = "CHOIX 3
 SANS RIEN"
+script = ExtResource("2_6hsv3")
 
 [node name="ItemsSpriteList" type="Node" parent="CanvasLayer"]
 

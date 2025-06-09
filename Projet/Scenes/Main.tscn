@@ -2,11 +2,15 @@
 
 [ext_resource type="Script" path="res://Scripts/Main.cs" id="1_3dioo"]
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("socialBar", "lifeBar", "moneyBar")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("socialBar", "lifeBar", "moneyBar", "firstChoiceButton", "secondChoiceButton", "thirdChoiceButton", "contextLabel")]
 script = ExtResource("1_3dioo")
 socialBar = NodePath("CanvasLayer/SocialBar")
 lifeBar = NodePath("CanvasLayer/LifeBar")
 moneyBar = NodePath("CanvasLayer/MoneyBar")
+firstChoiceButton = NodePath("CanvasLayer/BackGroundChoice/Choix1Button")
+secondChoiceButton = NodePath("CanvasLayer/BackGroundChoice/Choix2Button")
+thirdChoiceButton = NodePath("CanvasLayer/BackGroundChoice/Choix3Button")
+contextLabel = NodePath("CanvasLayer/BackGroundChoice/ContextLabel")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -101,7 +105,7 @@ text = "Pouvoir
 D'achat"
 horizontal_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="BackGroundChoice" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -115,7 +119,7 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.329412, 0.329412, 0.329412, 0.752941)
 
-[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+[node name="ContextLabel" type="Label" parent="CanvasLayer/BackGroundChoice"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -131,7 +135,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 56
 text = "Vous rencontrez cette personne. Faites ce choix :"
 
-[node name="Choix1Button" type="Button" parent="CanvasLayer/ColorRect"]
+[node name="Choix1Button" type="Button" parent="CanvasLayer/BackGroundChoice"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -148,7 +152,7 @@ theme_override_font_sizes/font_size = 31
 text = "CHOIX 1 
 AVEC OBJETS"
 
-[node name="Choix2Button" type="Button" parent="CanvasLayer/ColorRect"]
+[node name="Choix2Button" type="Button" parent="CanvasLayer/BackGroundChoice"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -165,7 +169,7 @@ theme_override_font_sizes/font_size = 31
 text = "CHOIX 2
 AVEC STATS"
 
-[node name="Choix3Button" type="Button" parent="CanvasLayer/ColorRect"]
+[node name="Choix3Button" type="Button" parent="CanvasLayer/BackGroundChoice"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

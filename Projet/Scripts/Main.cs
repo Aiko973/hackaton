@@ -28,6 +28,14 @@ namespace Com.IsartDigital.ProjectName
 		[Export] ProgressBar lifeBar;
 		[Export] ProgressBar moneyBar;
 
+		[Export] Button firstChoiceButton;
+		[Export] Button secondChoiceButton;
+		[Export] Button thirdChoiceButton;
+
+		[Export] Label contextLabel;
+
+		[Export] Node Items;
+
 		public override void _Ready()
 		{
 			#region Singleton Ready
@@ -55,6 +63,11 @@ namespace Com.IsartDigital.ProjectName
 		{
 			instance = null;
 			base.Dispose(pDisposing);
+		}
+
+		private void UpdateItems()
+		{
+
 		}
 	}
 }

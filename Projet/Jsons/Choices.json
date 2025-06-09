@@ -1,0 +1,28 @@
+[
+  {
+	"dilemma": "blablabla",
+	"choices": [
+	  {
+		"name": "Choice 1",
+		"description": "blabliblu",
+		"socialTies": 1,
+		"healthCondition": 2,
+		"purchasingPower": -1
+	  },
+	  {
+		"name": "Choice 2",
+		"description": "lalalalalala",
+		"socialTies": 3,
+		"healthCondition": -2,
+		"purchasingPower": -3
+	  },
+	  {
+		"name": "Choice 3",
+		"description": ",egfl;ddfl;m",
+		"socialTies": -3,
+		"healthCondition": 0,
+		"purchasingPower": 3
+	  }
+	]
+  }
+]

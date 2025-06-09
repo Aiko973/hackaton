@@ -14,6 +14,11 @@ config/name="Hackaton Croix Rouge"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [dotnet]
 
 project/assembly_name="Hackaton Croix Rouge"

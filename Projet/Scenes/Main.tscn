@@ -1,3 +1,15 @@
 [gd_scene format=3 uid="uid://bjtjkwm3iy7cb"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -552.0
+offset_top = 88.0
+offset_right = 552.0
+offset_bottom = 152.0
+grow_horizontal = 2

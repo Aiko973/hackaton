@@ -6,7 +6,7 @@ using System;
 namespace Com.IsartDigital.ProjectName
 {
 
-	public partial class Main : Node
+	public partial class Main : Node2D
 	{
 
 		#region Singleton
@@ -21,6 +21,10 @@ namespace Com.IsartDigital.ProjectName
 
 		}
 		#endregion
+
+		[Export] ProgressBar socialBar;
+		[Export] ProgressBar lifeBar;
+		[Export] ProgressBar moneyBar;
 
 		public override void _Ready()
 		{

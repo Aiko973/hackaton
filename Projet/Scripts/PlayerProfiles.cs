@@ -10,12 +10,12 @@ namespace Com.IsartDigital.Hackaton
 	public partial class PlayerProfiles
 	{
 		public Meds meds { get; set; }
-		public bool creditCard { get; set; }
-		public bool tent { get; set; }
-		public bool clothes { get; set; }
-		public bool passport { get; set; }
-		public bool phone { get; set; }
-		public bool food { get; set; }
+		public CreditCard creditCard { get; set; }
+		public Tent tent { get; set; }
+		public Clothes clothes { get; set; }
+		public Passport passport { get; set; }
+		public Phone phone { get; set; }
+		public Food food { get; set; }
 
 		public int socialTies { get; set; }
 		public int healthCondition { get; set; }

@@ -9,7 +9,7 @@ namespace Com.IsartDigital.Hackaton {
 	
 	public partial class Dilemma
 	{
-		public string dilemma {  get; set; }
+		public string dilemma { get; set; }
 		public List<Choice> choices { get; set; }
 
 		public Dilemma() { }

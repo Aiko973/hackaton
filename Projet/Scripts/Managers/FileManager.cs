@@ -11,7 +11,7 @@ namespace Com.IsartDigital.Hackaton {
 	
 	public static class FileManager
 	{
-        public static List<Dilemma> GetClientsFromJson(string pPath)
+        public static List<Dilemma> GetDilemmaFromJson(string pPath)
         {
             FileAccess lFile = FileAccess.Open(pPath, FileAccess.ModeFlags.Read);
             string lJsonString = lFile.GetAsText();
@@ -24,6 +24,23 @@ namespace Com.IsartDigital.Hackaton {
             };
 
             List<Dilemma> lList = JsonSerializer.Deserialize<List<Dilemma>>(lJsonString, lOptions);
+
+            return lList;
+        }
+
+        public static List<PlayerProfiles> GetPlayersProfilesFromJson(string pPath)
+        {
+            FileAccess lFile = FileAccess.Open(pPath, FileAccess.ModeFlags.Read);
+            string lJsonString = lFile.GetAsText();
+            lFile.Close();
+
+            JsonSerializerOptions lOptions = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                Converters = { new JsonStringEnumConverter() }
+            };
+
+            List<PlayerProfiles> lList = JsonSerializer.Deserialize<List<PlayerProfiles>>(lJsonString, lOptions);
 
             return lList;
         }

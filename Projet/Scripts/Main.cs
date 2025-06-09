@@ -37,6 +37,7 @@ namespace Com.IsartDigital.ProjectName
 		[Export] Node Items;
 
 		private Dilemma currentDilemma;
+		private PlayerProfiles currentPlayer;
 
 		RandomNumberGenerator rand = new RandomNumberGenerator();
 
@@ -59,11 +60,12 @@ namespace Com.IsartDigital.ProjectName
 			List<PlayerProfiles> players = FileManager.GetPlayersProfilesFromJson("res://Jsons/PlayerProfiles.json");
 
 			currentDilemma = dilemma[rand.RandiRange(0, dilemma.Count-1)];
+			currentPlayer = players[0];
 
 			contextLabel.Text = currentDilemma.dilemma;
 
-			firstChoiceButton.Text = currentDilemma.choices[0].name;
-			secondChoiceButton.Text = currentDilemma.choices[1].name;
+			firstChoiceButton.Text = currentDilemma.choices[0].name + " "+ currentDilemma.choices[0].item + " besoin";
+			secondChoiceButton.Text = currentDilemma.choices[1].name + " "+ currentDilemma.choices[1].socialTiesNeeded + " , " + currentDilemma.choices[1].healthConditionNeeded + " , " + currentDilemma.choices[1].purchasingPowerNeeded;
 			thirdChoiceButton.Text = currentDilemma.choices[2].name;
 
             firstChoiceButton.Pressed += FirstChoiceButtonPressed;

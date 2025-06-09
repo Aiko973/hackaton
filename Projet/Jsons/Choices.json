@@ -4,21 +4,33 @@
 	"choices": [
 	  {
 		"name": "Choice 1",
+		"item" : "meds",
 		"description": "blabliblu",
+		"socialTiesNeeded" : 0,
+		"healthConditionsNeeded" : 0,
+		"purchasingPowerNeeded" : 0,
 		"socialTies": 1,
 		"healthCondition": 2,
 		"purchasingPower": -1
 	  },
 	  {
 		"name": "Choice 2",
+		"item" : "",
 		"description": "lalalalalala",
+		"socialTiesNeeded" : 0,
+		"healthConditionsNeeded" : 2,
+		"purchasingPowerNeeded" : 0,
 		"socialTies": 3,
 		"healthCondition": -2,
 		"purchasingPower": -3
 	  },
 	  {
 		"name": "Choice 3",
+		"item" : "",
 		"description": ",egfl;ddfl;m",
+		"socialTiesNeeded" : 0,
+		"healthConditionsNeeded" : 0,
+		"purchasingPowerNeeded" : 0,
 		"socialTies": -3,
 		"healthCondition": 0,
 		"purchasingPower": 3
@@ -30,21 +42,33 @@
 	"choices": [
 	  {
 		"name": "Choice 1",
+		"item" : "clothes",
 		"description": "blabliblu",
+		"socialTiesNeeded" : 0,
+		"healthConditionsNeeded" : 0,
+		"purchasingPowerNeeded" : 0,
 		"socialTies": 1,
 		"healthCondition": -3,
 		"purchasingPower": -1
 	  },
 	  {
 		"name": "Choice 2",
+		"item" : "",
 		"description": "lalalalalala",
+		"socialTiesNeeded" : 0,
+		"healthConditionsNeeded" : 0,
+		"purchasingPowerNeeded" : 2,
 		"socialTies": 3,
 		"healthCondition": -2,
 		"purchasingPower": -3
 	  },
 	  {
 		"name": "Choice 3",
+		"item" :"",
 		"description": ",egfl;ddfl;m",
+		"socialTiesNeeded" : 0,
+		"healthConditionsNeeded" : 0,
+		"purchasingPowerNeeded" : 0,
 		"socialTies": -3,
 		"healthCondition": 0,
 		"purchasingPower": 3

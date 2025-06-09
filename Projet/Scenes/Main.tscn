@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://Scripts/Items/Phone.cs" id="8_01fr0"]
 [ext_resource type="Script" path="res://Scripts/Items/Food.cs" id="9_bxxsd"]
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("socialBar", "lifeBar", "moneyBar", "firstChoiceButton", "secondChoiceButton", "thirdChoiceButton", "contextLabel")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("socialBar", "lifeBar", "moneyBar", "firstChoiceButton", "secondChoiceButton", "thirdChoiceButton", "contextLabel", "itemSpriteList")]
 script = ExtResource("1_3dioo")
 socialBar = NodePath("CanvasLayer/SocialBar")
 lifeBar = NodePath("CanvasLayer/LifeBar")
@@ -20,6 +20,7 @@ firstChoiceButton = NodePath("CanvasLayer/BackGroundChoice/Choix1Button")
 secondChoiceButton = NodePath("CanvasLayer/BackGroundChoice/Choix2Button")
 thirdChoiceButton = NodePath("CanvasLayer/BackGroundChoice/Choix3Button")
 contextLabel = NodePath("CanvasLayer/BackGroundChoice/ContextLabel")
+itemSpriteList = NodePath("CanvasLayer/ItemsSpriteList")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -207,7 +208,6 @@ script = ExtResource("2_6hsv3")
 [node name="ItemsSpriteList" type="Node" parent="CanvasLayer"]
 
 [node name="Meds" type="TextureRect" parent="CanvasLayer/ItemsSpriteList"]
-visible = false
 offset_left = 78.0
 offset_top = 47.0
 offset_right = 158.0
@@ -216,8 +216,24 @@ texture = ExtResource("2_vvamr")
 expand_mode = 1
 script = ExtResource("3_qhlhc")
 
+[node name="Label" type="Label" parent="CanvasLayer/ItemsSpriteList/Meds"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Med"
+
 [node name="Creditcard" type="TextureRect" parent="CanvasLayer/ItemsSpriteList"]
-visible = false
 offset_left = 202.0
 offset_top = 45.0
 offset_right = 282.0
@@ -226,8 +242,24 @@ texture = ExtResource("2_vvamr")
 expand_mode = 1
 script = ExtResource("4_oanvu")
 
+[node name="Label" type="Label" parent="CanvasLayer/ItemsSpriteList/Creditcard"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Carte"
+
 [node name="Tent" type="TextureRect" parent="CanvasLayer/ItemsSpriteList"]
-visible = false
 offset_left = 328.0
 offset_top = 49.0
 offset_right = 408.0
@@ -236,8 +268,24 @@ texture = ExtResource("2_vvamr")
 expand_mode = 1
 script = ExtResource("5_ay2cy")
 
+[node name="Label" type="Label" parent="CanvasLayer/ItemsSpriteList/Tent"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Tente"
+
 [node name="Clothes" type="TextureRect" parent="CanvasLayer/ItemsSpriteList"]
-visible = false
 offset_left = 446.0
 offset_top = 49.0
 offset_right = 526.0
@@ -246,8 +294,24 @@ texture = ExtResource("2_vvamr")
 expand_mode = 1
 script = ExtResource("6_xq2oy")
 
+[node name="Label" type="Label" parent="CanvasLayer/ItemsSpriteList/Clothes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Vets"
+
 [node name="Passport" type="TextureRect" parent="CanvasLayer/ItemsSpriteList"]
-visible = false
 offset_left = 571.0
 offset_top = 48.0
 offset_right = 651.0
@@ -256,8 +320,24 @@ texture = ExtResource("2_vvamr")
 expand_mode = 1
 script = ExtResource("7_6mdth")
 
+[node name="Label" type="Label" parent="CanvasLayer/ItemsSpriteList/Passport"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "PassP"
+
 [node name="Phone" type="TextureRect" parent="CanvasLayer/ItemsSpriteList"]
-visible = false
 offset_left = 700.0
 offset_top = 48.0
 offset_right = 780.0
@@ -266,8 +346,24 @@ texture = ExtResource("2_vvamr")
 expand_mode = 1
 script = ExtResource("8_01fr0")
 
+[node name="Label" type="Label" parent="CanvasLayer/ItemsSpriteList/Phone"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Tel"
+
 [node name="Food" type="TextureRect" parent="CanvasLayer/ItemsSpriteList"]
-visible = false
 offset_left = 828.0
 offset_top = 49.0
 offset_right = 908.0
@@ -275,3 +371,20 @@ offset_bottom = 129.0
 texture = ExtResource("2_vvamr")
 expand_mode = 1
 script = ExtResource("9_bxxsd")
+
+[node name="Label" type="Label" parent="CanvasLayer/ItemsSpriteList/Food"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Nour"

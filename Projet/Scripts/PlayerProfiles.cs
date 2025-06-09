@@ -17,6 +17,8 @@ namespace Com.IsartDigital.Hackaton
 		public Phone phone { get; set; }
 		public Food food { get; set; }
 
+		public List<Items> itemsList = new List<Items>();
+
 		public int socialTies { get; set; }
 		public int healthCondition { get; set; }
 		public int purchasingPower { get; set; }

@@ -5,7 +5,7 @@ using System;
 
 namespace Com.IsartDigital.Hackaton
 {
-	public partial class Items
+	public partial class Items : TextureRect
 	{
 		public bool owned { get; set; }
 	}

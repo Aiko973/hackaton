@@ -2,10 +2,10 @@
   {
 	"meds": { "owned": false },
 	"creditCard": { "owned": false },
-	"tent": { "owned": false },
+	"tent": { "owned": true },
 	"clothes": { "owned": false },
 	"passport": { "owned": false },
-	"phone": { "owned": false },
+	"phone": { "owned": true },
 	"food": { "owned": false },
 	
 	"socialTies": 1,

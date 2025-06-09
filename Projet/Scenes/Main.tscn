@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjtjkwm3iy7cb"]
+[gd_scene load_steps=10 format=3 uid="uid://bjtjkwm3iy7cb"]
 
 [ext_resource type="Script" path="res://Scripts/Main.cs" id="1_3dioo"]
 [ext_resource type="Texture2D" uid="uid://crhrqonea4tja" path="res://Assets/icon.svg" id="2_vvamr"]
+[ext_resource type="Script" path="res://Scripts/Items/Meds.cs" id="3_qhlhc"]
+[ext_resource type="Script" path="res://Scripts/Items/CreditCard.cs" id="4_oanvu"]
+[ext_resource type="Script" path="res://Scripts/Items/Tent.cs" id="5_ay2cy"]
+[ext_resource type="Script" path="res://Scripts/Items/Clothes.cs" id="6_xq2oy"]
+[ext_resource type="Script" path="res://Scripts/Items/Passport.cs" id="7_6mdth"]
+[ext_resource type="Script" path="res://Scripts/Items/Phone.cs" id="8_01fr0"]
+[ext_resource type="Script" path="res://Scripts/Items/Food.cs" id="9_bxxsd"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("socialBar", "lifeBar", "moneyBar", "firstChoiceButton", "secondChoiceButton", "thirdChoiceButton", "contextLabel")]
 script = ExtResource("1_3dioo")
@@ -40,8 +47,8 @@ offset_top = 61.0
 offset_right = -62.0
 offset_bottom = 109.0
 grow_horizontal = 0
-max_value = 10.0
-value = 5.0
+min_value = -5.0
+max_value = 5.0
 
 [node name="LifeBar" type="ProgressBar" parent="CanvasLayer"]
 anchors_preset = 1
@@ -52,8 +59,8 @@ offset_top = 153.0
 offset_right = -61.0
 offset_bottom = 201.0
 grow_horizontal = 0
-max_value = 10.0
-value = 5.0
+min_value = -5.0
+max_value = 5.0
 
 [node name="MoneyBar" type="ProgressBar" parent="CanvasLayer"]
 anchors_preset = 1
@@ -64,8 +71,8 @@ offset_top = 244.0
 offset_right = -62.0
 offset_bottom = 292.0
 grow_horizontal = 0
-max_value = 10.0
-value = 5.0
+min_value = -5.0
+max_value = 5.0
 
 [node name="SocialLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = 1
@@ -190,60 +197,74 @@ theme_override_font_sizes/font_size = 31
 text = "CHOIX 3
 SANS RIEN"
 
-[node name="Items" type="Node" parent="CanvasLayer"]
+[node name="ItemsSpriteList" type="Node" parent="CanvasLayer"]
 
-[node name="Meds" type="TextureRect" parent="CanvasLayer/Items"]
+[node name="Meds" type="TextureRect" parent="CanvasLayer/ItemsSpriteList"]
+visible = false
 offset_left = 78.0
 offset_top = 47.0
 offset_right = 158.0
 offset_bottom = 127.0
 texture = ExtResource("2_vvamr")
 expand_mode = 1
+script = ExtResource("3_qhlhc")
 
-[node name="Creditcard" type="TextureRect" parent="CanvasLayer/Items"]
+[node name="Creditcard" type="TextureRect" parent="CanvasLayer/ItemsSpriteList"]
+visible = false
 offset_left = 202.0
 offset_top = 45.0
 offset_right = 282.0
 offset_bottom = 125.0
 texture = ExtResource("2_vvamr")
 expand_mode = 1
+script = ExtResource("4_oanvu")
 
-[node name="Tent" type="TextureRect" parent="CanvasLayer/Items"]
+[node name="Tent" type="TextureRect" parent="CanvasLayer/ItemsSpriteList"]
+visible = false
 offset_left = 328.0
 offset_top = 49.0
 offset_right = 408.0
 offset_bottom = 129.0
 texture = ExtResource("2_vvamr")
 expand_mode = 1
+script = ExtResource("5_ay2cy")
 
-[node name="Cloths" type="TextureRect" parent="CanvasLayer/Items"]
+[node name="Clothes" type="TextureRect" parent="CanvasLayer/ItemsSpriteList"]
+visible = false
 offset_left = 446.0
 offset_top = 49.0
 offset_right = 526.0
 offset_bottom = 129.0
 texture = ExtResource("2_vvamr")
 expand_mode = 1
+script = ExtResource("6_xq2oy")
 
-[node name="Passport" type="TextureRect" parent="CanvasLayer/Items"]
+[node name="Passport" type="TextureRect" parent="CanvasLayer/ItemsSpriteList"]
+visible = false
 offset_left = 571.0
 offset_top = 48.0
 offset_right = 651.0
 offset_bottom = 128.0
 texture = ExtResource("2_vvamr")
 expand_mode = 1
+script = ExtResource("7_6mdth")
 
-[node name="ChargingPhone" type="TextureRect" parent="CanvasLayer/Items"]
+[node name="Phone" type="TextureRect" parent="CanvasLayer/ItemsSpriteList"]
+visible = false
 offset_left = 700.0
 offset_top = 48.0
 offset_right = 780.0
 offset_bottom = 128.0
 texture = ExtResource("2_vvamr")
 expand_mode = 1
+script = ExtResource("8_01fr0")
 
-[node name="Food" type="TextureRect" parent="CanvasLayer/Items"]
+[node name="Food" type="TextureRect" parent="CanvasLayer/ItemsSpriteList"]
+visible = false
 offset_left = 828.0
 offset_top = 49.0
 offset_right = 908.0
 offset_bottom = 129.0
 texture = ExtResource("2_vvamr")
 expand_mode = 1
+script = ExtResource("9_bxxsd")

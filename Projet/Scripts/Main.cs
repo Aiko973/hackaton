@@ -34,7 +34,7 @@ namespace Com.IsartDigital.ProjectName
 
 		[Export] Label contextLabel;
 
-		[Export] Node Items;
+		[Export] Node ItemsSpriteList;
 
 		private Dilemma currentDilemma;
 		private PlayerProfiles currentPlayer;
@@ -64,19 +64,28 @@ namespace Com.IsartDigital.ProjectName
 
 			contextLabel.Text = currentDilemma.dilemma;
 
-			firstChoiceButton.Text = currentDilemma.choices[0].name + " "+ currentDilemma.choices[0].item + " besoin";
-			secondChoiceButton.Text = currentDilemma.choices[1].name + " "+ currentDilemma.choices[1].socialTiesNeeded + " , " + currentDilemma.choices[1].healthConditionNeeded + " , " + currentDilemma.choices[1].purchasingPowerNeeded;
+			firstChoiceButton.Text = currentDilemma.choices[0].name + "   "+ currentDilemma.choices[0].item + " besoin";
+
+			secondChoiceButton.Text = currentDilemma.choices[1].name +
+				" "+ currentDilemma.choices[1].socialTiesNeeded +
+				" , " + currentDilemma.choices[1].healthConditionNeeded + 
+				" , " + currentDilemma.choices[1].purchasingPowerNeeded;
+
 			thirdChoiceButton.Text = currentDilemma.choices[2].name;
 
             firstChoiceButton.Pressed += FirstChoiceButtonPressed;
             secondChoiceButton.Pressed += SecondChoiceButtonPressed;
             thirdChoiceButton.Pressed += ThirdChoiceButtonPressed;
+
+			UpdateBalancebar(currentPlayer);
 		}
 
         private void FirstChoiceButtonPressed()
         {
-            
+            string itemNeededString = currentDilemma.choices[0].item;
+
         }
+
         private void SecondChoiceButtonPressed()
         {
 
@@ -86,6 +95,21 @@ namespace Com.IsartDigital.ProjectName
         {
 
         }
+
+		private void UpdateItemsVisible(PlayerProfiles pPlayer)
+		{
+			foreach (Items pItem in ItemsSpriteList.GetChildren())
+			{
+
+			}
+		}
+
+		private void UpdateBalancebar(PlayerProfiles pPlayer)
+		{
+			socialBar.Value = pPlayer.socialTies;
+			lifeBar.Value = pPlayer.healthCondition;
+			moneyBar.Value = pPlayer.purchasingPower;
+		}
 
         public override void _Process(double pDelta)
 		{
@@ -97,11 +121,6 @@ namespace Com.IsartDigital.ProjectName
 		{
 			instance = null;
 			base.Dispose(pDisposing);
-		}
-
-		private void UpdateItems()
-		{
-			
 		}
 	}
 }

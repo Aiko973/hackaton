@@ -28,12 +28,9 @@ namespace Com.IsartDigital.ProjectName
 
 		[Export] TextureProgressBar socialBar, lifeBar, moneyBar;
 
-		[Export] Button firstChoiceButton;
-		[Export] Button secondChoiceButton;
-		[Export] Button thirdChoiceButton;
+		[Export] TextureButton firstChoiceButton, secondChoiceButton, thirdChoiceButton;
 
-		[Export] Label firstChoice, secondChoice, thirdChoice;
-
+		[Export] Label firstChoice, secondChoice, thirdChoice, characterName;
 
 		[Export] Sprite2D characterSprite;
 
@@ -45,6 +42,7 @@ namespace Com.IsartDigital.ProjectName
 
 		private Dilemma currentDilemma;
 		private PlayerProfiles currentPlayer;
+
 
 		RandomNumberGenerator rand = new RandomNumberGenerator();
         List<Dilemma> dilemma = FileManager.GetDilemmaFromJson(Path.DILEMMA);
@@ -76,6 +74,8 @@ namespace Com.IsartDigital.ProjectName
 
 			UpdateBalancebar(currentPlayer);
 			UpdateItemsVisible(currentPlayer);
+
+			characterName.Text = PlayerSelec.characterName;
 		}
 
         private void FirstChoiceButtonPressed()

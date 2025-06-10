@@ -24,10 +24,13 @@ namespace Com.IsartDigital.ProjectName {
 
         [Export] TextureProgressBar socialBar, lifeBar, moneyBar;
 
+        [Export] Label characterNameLabel;
+
         int currentPlayerIndex = 0;
 
         static public PlayerProfiles currentPlayer;
         static public Sprite2D currentCharacterSprite = new Sprite2D();
+        public static string characterName;
 
 		List<Items> textureButton = new List<Items>();
 
@@ -142,6 +145,7 @@ namespace Com.IsartDigital.ProjectName {
                 P2.Hide();
                 P3.Hide();
                 currentCharacterSprite.Texture = P1.Texture;
+                characterName = "Camille";
             }
             if (currentPlayerIndex == 1)
             {
@@ -149,6 +153,7 @@ namespace Com.IsartDigital.ProjectName {
                 P2.Show();
                 P3.Hide();
                 currentCharacterSprite.Texture = P2.Texture;
+                characterName = "Claude";
             }
             if (currentPlayerIndex == 2)
             {
@@ -156,7 +161,9 @@ namespace Com.IsartDigital.ProjectName {
                 P2.Hide();
                 P3.Show();
                 currentCharacterSprite.Texture = P3.Texture;
+                characterName = "Amira";
             }
+            characterNameLabel.Text = characterName;
         }
 
         private void AddItemsIntoPlayer(PlayerProfiles pPlayer)

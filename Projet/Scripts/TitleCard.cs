@@ -9,7 +9,7 @@ namespace Com.IsartDigital.Hackaton
 
 	public partial class TitleCard : Control
 	{
-		[Export] Button button;
+		[Export] TextureButton button;
 		#region Singleton
 		static private TitleCard instance;
 

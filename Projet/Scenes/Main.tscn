@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bjtjkwm3iy7cb"]
+[gd_scene load_steps=26 format=3 uid="uid://bjtjkwm3iy7cb"]
 
 [ext_resource type="Script" path="res://Scripts/Main.cs" id="1_3dioo"]
 [ext_resource type="Script" path="res://Scripts/Utils/ButtonEffect.cs" id="2_6hsv3"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c6hnndourgqmj" path="res://Assets/UI/Bar/BARRE_VIDE_LIEN_SOCIAL.png" id="2_wgtv3"]
 [ext_resource type="Texture2D" uid="uid://svu01bq7y1tt" path="res://Assets/UI/Bar/BARRE_PLEINE_LIEN_SOCIAL.png" id="3_5v0dg"]
 [ext_resource type="Script" path="res://Scripts/Items/Meds.cs" id="3_qhlhc"]
+[ext_resource type="Texture2D" uid="uid://busitbh44fuha" path="res://Assets/Character/Claude sprite 1.png" id="3_qwxap"]
 [ext_resource type="Script" path="res://Scripts/Items/CreditCard.cs" id="4_oanvu"]
 [ext_resource type="Texture2D" uid="uid://cwycnp6v2qlbb" path="res://Assets/UI/Bar/BARRE_VIDE_CONDITION_VIE.png" id="5_afvkq"]
 [ext_resource type="Script" path="res://Scripts/Items/Tent.cs" id="5_ay2cy"]
@@ -18,7 +19,10 @@
 [ext_resource type="Script" path="res://Scripts/Items/Phone.cs" id="8_01fr0"]
 [ext_resource type="Texture2D" uid="uid://ce5b3r1qy743h" path="res://Assets/UI/Bar/BARRE_PLEINE_POUVOIR_ACHAT.png" id="8_e3aci"]
 [ext_resource type="Script" path="res://Scripts/Items/Food.cs" id="9_bxxsd"]
+[ext_resource type="Texture2D" uid="uid://dh6pvnudhuhc" path="res://Assets/DIALOGUE_AFFICHE.png" id="10_5ht56"]
+[ext_resource type="Texture2D" uid="uid://dpabw7d3hxo7f" path="res://Assets/CHOIX_DIALOGUE.png" id="11_4wo0m"]
 [ext_resource type="Script" path="res://Scripts/Items/Axe.cs" id="12_ytu63"]
+[ext_resource type="Texture2D" uid="uid://dligowy5m57ks" path="res://Assets/CHOIX_DIALOGUE_PRESSED.png" id="13_71eop"]
 
 [sub_resource type="Gradient" id="Gradient_sxst2"]
 offsets = PackedFloat32Array(1)
@@ -27,21 +31,22 @@ colors = PackedColorArray(0.194349, 0.194349, 0.194349, 0.360784)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_j70ue"]
 gradient = SubResource("Gradient_sxst2")
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("socialBar", "lifeBar", "moneyBar", "firstChoiceButton", "secondChoiceButton", "thirdChoiceButton", "firstChoice", "secondChoice", "thirdChoice", "characterSprite", "contextLabel", "itemSpriteList", "itemNeeded")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("socialBar", "lifeBar", "moneyBar", "firstChoiceButton", "secondChoiceButton", "thirdChoiceButton", "firstChoice", "secondChoice", "thirdChoice", "characterName", "characterSprite", "contextLabel", "itemSpriteList", "itemNeeded")]
 script = ExtResource("1_3dioo")
 socialBar = NodePath("CanvasLayer/SocialTiesBar")
 lifeBar = NodePath("CanvasLayer/LifeConBar")
 moneyBar = NodePath("CanvasLayer/PurchasePowBar")
-firstChoiceButton = NodePath("CanvasLayer/BackGroundChoice/Choix1Button")
-secondChoiceButton = NodePath("CanvasLayer/BackGroundChoice/Choix2Button")
-thirdChoiceButton = NodePath("CanvasLayer/BackGroundChoice/Choix3Button")
-firstChoice = NodePath("CanvasLayer/BackGroundChoice/Choix1Button/choice1Label")
-secondChoice = NodePath("CanvasLayer/BackGroundChoice/Choix2Button/choice2Label")
-thirdChoice = NodePath("CanvasLayer/BackGroundChoice/Choix3Button/choice3Label")
+firstChoiceButton = NodePath("CanvasLayer/Choix1Button")
+secondChoiceButton = NodePath("CanvasLayer/Choix2Button")
+thirdChoiceButton = NodePath("CanvasLayer/Choix3Button")
+firstChoice = NodePath("CanvasLayer/choice1Label")
+secondChoice = NodePath("CanvasLayer/choice2Label")
+thirdChoice = NodePath("CanvasLayer/choice3Label")
+characterName = NodePath("CanvasLayer/CharacterName")
 characterSprite = NodePath("CanvasLayer/Character")
-contextLabel = NodePath("CanvasLayer/BackGroundChoice/ContextLabel")
+contextLabel = NodePath("CanvasLayer/ContextLabel")
 itemSpriteList = NodePath("CanvasLayer/ItemsSpriteList")
-itemNeeded = NodePath("CanvasLayer/BackGroundChoice/ItemNeeded")
+itemNeeded = NodePath("CanvasLayer/ItemNeeded")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -86,8 +91,9 @@ scale = Vector2(0.038424, 0.038424)
 texture = ExtResource("2_j6ds6")
 
 [node name="Character" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(331, 558)
-scale = Vector2(0.373178, 0.373178)
+position = Vector2(420, 648)
+scale = Vector2(0.308, 0.308)
+texture = ExtResource("3_qwxap")
 
 [node name="SocialTiesBar" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("barValue")]
 anchors_preset = 1
@@ -239,124 +245,135 @@ text = "Pouvoir
 D'achat"
 horizontal_alignment = 1
 
-[node name="BackGroundChoice" type="ColorRect" parent="CanvasLayer"]
+[node name="BackGroundChoice" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -1006.0
-offset_top = -292.0
-offset_right = 982.0
-offset_bottom = 36.0
+offset_left = -964.0
+offset_top = -447.53
+offset_right = 3452.0
+offset_bottom = 636.47
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0.329412, 0.329412, 0.329412, 0.752941)
+scale = Vector2(0.43, 0.43)
+texture = ExtResource("10_5ht56")
 
-[node name="ContextLabel" type="Label" parent="CanvasLayer/BackGroundChoice"]
-layout_mode = 1
+[node name="ContextLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -874.0
-offset_top = -148.0
-offset_right = 953.0
-offset_bottom = -71.0
+offset_left = -908.0
+offset_top = 252.0
+offset_right = 919.0
+offset_bottom = 329.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
 text = "Vous rencontrez cette personne. Faites ce choix :"
 autowrap_mode = 2
 
-[node name="Choix1Button" type="Button" parent="CanvasLayer/BackGroundChoice"]
-layout_mode = 1
+[node name="Choix1Button" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -648.0
-offset_top = -20.0
-offset_right = -353.0
-offset_bottom = 104.0
+offset_left = -2518.59
+offset_top = -274.0
+offset_right = 1379.41
+offset_bottom = 1152.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(147, 62)
-theme_override_font_sizes/font_size = 16
+scale = Vector2(0.09, 0.09)
+pivot_offset = Vector2(1949, 713)
+texture_normal = ExtResource("11_4wo0m")
+texture_pressed = ExtResource("13_71eop")
 script = ExtResource("2_6hsv3")
 
-[node name="choice1Label" type="Label" parent="CanvasLayer/BackGroundChoice/Choix1Button"]
-offset_right = 295.0
-offset_bottom = 124.0
+[node name="choice1Label" type="Label" parent="CanvasLayer"]
+offset_left = 244.91
+offset_top = 918.17
+offset_right = 539.91
+offset_bottom = 1042.17
 pivot_offset = Vector2(147, 62)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Choix2Button" type="Button" parent="CanvasLayer/BackGroundChoice"]
-layout_mode = 1
+[node name="Choix2Button" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -148.0
-offset_top = -19.0
-offset_right = 147.0
-offset_bottom = 105.0
+offset_left = -1989.0
+offset_top = -274.0
+offset_right = 1909.0
+offset_bottom = 1152.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(147, 62)
-theme_override_font_sizes/font_size = 16
+scale = Vector2(0.09, 0.09)
+pivot_offset = Vector2(1949, 713)
+texture_normal = ExtResource("11_4wo0m")
+texture_pressed = ExtResource("13_71eop")
 script = ExtResource("2_6hsv3")
 
-[node name="choice2Label" type="Label" parent="CanvasLayer/BackGroundChoice/Choix2Button"]
-offset_left = -1.0
-offset_right = 294.0
-offset_bottom = 124.0
+[node name="choice2Label" type="Label" parent="CanvasLayer"]
+offset_left = 777.0
+offset_top = 921.0
+offset_right = 1072.0
+offset_bottom = 1045.0
 pivot_offset = Vector2(147, 62)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Choix3Button" type="Button" parent="CanvasLayer/BackGroundChoice"]
-layout_mode = 1
+[node name="Choix3Button" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 391.0
-offset_top = -23.0
-offset_right = 686.0
-offset_bottom = 101.0
+offset_left = 357.0
+offset_top = 377.0
+offset_right = 652.0
+offset_bottom = 501.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(147, 62)
-theme_override_font_sizes/font_size = 16
+scale = Vector2(0.09, 0.09)
+pivot_offset = Vector2(1949, 713)
+texture_normal = ExtResource("11_4wo0m")
+texture_pressed = ExtResource("13_71eop")
 script = ExtResource("2_6hsv3")
 
-[node name="choice3Label" type="Label" parent="CanvasLayer/BackGroundChoice/Choix3Button"]
-offset_right = 295.0
-offset_bottom = 124.0
+[node name="choice3Label" type="Label" parent="CanvasLayer"]
+offset_left = 1317.0
+offset_top = 917.0
+offset_right = 1612.0
+offset_bottom = 1041.0
 pivot_offset = Vector2(147, 62)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="ItemNeeded" type="TextureRect" parent="CanvasLayer/BackGroundChoice"]
-layout_mode = 1
+[node name="ItemNeeded" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -844.0
-offset_top = 17.0
-offset_right = -801.0
-offset_bottom = 57.0
+offset_left = -878.0
+offset_top = 417.0
+offset_right = -835.0
+offset_bottom = 457.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -796,3 +813,19 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 text = "Hache"
+
+[node name="CharacterName" type="Label" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -428.0
+offset_top = -422.0
+offset_right = -259.0
+offset_bottom = -352.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 51
+text = "Claude"

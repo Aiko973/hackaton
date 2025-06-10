@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://dnp0qihnh8t4b"]
+[gd_scene load_steps=26 format=3 uid="uid://dnp0qihnh8t4b"]
 
 [ext_resource type="Script" path="res://Scripts/Utils/BarInformation.cs" id="1_1tcxi"]
 [ext_resource type="Script" path="res://Scripts/PlayerSelec.cs" id="1_8fkp7"]
 [ext_resource type="Texture2D" uid="uid://dyt5vyridv7al" path="res://Assets/Character/Camille sprite 1.png" id="2_8k4v4"]
+[ext_resource type="Texture2D" uid="uid://dhatlptnuajeo" path="res://Assets/UI/ITEM_CONTOUR.png" id="2_51rfe"]
 [ext_resource type="Texture2D" uid="uid://d05csnrdsrrgh" path="res://Assets/arrow.png" id="3_62j6l"]
 [ext_resource type="Texture2D" uid="uid://busitbh44fuha" path="res://Assets/Character/Claude sprite 1.png" id="3_mqikj"]
 [ext_resource type="Texture2D" uid="uid://crhrqonea4tja" path="res://Assets/icon.svg" id="3_nop22"]
@@ -21,6 +22,7 @@
 [ext_resource type="Script" path="res://Scripts/Items/Phone.cs" id="11_i2o3g"]
 [ext_resource type="Script" path="res://Scripts/Items/Food.cs" id="12_vcg34"]
 [ext_resource type="Script" path="res://Scripts/Items/Axe.cs" id="13_dwr5i"]
+[ext_resource type="Texture2D" uid="uid://dpabw7d3hxo7f" path="res://Assets/CHOIX_DIALOGUE.png" id="14_ecc0q"]
 
 [sub_resource type="Gradient" id="Gradient_30hc8"]
 offsets = PackedFloat32Array(1)
@@ -29,7 +31,7 @@ colors = PackedColorArray(0.194349, 0.194349, 0.194349, 0.360784)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_6oq63"]
 gradient = SubResource("Gradient_30hc8")
 
-[node name="PlayerSelec" type="Control" node_paths=PackedStringArray("takenObjects", "itemsButtons", "items", "rightArrow", "leftArrow", "UnselectButton", "lockPlayerButton", "playButton", "P1", "P2", "P3", "socialBar", "lifeBar", "moneyBar")]
+[node name="PlayerSelec" type="Control" node_paths=PackedStringArray("takenObjects", "itemsButtons", "items", "rightArrow", "leftArrow", "UnselectButton", "lockPlayerButton", "playButton", "P1", "P2", "P3", "socialBar", "lifeBar", "moneyBar", "characterNameLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,6 +53,7 @@ P3 = NodePath("BackGround/Character3")
 socialBar = NodePath("BackGround/SocialTiesBar")
 lifeBar = NodePath("BackGround/LifeConBar")
 moneyBar = NodePath("BackGround/PurchasePowBar")
+characterNameLabel = NodePath("BackGround/CharacterName")
 
 [node name="BackGround" type="ColorRect" parent="."]
 layout_mode = 1
@@ -67,9 +70,29 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.470076, 0.470076, 0.470076, 1)
 
+[node name="ItemContour8" type="Sprite2D" parent="BackGround"]
+position = Vector2(744, 465)
+scale = Vector2(0.0481928, 0.0481928)
+texture = ExtResource("2_51rfe")
+
+[node name="ItemContour9" type="Sprite2D" parent="BackGround"]
+position = Vector2(910.01, 465)
+scale = Vector2(0.0481928, 0.0481928)
+texture = ExtResource("2_51rfe")
+
+[node name="ItemContour10" type="Sprite2D" parent="BackGround"]
+position = Vector2(1078.63, 465)
+scale = Vector2(0.0481928, 0.0481928)
+texture = ExtResource("2_51rfe")
+
+[node name="ItemContour11" type="Sprite2D" parent="BackGround"]
+position = Vector2(1245.22, 465)
+scale = Vector2(0.0481928, 0.0481928)
+texture = ExtResource("2_51rfe")
+
 [node name="Character1" type="Sprite2D" parent="BackGround"]
-position = Vector2(212, 411)
-scale = Vector2(0.339359, 0.339359)
+position = Vector2(240, 437)
+scale = Vector2(0.3207, 0.3207)
 texture = ExtResource("2_8k4v4")
 
 [node name="Character2" type="Sprite2D" parent="BackGround"]
@@ -305,6 +328,33 @@ grow_vertical = 2
 rotation = 1.5708
 theme_override_font_sizes/font_size = 141
 
+[node name="TextureRect" type="TextureRect" parent="BackGround"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.99997
+offset_top = -75.0
+offset_right = 3907.0
+offset_bottom = 1351.0
+grow_vertical = 0
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("14_ecc0q")
+
+[node name="CharacterName" type="Label" parent="BackGround"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = -68.0
+offset_right = 144.0
+offset_bottom = -24.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "Camille"
+
 [node name="ItemsButtons" type="Node" parent="."]
 
 [node name="UnSelect" type="Button" parent="ItemsButtons"]
@@ -329,10 +379,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = 25.0
-offset_right = 78.0
-offset_bottom = 119.0
+offset_left = -8.0
+offset_top = -21.0
+offset_right = 86.0
+offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
@@ -343,10 +393,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 115.0
-offset_top = 27.0
-offset_right = 209.0
-offset_bottom = 121.0
+offset_left = 159.0
+offset_top = -20.0
+offset_right = 253.0
+offset_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
@@ -357,10 +407,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 241.0
-offset_top = 30.0
-offset_right = 335.0
-offset_bottom = 124.0
+offset_left = 326.0
+offset_top = -23.0
+offset_right = 420.0
+offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
@@ -371,10 +421,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 387.0
-offset_top = 26.0
-offset_right = 481.0
-offset_bottom = 120.0
+offset_left = 493.0
+offset_top = -22.0
+offset_right = 587.0
+offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1

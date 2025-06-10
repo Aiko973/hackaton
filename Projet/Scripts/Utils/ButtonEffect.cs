@@ -2,7 +2,7 @@ using Com.IsartDigital.OBG.Utils;
 using Godot;
 using System;
 
-public partial class ButtonEffect : Button
+public partial class ButtonEffect : TextureButton
 {
 	public override void _Ready()
 	{
@@ -13,19 +13,19 @@ public partial class ButtonEffect : Button
 
     private void ButtonSound_MouseEntered()
     {
-        AnimUtils.AnimateScale(this, new Vector2(1.2f, 1.2f), 0.3f, Tween.TransitionType.Quart);
+        AnimUtils.AnimateScale(this, new Vector2(0.11f, 0.11f), 0.3f, Tween.TransitionType.Quart);
     }
     
     private void ButtonMouseExited()
     {
-        AnimUtils.AnimateScale(this, Vector2.One, 0.3f, Tween.TransitionType.Quart);
+        AnimUtils.AnimateScale(this, new Vector2(0.09f,0.09f), 0.3f, Tween.TransitionType.Quart);
     }
 
     private void ButtonSound_Pressed()
     {
         Tween lTween = CreateTween();
-        AnimUtils.AnimateScale(this, new Vector2(0.7f, 0.7f), 0.1f, pTween: lTween);
-        AnimUtils.AnimateScale(this, Vector2.One, 0.1f, pTween: lTween);
+        lTween.TweenProperty(this, "modulate", new Color(0.6f,0.6f,0.6f), 0.1f);
+        lTween.TweenProperty(this, "modulate", new Color(1f, 1f, 1f), 0.1f);
         lTween.Kill();
     }
 

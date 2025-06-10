@@ -152,11 +152,11 @@
 	]
   },
   {
-	"dilemma": "Les experts prévoient un hiver particulièrement froid et vous n’avez pas d’endroit ou vous abriter.  ",
+	"dilemma": "Les experts prévoient un hiver particulièrement froid et vous n’avez pas d’endroit où vous abriter.  ",
 	"choices": [
 	  {
-		"name": "Vêtements chauds : Se protéger la peau sous d’épais vêtements",
-		"item" : "cloth",
+		"name": "Vêtements chauds : Se couvrir chaudement",
+		"item" : "clothes",
 		"description": "blabliblu",
 		"socialTiesNeeded" : -5,
 		"healthConditionsNeeded" : -5,

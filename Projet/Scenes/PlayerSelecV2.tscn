@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/PlayerSelec.cs" id="1_yh66s"]
 [ext_resource type="Texture2D" uid="uid://dhatlptnuajeo" path="res://Assets/UI/ITEM_CONTOUR.png" id="2_fg3ko"]
-[ext_resource type="LabelSettings" path="res://fontBarr.tres" id="2_nr5jq"]
+[ext_resource type="LabelSettings" uid="uid://dvhttupb55uqw" path="res://fontBarr.tres" id="2_nr5jq"]
 [ext_resource type="Texture2D" uid="uid://dyt5vyridv7al" path="res://Assets/Character/Camille sprite 1.png" id="3_10eyt"]
 [ext_resource type="Texture2D" uid="uid://busitbh44fuha" path="res://Assets/Character/Claude sprite 1.png" id="4_hstai"]
 [ext_resource type="Texture2D" uid="uid://d05csnrdsrrgh" path="res://Assets/UI/arrow.png" id="5_qm7ps"]

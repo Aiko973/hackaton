@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bd2ymf25k6f5b" path="res://Assets/Items/TENTE_ITEM.png" id="18_dulns"]
 [ext_resource type="Texture2D" uid="uid://cxetla4gekrya" path="res://Assets/Items/TSHIRT_ITEM.png" id="20_64vfv"]
 [ext_resource type="Texture2D" uid="uid://btdrkomg0riua" path="res://Assets/Items/PASSPORT_ITEM.png" id="22_8wdii"]
-[ext_resource type="LabelSettings" path="res://fontBarr.tres" id="23_87qtf"]
+[ext_resource type="LabelSettings" uid="uid://dvhttupb55uqw" path="res://fontBarr.tres" id="23_87qtf"]
 [ext_resource type="Texture2D" uid="uid://bi74qptcpr8gf" path="res://Assets/Items/TELEPHONE_ITEM.png" id="24_sq1or"]
 [ext_resource type="Texture2D" uid="uid://cle3qs4qdur6e" path="res://Assets/Items/CONSERVE_ITEM.png" id="26_02i35"]
 [ext_resource type="Texture2D" uid="uid://c1txe522gkusv" path="res://Assets/Items/HACHE_ITEM.png" id="28_5v3fg"]

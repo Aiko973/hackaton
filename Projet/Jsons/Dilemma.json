@@ -349,5 +349,83 @@
 		"purchasingPower": 0
 	  }
 	]
+  },
+  {
+	"dilemma": "Sur votre chemin se trouve un marché. Suite aux nombreuses sécheresses, l’eau se fait rare. Un échange intéressant vous est proposé : un peu d’argent contre quelques bouteilles d’eau.",
+	"done": false,
+	"choices": [
+	  {
+		"name": "CB : Vous échangez votre carte bleue sans même savoir combien elle contient.",
+		"item" : "creditCard",
+		"description": "blabliblu",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": 2,
+		"purchasingPower": -1
+	  },
+	  {
+		"name": "Vous arrivez à négocier une réduction des prix afin qu’elle corresponde à votre tirelire.",
+		"item" : "",
+		"description": "lalalalalala",
+		"socialTiesNeeded" : 1,
+		"healthConditionsNeeded" : 3,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": 1,
+		"purchasingPower": 0
+	  },
+	  {
+		"name": "Vous continuez votre route.",
+		"item" : "",
+		"description": ",egfl;ddfl;m",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": -1,
+		"healthCondition": -1,
+		"purchasingPower": 0
+	  }
+	]
+  },
+  {
+	"dilemma": "Vous rencontrez une personne à la recherche de personnel pour reconstruire des habitations après un cyclone.",
+	"done": false,
+	"choices": [
+	  {
+		"name": "PassPort : Vous proposez vos services.",
+		"item" : "passport",
+		"description": "blabliblu",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": -1,
+		"purchasingPower": 2
+	  },
+	  {
+		"name": "Vous proposez de participer en tant que bénévole.",
+		"item" : "",
+		"description": "lalalalalala",
+		"socialTiesNeeded" : 2,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 2,
+		"healthCondition": -1,
+		"purchasingPower": 0
+	  },
+	  {
+		"name": "Vous déclinez l'offre.",
+		"item" : "",
+		"description": ",egfl;ddfl;m",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": -1,
+		"healthCondition": 0,
+		"purchasingPower": -1
+	  }
+	]
   }
 ]

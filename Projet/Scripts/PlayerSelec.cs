@@ -119,7 +119,7 @@ namespace Com.IsartDigital.ProjectName {
             if (textureButton.Count < 4) textureButton.Add(items[pIndex]);
             for (int i = 0; i < textureButton.Count; i++)
             {
-                takenObjects[i].Texture = textureButton[i].Texture;
+                takenObjects[i].Texture = textureButton[i].TextureNormal;
             }
         }
 

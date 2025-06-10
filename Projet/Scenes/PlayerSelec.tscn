@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://clniwqocdro88"]
+[gd_scene load_steps=16 format=3 uid="uid://dnp0qihnh8t4b"]
 
 [ext_resource type="Script" path="res://Scripts/Utils/BarInformation.cs" id="1_1tcxi"]
 [ext_resource type="Script" path="res://Scripts/PlayerSelec.cs" id="1_8fkp7"]
@@ -14,7 +14,14 @@
 [ext_resource type="Script" path="res://Scripts/Items/Food.cs" id="12_vcg34"]
 [ext_resource type="Script" path="res://Scripts/Items/Axe.cs" id="13_dwr5i"]
 
-[node name="PlayerSelec" type="Control" node_paths=PackedStringArray("medsButton", "takenObjects", "itemsButtons", "items", "rightArrow", "leftArrow", "UnselectButton", "lockPlayerButton", "playButton", "P1", "P2", "P3", "socialBar", "lifeBar", "moneyBar")]
+[sub_resource type="Gradient" id="Gradient_30hc8"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.194349, 0.194349, 0.194349, 0.360784)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6oq63"]
+gradient = SubResource("Gradient_30hc8")
+
+[node name="PlayerSelec" type="Control" node_paths=PackedStringArray("takenObjects", "itemsButtons", "items", "rightArrow", "leftArrow", "UnselectButton", "lockPlayerButton", "playButton", "P1", "P2", "P3", "socialBar", "lifeBar", "moneyBar")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,7 +29,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8fkp7")
-medsButton = NodePath("")
 takenObjects = [NodePath("SelectedObject/TakenObject1"), NodePath("SelectedObject/TakenObject2"), NodePath("SelectedObject/TakenObject3"), NodePath("SelectedObject/TakenObject4")]
 itemsButtons = [NodePath("Meds/TextureButton"), NodePath("Creditcard/TextureButton"), NodePath("Tent/TextureButton"), NodePath("Clothes/TextureButton"), NodePath("Passport/TextureButton"), NodePath("Phone/TextureButton"), NodePath("Food/TextureButton"), NodePath("Axe/TextureButton")]
 items = [NodePath("Meds"), NodePath("Creditcard"), NodePath("Tent"), NodePath("Clothes"), NodePath("Passport"), NodePath("Phone"), NodePath("Food"), NodePath("Axe")]
@@ -81,6 +87,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -1400.0
 offset_bottom = -886.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Line2D" type="Line2D" parent="BackGround/P2"]
 position = Vector2(-321.37, -174.059)
@@ -119,6 +127,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -1400.0
 offset_bottom = -886.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Line2D" type="Line2D" parent="BackGround/P3"]
 position = Vector2(-321.37, -174.059)
@@ -424,14 +434,16 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 
-[node name="Meds" type="TextureRect" parent="."]
+[node name="Meds" type="TextureButton" parent="." node_paths=PackedStringArray("textTexture")]
+layout_mode = 0
 offset_left = 937.0
 offset_top = 693.0
 offset_right = 1017.0
 offset_bottom = 773.0
-texture = ExtResource("3_nop22")
-expand_mode = 1
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("3_nop22")
 script = ExtResource("6_vsav8")
+textTexture = NodePath("../ItemsDescription/MedsDescription")
 
 [node name="Label" type="Label" parent="Meds"]
 layout_mode = 1
@@ -458,14 +470,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Creditcard" type="TextureRect" parent="."]
+[node name="Creditcard" type="TextureButton" parent="." node_paths=PackedStringArray("textTexture")]
+layout_mode = 0
 offset_left = 1061.0
 offset_top = 691.0
 offset_right = 1141.0
 offset_bottom = 771.0
-texture = ExtResource("3_nop22")
-expand_mode = 1
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("3_nop22")
 script = ExtResource("7_ocqka")
+textTexture = NodePath("../ItemsDescription/CarteDescription")
 
 [node name="Label" type="Label" parent="Creditcard"]
 layout_mode = 1
@@ -492,14 +506,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Tent" type="TextureRect" parent="."]
+[node name="Tent" type="TextureButton" parent="." node_paths=PackedStringArray("textTexture")]
+layout_mode = 0
 offset_left = 1187.0
 offset_top = 695.0
 offset_right = 1267.0
 offset_bottom = 775.0
-texture = ExtResource("3_nop22")
-expand_mode = 1
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("3_nop22")
 script = ExtResource("8_dwkvc")
+textTexture = NodePath("../ItemsDescription/TenteDescription")
 
 [node name="Label" type="Label" parent="Tent"]
 layout_mode = 1
@@ -526,14 +542,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Clothes" type="TextureRect" parent="."]
+[node name="Clothes" type="TextureButton" parent="." node_paths=PackedStringArray("textTexture")]
+layout_mode = 0
 offset_left = 1305.0
 offset_top = 695.0
 offset_right = 1385.0
 offset_bottom = 775.0
-texture = ExtResource("3_nop22")
-expand_mode = 1
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("3_nop22")
 script = ExtResource("9_g4wia")
+textTexture = NodePath("../ItemsDescription/VetsDescription")
 
 [node name="Label" type="Label" parent="Clothes"]
 layout_mode = 1
@@ -560,14 +578,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Passport" type="TextureRect" parent="."]
+[node name="Passport" type="TextureButton" parent="." node_paths=PackedStringArray("textTexture")]
+layout_mode = 0
 offset_left = 934.0
 offset_top = 793.0
 offset_right = 1014.0
 offset_bottom = 873.0
-texture = ExtResource("3_nop22")
-expand_mode = 1
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("3_nop22")
 script = ExtResource("10_x2cpr")
+textTexture = NodePath("../ItemsDescription/PassPDescription")
 
 [node name="Label" type="Label" parent="Passport"]
 layout_mode = 1
@@ -594,14 +614,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Phone" type="TextureRect" parent="."]
+[node name="Phone" type="TextureButton" parent="." node_paths=PackedStringArray("textTexture")]
+layout_mode = 0
 offset_left = 1063.0
 offset_top = 793.0
 offset_right = 1143.0
 offset_bottom = 873.0
-texture = ExtResource("3_nop22")
-expand_mode = 1
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("3_nop22")
 script = ExtResource("11_i2o3g")
+textTexture = NodePath("../ItemsDescription/TelDescription")
 
 [node name="Label" type="Label" parent="Phone"]
 layout_mode = 1
@@ -628,14 +650,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Food" type="TextureRect" parent="."]
+[node name="Food" type="TextureButton" parent="." node_paths=PackedStringArray("textTexture")]
+layout_mode = 0
 offset_left = 1191.0
 offset_top = 794.0
 offset_right = 1271.0
 offset_bottom = 874.0
-texture = ExtResource("3_nop22")
-expand_mode = 1
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("3_nop22")
 script = ExtResource("12_vcg34")
+textTexture = NodePath("../ItemsDescription/NourDescription")
 
 [node name="Label" type="Label" parent="Food"]
 layout_mode = 1
@@ -662,14 +686,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Axe" type="TextureRect" parent="."]
+[node name="Axe" type="TextureButton" parent="." node_paths=PackedStringArray("textTexture")]
+layout_mode = 0
 offset_left = 1305.0
 offset_top = 794.0
 offset_right = 1385.0
 offset_bottom = 874.0
-texture = ExtResource("3_nop22")
-expand_mode = 1
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("3_nop22")
 script = ExtResource("13_dwr5i")
+textTexture = NodePath("../ItemsDescription/AxeDescription")
 
 [node name="Label" type="Label" parent="Axe"]
 layout_mode = 1
@@ -695,3 +721,221 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ItemsDescription" type="Node" parent="."]
+
+[node name="MedsDescription" type="TextureRect" parent="ItemsDescription"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 45.0
+offset_top = 153.0
+offset_right = 301.0
+offset_bottom = 262.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(128, 54)
+texture = SubResource("GradientTexture1D_6oq63")
+
+[node name="Label" type="Label" parent="ItemsDescription/MedsDescription"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Médicament"
+
+[node name="CarteDescription" type="TextureRect" parent="ItemsDescription"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 173.0
+offset_top = 155.0
+offset_right = 429.0
+offset_bottom = 264.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(128, 54)
+texture = SubResource("GradientTexture1D_6oq63")
+
+[node name="Label" type="Label" parent="ItemsDescription/CarteDescription"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Carte Bleu"
+
+[node name="TenteDescription" type="TextureRect" parent="ItemsDescription"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 308.0
+offset_top = 149.0
+offset_right = 564.0
+offset_bottom = 258.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(128, 54)
+texture = SubResource("GradientTexture1D_6oq63")
+
+[node name="Label" type="Label" parent="ItemsDescription/TenteDescription"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Tente"
+
+[node name="VetsDescription" type="TextureRect" parent="ItemsDescription"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 424.0
+offset_top = 150.0
+offset_right = 680.0
+offset_bottom = 259.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(128, 54)
+texture = SubResource("GradientTexture1D_6oq63")
+
+[node name="Label" type="Label" parent="ItemsDescription/VetsDescription"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Vets"
+
+[node name="PassPDescription" type="TextureRect" parent="ItemsDescription"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 540.0
+offset_top = 152.0
+offset_right = 796.0
+offset_bottom = 261.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(128, 54)
+texture = SubResource("GradientTexture1D_6oq63")
+
+[node name="Label" type="Label" parent="ItemsDescription/PassPDescription"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Passport"
+
+[node name="TelDescription" type="TextureRect" parent="ItemsDescription"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 673.0
+offset_top = 148.0
+offset_right = 929.0
+offset_bottom = 257.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(128, 54)
+texture = SubResource("GradientTexture1D_6oq63")
+
+[node name="Label" type="Label" parent="ItemsDescription/TelDescription"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Téléphone"
+
+[node name="NourDescription" type="TextureRect" parent="ItemsDescription"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 804.0
+offset_top = 146.0
+offset_right = 1060.0
+offset_bottom = 255.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(128, 54)
+texture = SubResource("GradientTexture1D_6oq63")
+
+[node name="Label" type="Label" parent="ItemsDescription/NourDescription"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Nourriture"
+
+[node name="AxeDescription" type="TextureRect" parent="ItemsDescription"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 901.0
+offset_top = 144.0
+offset_right = 1157.0
+offset_bottom = 253.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(128, 54)
+texture = SubResource("GradientTexture1D_6oq63")
+
+[node name="Label" type="Label" parent="ItemsDescription/AxeDescription"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Hache"

@@ -1,77 +1,305 @@
 [
   {
-	"dilemma": "blablabla",
+	"dilemma": "Suite à l’inondation, vous vous rendez compte que vous êtres gravement blessé, il faut vite faire quelque chose. ",
 	"choices": [
 	  {
-		"name": "Choice 1",
-		"item" : "axe",
+		"name": "Meds : Utiliser la trousse de secours",
+		"item" : "meds",
 		"description": "blabliblu",
-		"socialTiesNeeded" : 0,
-		"healthConditionsNeeded" : 0,
-		"purchasingPowerNeeded" : 0,
-		"socialTies": 1,
-		"healthCondition": 2,
-		"purchasingPower": -1
-	  },
-	  {
-		"name": "Choice 2",
-		"item" : "",
-		"description": "lalalalalala",
 		"socialTiesNeeded" : -5,
-		"healthConditionsNeeded" : 2,
+		"healthConditionsNeeded" : -5,
 		"purchasingPowerNeeded" : -5,
-		"socialTies": 3,
-		"healthCondition": -2,
-		"purchasingPower": -3
+		"socialTies": 0,
+		"healthCondition": 2,
+		"purchasingPower": 0
 	  },
 	  {
-		"name": "Choice 3",
-		"item" : "",
-		"description": ",egfl;ddfl;m",
-		"socialTiesNeeded" : 0,
-		"healthConditionsNeeded" : 0,
-		"purchasingPowerNeeded" : 0,
-		"socialTies": -3,
-		"healthCondition": 0,
-		"purchasingPower": 3
-	  }
-	]
-  },
-  {
-	"dilemma": "lalalalALAL",
-	"choices": [
-	  {
-		"name": "Choice 1",
-		"item" : "clothes",
-		"description": "blabliblu",
-		"socialTiesNeeded" : 0,
-		"healthConditionsNeeded" : 0,
-		"purchasingPowerNeeded" : 0,
-		"socialTies": 1,
-		"healthCondition": -3,
-		"purchasingPower": -1
-	  },
-	  {
-		"name": "Choice 2",
+		"name": "pouvoir d'achat : Echanger des bandages avec un survivant",
 		"item" : "",
 		"description": "lalalalalala",
 		"socialTiesNeeded" : -5,
 		"healthConditionsNeeded" : -5,
 		"purchasingPowerNeeded" : 2,
-		"socialTies": 3,
-		"healthCondition": -2,
-		"purchasingPower": -3
+		"socialTies": 1,
+		"healthCondition": 0,
+		"purchasingPower": -1
 	  },
 	  {
-		"name": "Choice 3",
+		"name": "Continuer son chemin malgré la douleur",
+		"item" : "",
+		"description": ",egfl;ddfl;m",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": -3,
+		"purchasingPower": 0
+	  }
+	]
+  },
+  {
+	"dilemma": "Une personne a été piégé dans l’incendie et est dans un état critique. Elle est gravement affaiblie et a besoin d’une aide urgente. ",
+	"choices": [
+	  {
+		"name": "Nourriture : La revitaliser avec un bon repas",
+		"item" : "food",
+		"description": "blabliblu",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 3,
+		"healthCondition": 0,
+		"purchasingPower": 0
+	  },
+	  {
+		"name": "condition de vie : La transporter à une équipe médicale",
+		"item" : "",
+		"description": "lalalalalala",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : 3,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 1,
+		"healthCondition": -1,
+		"purchasingPower": 0
+	  },
+	  {
+		"name": "Faire du mieux qu’on peut, en vain",
 		"item" :"",
 		"description": ",egfl;ddfl;m",
-		"socialTiesNeeded" : 0,
-		"healthConditionsNeeded" : 0,
-		"purchasingPowerNeeded" : 0,
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
 		"socialTies": -3,
 		"healthCondition": 0,
-		"purchasingPower": 3
+		"purchasingPower": 0
+	  }
+	]
+  },
+  {
+	"dilemma": "La sècheresse ne vous laisse pas indifférents vous ressentez la faim comme jamais auparavant. ",
+	"choices": [
+	  {
+		"name": "Nourriture : Ouvrir une conserve",
+		"item" : "food",
+		"description": "blabliblu",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": 2,
+		"purchasingPower": 0
+	  },
+	  {
+		"name": "lien social : Heureusement pour vous, un proche vous a glissé une conserve dans vos provisions",
+		"item" : "",
+		"description": "lalalalalala",
+		"socialTiesNeeded" : 3,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": 1,
+		"purchasingPower": 0
+	  },
+	  {
+		"name": "Avancer malgré la faim",
+		"item" : "",
+		"description": ",egfl;ddfl;m",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": -2,
+		"purchasingPower": 0
+	  }
+	]
+  },
+  {
+	"dilemma": "Un épais nuage de pollution traverse le ciel tandis que les nuages se noircissent, une pluie acide fait rage mais vous n’avez aucun abri.  ",
+	"choices": [
+	  {
+		"name": "Tente : Monter une tente en prévision des pluies acides",
+		"item" : "tent",
+		"description": "blabliblu",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": 1,
+		"purchasingPower": 0
+	  },
+	  {
+		"name": " pouvoir d’achat : vous avez prévu le coup avec une tenue imperméable",
+		"item" : "",
+		"description": "lalalalalala",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : 2,
+		"socialTies": 0,
+		"healthCondition": 0,
+		"purchasingPower": 0
+	  },
+	  {
+		"name": "Accélérer le pas",
+		"item" : "",
+		"description": ",egfl;ddfl;m",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": -1,
+		"purchasingPower": 0
+	  }
+	]
+  },
+  {
+	"dilemma": "Les experts prévoient un hiver particulièrement froid et vous n’avez pas d’endroit ou vous abriter.  ",
+	"choices": [
+	  {
+		"name": "Vêtements chauds : Se protéger la peau sous d’épais vêtements",
+		"item" : "cloth",
+		"description": "blabliblu",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": 2,
+		"purchasingPower": 0
+	  },
+	  {
+		"name": "lien social : Une connaissance vous oriente vers un lieu où passer l’hiver",
+		"item" : "",
+		"description": "lalalalalala",
+		"socialTiesNeeded" : 3,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": 1,
+		"purchasingPower": 0
+	  },
+	  {
+		"name": "Endurer la basse température malgré vous",
+		"item" : "",
+		"description": ",egfl;ddfl;m",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": -2,
+		"purchasingPower": 0
+	  }
+	]
+  },
+  {
+	"dilemma": " La chaleur bat encore son record, et ce, de plus en plus tôt dans l’année. Vous n’êtes pas proche de zone d’ombre et le soleil est au zénith ",
+	"choices": [
+	  {
+		"name": "Vêtements chauds : Se protéger du soleil",
+		"item" : "clothes",
+		"description": "blabliblu",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": 1,
+		"purchasingPower": 0
+	  },
+	  {
+		"name": "lien social : Le chapeau qu’on vous a offert vous est enfin utile",
+		"item" : "",
+		"description": "lalalalalala",
+		"socialTiesNeeded" : 3,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": 1,
+		"purchasingPower": 0
+	  },
+	  {
+		"name": " Continuer à marcher jusqu’à trouver un coin d’ombre",
+		"item" : "",
+		"description": ",egfl;ddfl;m",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": -1,
+		"purchasingPower": 0
+	  }
+	]
+  },
+  {
+	"dilemma": "Un épais nuage de pollution traverse le ciel tandis que les nuages se noircissent, une pluie acide fait rage mais vous n’avez aucun abri.  ",
+	"choices": [
+	  {
+		"name": "Tente : Monter une tente en prévision des pluies acides",
+		"item" : "tent",
+		"description": "blabliblu",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": 1,
+		"purchasingPower": 0
+	  },
+	  {
+		"name": " pouvoir d’achat : vous avez prévu le coup avec une tenue imperméable",
+		"item" : "",
+		"description": "lalalalalala",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : 2,
+		"socialTies": 0,
+		"healthCondition": 0,
+		"purchasingPower": 0
+	  },
+	  {
+		"name": "Accélérer le pas",
+		"item" : "",
+		"description": ",egfl;ddfl;m",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": -1,
+		"purchasingPower": 0
+	  }
+	]
+  },
+  {
+	"dilemma": "Un épais nuage de pollution traverse le ciel tandis que les nuages se noircissent, une pluie acide fait rage mais vous n’avez aucun abri.  ",
+	"choices": [
+	  {
+		"name": "Tente : Monter une tente en prévision des pluies acides",
+		"item" : "tent",
+		"description": "blabliblu",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": 1,
+		"purchasingPower": 0
+	  },
+	  {
+		"name": " pouvoir d’achat : vous avez prévu le coup avec une tenue imperméable",
+		"item" : "",
+		"description": "lalalalalala",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : 2,
+		"socialTies": 0,
+		"healthCondition": 0,
+		"purchasingPower": 0
+	  },
+	  {
+		"name": "Accélérer le pas",
+		"item" : "",
+		"description": ",egfl;ddfl;m",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 0,
+		"healthCondition": -1,
+		"purchasingPower": 0
 	  }
 	]
   }

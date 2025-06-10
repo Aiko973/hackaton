@@ -26,24 +26,27 @@ namespace Com.IsartDigital.ProjectName
 		}
 		#endregion
 
-		[Export] ProgressBar socialBar;
-		[Export] ProgressBar lifeBar;
-		[Export] ProgressBar moneyBar;
+		[Export] TextureProgressBar socialBar, lifeBar, moneyBar;
 
 		[Export] Button firstChoiceButton;
 		[Export] Button secondChoiceButton;
 		[Export] Button thirdChoiceButton;
 
+		[Export] Sprite2D characterSprite;
+
 		[Export] Label contextLabel;
 
 		[Export] Node itemSpriteList;
+
+		[Export] TextureRect itemNeeded;
 
 		private Dilemma currentDilemma;
 		private PlayerProfiles currentPlayer;
 
 		RandomNumberGenerator rand = new RandomNumberGenerator();
+        List<Dilemma> dilemma = FileManager.GetDilemmaFromJson(Path.DILEMMA);
 
-		public override void _Ready()
+        public override void _Ready()
 		{
 			#region Singleton Ready
 			if (instance != null)
@@ -58,22 +61,11 @@ namespace Com.IsartDigital.ProjectName
 
 			rand.Randomize();
 
-			List<Dilemma> dilemma = FileManager.GetDilemmaFromJson(Path.DILEMMA);
+			characterSprite.Texture = PlayerSelec.currentCharacterSprite.Texture;
 
-			currentDilemma = dilemma[0];
+			ResetDilemma();
 			currentPlayer = PlayerSelec.currentPlayer;
 			
-			contextLabel.Text = currentDilemma.dilemma;
-
-			firstChoiceButton.Text = currentDilemma.choices[0].name + "   "+ currentDilemma.choices[0].item + " besoin";
-
-			secondChoiceButton.Text = currentDilemma.choices[1].name + ", Besoin de \n";
-
-			if (currentDilemma.choices[1].socialTiesNeeded != -5) secondChoiceButton.Text += currentDilemma.choices[1].socialTiesNeeded + " Vie Sociale";
-			if (currentDilemma.choices[1].healthConditionsNeeded != -5) secondChoiceButton.Text += currentDilemma.choices[1].healthConditionsNeeded + " Conditions de vie";
-			if (currentDilemma.choices[1].purchasingPowerNeeded != -5) secondChoiceButton.Text += currentDilemma.choices[1].purchasingPowerNeeded + " Pouvoir d'achat";
-                 
-			thirdChoiceButton.Text = currentDilemma.choices[2].name;
 
             firstChoiceButton.Pressed += FirstChoiceButtonPressed;
             secondChoiceButton.Pressed += SecondChoiceButtonPressed;
@@ -97,10 +89,13 @@ namespace Com.IsartDigital.ProjectName
 
 						currentPlayer.itemsList[i].owned = false;
 						UpdateItemsVisible(currentPlayer);
-					}
+						ResetDilemma();
+
+                    }
 					else break;
 				}
 			}
+
         }
 
         private void SecondChoiceButtonPressed()
@@ -112,14 +107,17 @@ namespace Com.IsartDigital.ProjectName
 					if (currentPlayer.purchasingPower >= currentDilemma.choices[1].purchasingPowerNeeded)
 					{
 						UpdatePlayerStat(currentPlayer, 1);
+						ResetDilemma();
                     }
 				}
 			}
+
         }
 
         private void ThirdChoiceButtonPressed()
         {
 			UpdatePlayerStat(currentPlayer, 2);
+			ResetDilemma();
         }
 
 		private void UpdateItemsVisible(PlayerProfiles pPlayer)
@@ -147,13 +145,31 @@ namespace Com.IsartDigital.ProjectName
 			UpdateBalancebar(pPlayer);
         }
 
-        public override void _Process(double pDelta)
+        public void ResetDilemma()
 		{
-			float lDelta = (float)pDelta;
+            currentDilemma = dilemma[rand.RandiRange(0, dilemma.Count-1)];
+			foreach (Items item in itemSpriteList.GetChildren())
+			{
+				string lItem = char.ToLower(item.Name.ToString()[0]) + item.Name.ToString().Substring(1);
 
-		}
+				if (lItem == currentDilemma.choices[0].item) itemNeeded.Texture = item.TextureNormal;
+			}
 
-		protected override void Dispose(bool pDisposing)
+            contextLabel.Text = currentDilemma.dilemma;
+
+            firstChoiceButton.Text = currentDilemma.choices[0].name + "   " + currentDilemma.choices[0].item + " besoin";
+
+            secondChoiceButton.Text = currentDilemma.choices[1].name + "\n Besoin de ";
+
+            if (currentDilemma.choices[1].socialTiesNeeded != -5) secondChoiceButton.Text += currentDilemma.choices[1].socialTiesNeeded + " Vie Sociale";
+            if (currentDilemma.choices[1].healthConditionsNeeded != -5) secondChoiceButton.Text += currentDilemma.choices[1].healthConditionsNeeded + " Conditions de vie";
+            if (currentDilemma.choices[1].purchasingPowerNeeded != -5) secondChoiceButton.Text += currentDilemma.choices[1].purchasingPowerNeeded + " Pouvoir d'achat";
+
+            thirdChoiceButton.Text = currentDilemma.choices[2].name;
+
+        }
+
+        protected override void Dispose(bool pDisposing)
 		{
 			instance = null;
 			base.Dispose(pDisposing);

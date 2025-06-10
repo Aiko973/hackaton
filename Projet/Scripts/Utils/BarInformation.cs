@@ -5,7 +5,7 @@ using System;
 
 namespace Com.IsartDigital.ProjectName {
 	
-	public partial class BarInformation : ProgressBar
+	public partial class BarInformation : TextureProgressBar
 	{
 		[Export] Label barValue;
 		public override void _Process(double pDelta)

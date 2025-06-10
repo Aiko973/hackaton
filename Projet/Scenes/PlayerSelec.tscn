@@ -1,15 +1,22 @@
-[gd_scene load_steps=16 format=3 uid="uid://dnp0qihnh8t4b"]
+[gd_scene load_steps=23 format=3 uid="uid://dnp0qihnh8t4b"]
 
 [ext_resource type="Script" path="res://Scripts/Utils/BarInformation.cs" id="1_1tcxi"]
 [ext_resource type="Script" path="res://Scripts/PlayerSelec.cs" id="1_8fkp7"]
+[ext_resource type="Texture2D" uid="uid://dyt5vyridv7al" path="res://Assets/Character/Camille sprite 1.png" id="2_8k4v4"]
 [ext_resource type="Texture2D" uid="uid://d05csnrdsrrgh" path="res://Assets/arrow.png" id="3_62j6l"]
 [ext_resource type="Texture2D" uid="uid://crhrqonea4tja" path="res://Assets/icon.svg" id="3_nop22"]
 [ext_resource type="Texture2D" uid="uid://bbct71yhmqryx" path="res://Assets/arrow pressed.png" id="4_7qsfh"]
+[ext_resource type="Texture2D" uid="uid://c6hnndourgqmj" path="res://Assets/UI/BARRE_VIDE_LIEN_SOCIAL.png" id="5_k0jgf"]
 [ext_resource type="Script" path="res://Scripts/Items/Meds.cs" id="6_vsav8"]
+[ext_resource type="Texture2D" uid="uid://svu01bq7y1tt" path="res://Assets/UI/BARRE_PLEINE_LIEN_SOCIAL.png" id="6_wm3p3"]
 [ext_resource type="Script" path="res://Scripts/Items/CreditCard.cs" id="7_ocqka"]
+[ext_resource type="Texture2D" uid="uid://cwycnp6v2qlbb" path="res://Assets/UI/BARRE_VIDE_CONDITION_VIE.png" id="8_6g5iv"]
 [ext_resource type="Script" path="res://Scripts/Items/Tent.cs" id="8_dwkvc"]
 [ext_resource type="Script" path="res://Scripts/Items/Clothes.cs" id="9_g4wia"]
+[ext_resource type="Texture2D" uid="uid://dxsrnoiew0a70" path="res://Assets/UI/BARRE_PLEINE_CONDITION_VIE.png" id="9_srath"]
+[ext_resource type="Texture2D" uid="uid://dqptdhg8adaue" path="res://Assets/UI/BARRE_VIDE_POUVOIR_ACHAT.png" id="10_lrpvp"]
 [ext_resource type="Script" path="res://Scripts/Items/Passport.cs" id="10_x2cpr"]
+[ext_resource type="Texture2D" uid="uid://ce5b3r1qy743h" path="res://Assets/UI/BARRE_PLEINE_POUVOIR_ACHAT.png" id="11_hj2r3"]
 [ext_resource type="Script" path="res://Scripts/Items/Phone.cs" id="11_i2o3g"]
 [ext_resource type="Script" path="res://Scripts/Items/Food.cs" id="12_vcg34"]
 [ext_resource type="Script" path="res://Scripts/Items/Axe.cs" id="13_dwr5i"]
@@ -37,12 +44,12 @@ leftArrow = NodePath("BackGround/LeftArrow")
 UnselectButton = NodePath("ItemsButtons/UnSelect")
 lockPlayerButton = NodePath("BackGround/LockPlayer")
 playButton = NodePath("BackGround/PlayButton")
-P1 = NodePath("BackGround/P1")
-P2 = NodePath("BackGround/P2")
-P3 = NodePath("BackGround/P3")
-socialBar = NodePath("BackGround/SocialBar")
-lifeBar = NodePath("BackGround/LifeBar")
-moneyBar = NodePath("BackGround/MoneyBar")
+P1 = NodePath("BackGround/Character1")
+P2 = NodePath("BackGround/Character2")
+P3 = NodePath("BackGround/Character3")
+socialBar = NodePath("BackGround/SocialTiesBar")
+lifeBar = NodePath("BackGround/LifeConBar")
+moneyBar = NodePath("BackGround/PurchasePowBar")
 
 [node name="BackGround" type="ColorRect" parent="."]
 layout_mode = 1
@@ -59,105 +66,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.470076, 0.470076, 0.470076, 1)
 
-[node name="P1" type="Control" parent="BackGround"]
-anchors_preset = 0
+[node name="Character1" type="Sprite2D" parent="BackGround"]
+position = Vector2(212, 411)
+scale = Vector2(0.339359, 0.339359)
+texture = ExtResource("2_8k4v4")
 
-[node name="Line2D" type="Line2D" parent="BackGround/P1"]
-position = Vector2(-319.37, -173.059)
-scale = Vector2(2.5053, 2.5053)
-points = PackedVector2Array(243, 201, 243, 200)
-width = 82.625
-joint_mode = 2
-begin_cap_mode = 2
-end_cap_mode = 2
+[node name="Character2" type="Sprite2D" parent="BackGround"]
+position = Vector2(232, 506)
+scale = Vector2(0.268222, 0.268222)
 
-[node name="Line2D2" type="Line2D" parent="BackGround/P1"]
-position = Vector2(-635.37, -192.059)
-scale = Vector2(3.82003, 3.82003)
-points = PackedVector2Array(241.621, 280.103, 242.668, 203.14)
-width = 82.625
-joint_mode = 2
-end_cap_mode = 2
-
-[node name="P2" type="Control" parent="BackGround"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1400.0
-offset_bottom = -886.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Line2D" type="Line2D" parent="BackGround/P2"]
-position = Vector2(-321.37, -174.059)
-scale = Vector2(2.5053, 2.5053)
-points = PackedVector2Array(243, 201, 243, 200)
-width = 82.625
-joint_mode = 2
-begin_cap_mode = 2
-end_cap_mode = 2
-
-[node name="Line2D2" type="Line2D" parent="BackGround/P2"]
-position = Vector2(-637.37, -193.059)
-scale = Vector2(3.82003, 3.82003)
-points = PackedVector2Array(242.765, 281.95, 242.668, 203.14)
-width = 82.625
-joint_mode = 2
-end_cap_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="BackGround/P2"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 244.0
-offset_top = 358.0
-offset_right = 334.0
-offset_bottom = 421.0
-grow_vertical = 0
-color = Color(0.43134, 0.43134, 0.43134, 1)
-
-[node name="P3" type="Control" parent="BackGround"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1400.0
-offset_bottom = -886.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Line2D" type="Line2D" parent="BackGround/P3"]
-position = Vector2(-321.37, -174.059)
-scale = Vector2(2.5053, 2.5053)
-points = PackedVector2Array(243, 201, 243, 200)
-width = 82.625
-joint_mode = 2
-begin_cap_mode = 2
-end_cap_mode = 2
-
-[node name="Line2D2" type="Line2D" parent="BackGround/P3"]
-position = Vector2(-637.37, -193.059)
-scale = Vector2(3.82003, 3.82003)
-points = PackedVector2Array(242.765, 281.95, 242.668, 203.14)
-width = 82.625
-joint_mode = 2
-end_cap_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="BackGround/P3"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 198.0
-offset_top = 218.0
-offset_right = 377.0
-offset_bottom = 281.0
-grow_vertical = 0
-color = Color(0.43134, 0.43134, 0.43134, 1)
+[node name="Character3" type="Sprite2D" parent="BackGround"]
+position = Vector2(232, 506)
+scale = Vector2(0.268222, 0.268222)
 
 [node name="SocialLabel" type="Label" parent="BackGround"]
 layout_mode = 1
@@ -204,96 +124,6 @@ text = "Pouvoir
 D'achat"
 horizontal_alignment = 1
 
-[node name="SocialBar" type="ProgressBar" parent="BackGround" node_paths=PackedStringArray("barValue")]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -643.0
-offset_top = 117.0
-offset_right = -54.0
-offset_bottom = 165.0
-grow_horizontal = 0
-min_value = -5.0
-max_value = 5.0
-show_percentage = false
-script = ExtResource("1_1tcxi")
-barValue = NodePath("Label")
-
-[node name="Label" type="Label" parent="BackGround/SocialBar"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="LifeBar" type="ProgressBar" parent="BackGround" node_paths=PackedStringArray("barValue")]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -642.0
-offset_top = 209.0
-offset_right = -53.0
-offset_bottom = 257.0
-grow_horizontal = 0
-min_value = -5.0
-max_value = 5.0
-show_percentage = false
-script = ExtResource("1_1tcxi")
-barValue = NodePath("Label")
-
-[node name="Label" type="Label" parent="BackGround/LifeBar"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MoneyBar" type="ProgressBar" parent="BackGround" node_paths=PackedStringArray("barValue")]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -643.0
-offset_top = 300.0
-offset_right = -54.0
-offset_bottom = 348.0
-grow_horizontal = 0
-min_value = -5.0
-max_value = 5.0
-show_percentage = false
-script = ExtResource("1_1tcxi")
-barValue = NodePath("Label")
-
-[node name="Label" type="Label" parent="BackGround/MoneyBar"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="RightArrow" type="TextureButton" parent="BackGround"]
 layout_mode = 1
 anchors_preset = 8
@@ -301,10 +131,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -224.0
-offset_top = 158.0
-offset_right = -140.0
-offset_bottom = 242.0
+offset_left = -245.0
+offset_top = 64.0
+offset_right = -161.0
+offset_bottom = 148.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("3_62j6l")
@@ -319,10 +149,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -592.0
-offset_top = 163.0
-offset_right = -508.0
-offset_bottom = 247.0
+offset_left = -584.0
+offset_top = 68.0
+offset_right = -500.0
+offset_bottom = 152.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(-1, 1)
@@ -359,6 +189,117 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 41
 text = "JOUER"
+
+[node name="SocialTiesBar" type="TextureProgressBar" parent="BackGround" node_paths=PackedStringArray("barValue")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1882.0
+offset_top = -1332.0
+offset_right = 1189.0
+offset_bottom = 2566.0
+grow_horizontal = 0
+rotation = -1.54462
+scale = Vector2(0.21, 0.21)
+pivot_offset = Vector2(1535, 1449)
+min_value = -5.0
+max_value = 5.0
+fill_mode = 2
+texture_under = ExtResource("5_k0jgf")
+texture_progress = ExtResource("6_wm3p3")
+script = ExtResource("1_1tcxi")
+barValue = NodePath("Label")
+
+[node name="Label" type="Label" parent="BackGround/SocialTiesBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 15.923
+offset_top = -600.464
+offset_right = 175.923
+offset_bottom = -407.464
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+theme_override_font_sizes/font_size = 141
+
+[node name="LifeConBar" type="TextureProgressBar" parent="BackGround" node_paths=PackedStringArray("barValue")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1884.0
+offset_top = -1237.0
+offset_right = 1187.0
+offset_bottom = 2661.0
+grow_horizontal = 0
+rotation = -1.54462
+scale = Vector2(0.21, 0.21)
+pivot_offset = Vector2(1535, 1449)
+min_value = -5.0
+max_value = 5.0
+fill_mode = 2
+texture_under = ExtResource("8_6g5iv")
+texture_progress = ExtResource("9_srath")
+script = ExtResource("1_1tcxi")
+barValue = NodePath("Label")
+
+[node name="Label" type="Label" parent="BackGround/LifeConBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 15.923
+offset_top = -600.464
+offset_right = 175.923
+offset_bottom = -407.464
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+theme_override_font_sizes/font_size = 141
+
+[node name="PurchasePowBar" type="TextureProgressBar" parent="BackGround" node_paths=PackedStringArray("barValue")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1885.0
+offset_top = -1145.0
+offset_right = 1186.0
+offset_bottom = 2753.0
+grow_horizontal = 0
+rotation = -1.54462
+scale = Vector2(0.21, 0.21)
+pivot_offset = Vector2(1535, 1449)
+min_value = -5.0
+max_value = 5.0
+fill_mode = 2
+texture_under = ExtResource("10_lrpvp")
+texture_progress = ExtResource("11_hj2r3")
+script = ExtResource("1_1tcxi")
+barValue = NodePath("Label")
+
+[node name="Label" type="Label" parent="BackGround/PurchasePowBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 15.923
+offset_top = -600.464
+offset_right = 175.923
+offset_bottom = -407.464
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+theme_override_font_sizes/font_size = 141
 
 [node name="ItemsButtons" type="Node" parent="."]
 
@@ -412,10 +353,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 248.0
-offset_top = 27.0
-offset_right = 342.0
-offset_bottom = 121.0
+offset_left = 241.0
+offset_top = 30.0
+offset_right = 335.0
+offset_bottom = 124.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
@@ -441,6 +382,7 @@ offset_top = 693.0
 offset_right = 1017.0
 offset_bottom = 773.0
 scale = Vector2(0.7, 0.7)
+disabled = true
 texture_normal = ExtResource("3_nop22")
 script = ExtResource("6_vsav8")
 textTexture = NodePath("../ItemsDescription/MedsDescription")
@@ -469,6 +411,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+disabled = true
 
 [node name="Creditcard" type="TextureButton" parent="." node_paths=PackedStringArray("textTexture")]
 layout_mode = 0
@@ -477,6 +420,7 @@ offset_top = 691.0
 offset_right = 1141.0
 offset_bottom = 771.0
 scale = Vector2(0.7, 0.7)
+disabled = true
 texture_normal = ExtResource("3_nop22")
 script = ExtResource("7_ocqka")
 textTexture = NodePath("../ItemsDescription/CarteDescription")
@@ -505,6 +449,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+disabled = true
 
 [node name="Tent" type="TextureButton" parent="." node_paths=PackedStringArray("textTexture")]
 layout_mode = 0
@@ -513,6 +458,7 @@ offset_top = 695.0
 offset_right = 1267.0
 offset_bottom = 775.0
 scale = Vector2(0.7, 0.7)
+disabled = true
 texture_normal = ExtResource("3_nop22")
 script = ExtResource("8_dwkvc")
 textTexture = NodePath("../ItemsDescription/TenteDescription")
@@ -541,6 +487,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+disabled = true
 
 [node name="Clothes" type="TextureButton" parent="." node_paths=PackedStringArray("textTexture")]
 layout_mode = 0
@@ -549,6 +496,7 @@ offset_top = 695.0
 offset_right = 1385.0
 offset_bottom = 775.0
 scale = Vector2(0.7, 0.7)
+disabled = true
 texture_normal = ExtResource("3_nop22")
 script = ExtResource("9_g4wia")
 textTexture = NodePath("../ItemsDescription/VetsDescription")
@@ -577,6 +525,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+disabled = true
 
 [node name="Passport" type="TextureButton" parent="." node_paths=PackedStringArray("textTexture")]
 layout_mode = 0
@@ -585,6 +534,7 @@ offset_top = 793.0
 offset_right = 1014.0
 offset_bottom = 873.0
 scale = Vector2(0.7, 0.7)
+disabled = true
 texture_normal = ExtResource("3_nop22")
 script = ExtResource("10_x2cpr")
 textTexture = NodePath("../ItemsDescription/PassPDescription")
@@ -613,6 +563,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+disabled = true
 
 [node name="Phone" type="TextureButton" parent="." node_paths=PackedStringArray("textTexture")]
 layout_mode = 0
@@ -621,6 +572,7 @@ offset_top = 793.0
 offset_right = 1143.0
 offset_bottom = 873.0
 scale = Vector2(0.7, 0.7)
+disabled = true
 texture_normal = ExtResource("3_nop22")
 script = ExtResource("11_i2o3g")
 textTexture = NodePath("../ItemsDescription/TelDescription")
@@ -649,6 +601,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+disabled = true
 
 [node name="Food" type="TextureButton" parent="." node_paths=PackedStringArray("textTexture")]
 layout_mode = 0
@@ -657,6 +610,7 @@ offset_top = 794.0
 offset_right = 1271.0
 offset_bottom = 874.0
 scale = Vector2(0.7, 0.7)
+disabled = true
 texture_normal = ExtResource("3_nop22")
 script = ExtResource("12_vcg34")
 textTexture = NodePath("../ItemsDescription/NourDescription")
@@ -685,6 +639,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+disabled = true
 
 [node name="Axe" type="TextureButton" parent="." node_paths=PackedStringArray("textTexture")]
 layout_mode = 0
@@ -693,6 +648,7 @@ offset_top = 794.0
 offset_right = 1385.0
 offset_bottom = 874.0
 scale = Vector2(0.7, 0.7)
+disabled = true
 texture_normal = ExtResource("3_nop22")
 script = ExtResource("13_dwr5i")
 textTexture = NodePath("../ItemsDescription/AxeDescription")
@@ -721,6 +677,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+disabled = true
 
 [node name="ItemsDescription" type="Node" parent="."]
 

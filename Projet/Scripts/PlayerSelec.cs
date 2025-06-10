@@ -10,8 +10,6 @@ namespace Com.IsartDigital.ProjectName {
 	
 	public partial class PlayerSelec : Control
 	{
-		[Export] TextureButton medsButton;
-
         [Export] TextureRect[] takenObjects;
         [Export] TextureButton[] itemsButtons;
         [Export] Items[] items;
@@ -20,17 +18,16 @@ namespace Com.IsartDigital.ProjectName {
 
 		[Export] Button UnselectButton, lockPlayerButton, playButton;
 
-        [Export] Control P1;
-        [Export] Control P2;
-        [Export] Control P3;
+        [Export] Sprite2D P1;
+        [Export] Sprite2D P2;
+        [Export] Sprite2D P3;
 
-        [Export] ProgressBar socialBar;
-        [Export] ProgressBar lifeBar;
-        [Export] ProgressBar moneyBar;
+        [Export] TextureProgressBar socialBar, lifeBar, moneyBar;
 
         int currentPlayerIndex = 0;
 
         static public PlayerProfiles currentPlayer;
+        static public Sprite2D currentCharacterSprite = new Sprite2D();
 
 		List<Items> textureButton = new List<Items>();
 
@@ -39,6 +36,7 @@ namespace Com.IsartDigital.ProjectName {
         public override void _Ready()
 		{
 			currentPlayer = players[currentPlayerIndex];
+            currentCharacterSprite.Texture = P1.Texture;
             AddItemsIntoPlayer(currentPlayer);
             UpdateBalancebar(currentPlayer);
 
@@ -63,7 +61,7 @@ namespace Com.IsartDigital.ProjectName {
             {
                 foreach (Items itemSelected in textureButton)
                 {
-                    if (currentPlayer.itemsList[i] == itemSelected)
+                    if (currentPlayer.itemsList[i].GetType().Name == itemSelected.GetType().Name)
                     {
                         currentPlayer.itemsList[i].owned = true;
                     }
@@ -90,6 +88,7 @@ namespace Com.IsartDigital.ProjectName {
                 currentPlayer = players[currentPlayerIndex];
                 UpdateBalancebar(currentPlayer);
                 UpdatePlayerSprite();
+                if (currentPlayer.itemsList.Count == 0) AddItemsIntoPlayer(currentPlayer);
             }
         }
 
@@ -142,18 +141,21 @@ namespace Com.IsartDigital.ProjectName {
                 P1.Show();
                 P2.Hide();
                 P3.Hide();
+                currentCharacterSprite.Texture = P1.Texture;
             }
             if (currentPlayerIndex == 1)
             {
                 P1.Hide();
                 P2.Show();
                 P3.Hide();
+                currentCharacterSprite.Texture = P2.Texture;
             }
             if (currentPlayerIndex == 2)
             {
                 P1.Hide();
                 P2.Hide();
                 P3.Show();
+                currentCharacterSprite.Texture = P3.Texture;
             }
         }
 

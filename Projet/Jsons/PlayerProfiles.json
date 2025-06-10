@@ -7,7 +7,7 @@
 	"passport": { "owned": false },
 	"phone": { "owned": false },
 	"food": { "owned": false },
-	"axe": { "owned": true },
+	"axe": { "owned": false },
 	
 	"socialTies": 4,
 	"healthCondition": 2,

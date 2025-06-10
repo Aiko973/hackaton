@@ -40,6 +40,8 @@ namespace Com.IsartDigital.ProjectName
 
 		[Export] TextureRect itemNeeded;
 
+		private int nbDilemma;
+		private int nbDilemmaDone;
 		private Dilemma currentDilemma;
 		private PlayerProfiles currentPlayer;
 
@@ -61,6 +63,8 @@ namespace Com.IsartDigital.ProjectName
 			#endregion
 
 			rand.Randomize();
+
+			nbDilemma = dilemma.Count;
 
 			characterSprite.Texture = PlayerSelec.currentCharacterSprite.Texture;
 
@@ -150,7 +154,24 @@ namespace Com.IsartDigital.ProjectName
 
         public void ResetDilemma()
 		{
+			nbDilemmaDone++;
             currentDilemma = dilemma[rand.RandiRange(0, dilemma.Count-1)];
+
+			if(nbDilemmaDone < nbDilemma)
+			{
+				if (currentDilemma.done)
+				{
+					while (currentDilemma.done)
+					{
+						currentDilemma = dilemma[rand.RandiRange(0, dilemma.Count - 1)];
+                    }
+				}
+			}
+			else
+			{
+				GetTree().Quit();
+			}
+
 			foreach (Items item in itemSpriteList.GetChildren())
 			{
 				string lItem = char.ToLower(item.Name.ToString()[0]) + item.Name.ToString().Substring(1);

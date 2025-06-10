@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://Scripts/PlayerSelec.cs" id="1_8fkp7"]
 [ext_resource type="Texture2D" uid="uid://dyt5vyridv7al" path="res://Assets/Character/Camille sprite 1.png" id="2_8k4v4"]
 [ext_resource type="Texture2D" uid="uid://dhatlptnuajeo" path="res://Assets/UI/ITEM_CONTOUR.png" id="2_51rfe"]
-[ext_resource type="Texture2D" uid="uid://d05csnrdsrrgh" path="res://Assets/arrow.png" id="3_62j6l"]
+[ext_resource type="Texture2D" uid="uid://d05csnrdsrrgh" path="res://Assets/UI/arrow.png" id="3_62j6l"]
 [ext_resource type="Texture2D" uid="uid://busitbh44fuha" path="res://Assets/Character/Claude sprite 1.png" id="3_mqikj"]
 [ext_resource type="Texture2D" uid="uid://crhrqonea4tja" path="res://Assets/icon.svg" id="3_nop22"]
-[ext_resource type="Texture2D" uid="uid://bbct71yhmqryx" path="res://Assets/arrow pressed.png" id="4_7qsfh"]
+[ext_resource type="Texture2D" uid="uid://bbct71yhmqryx" path="res://Assets/UI/arrow pressed.png" id="4_7qsfh"]
 [ext_resource type="Texture2D" uid="uid://c6hnndourgqmj" path="res://Assets/UI/Bar/BARRE_VIDE_LIEN_SOCIAL.png" id="5_k0jgf"]
 [ext_resource type="Script" path="res://Scripts/Items/Meds.cs" id="6_vsav8"]
 [ext_resource type="Texture2D" uid="uid://svu01bq7y1tt" path="res://Assets/UI/Bar/BARRE_PLEINE_LIEN_SOCIAL.png" id="6_wm3p3"]
@@ -22,7 +22,7 @@
 [ext_resource type="Script" path="res://Scripts/Items/Phone.cs" id="11_i2o3g"]
 [ext_resource type="Script" path="res://Scripts/Items/Food.cs" id="12_vcg34"]
 [ext_resource type="Script" path="res://Scripts/Items/Axe.cs" id="13_dwr5i"]
-[ext_resource type="Texture2D" uid="uid://dpabw7d3hxo7f" path="res://Assets/CHOIX_DIALOGUE.png" id="14_ecc0q"]
+[ext_resource type="Texture2D" uid="uid://dpabw7d3hxo7f" path="res://Assets/UI/CHOIX_DIALOGUE.png" id="14_ecc0q"]
 
 [sub_resource type="Gradient" id="Gradient_30hc8"]
 offsets = PackedFloat32Array(1)

@@ -1,6 +1,7 @@
 [
   {
 	"dilemma": "Suite à l’inondation, vous vous rendez compte que vous êtres gravement blessé, il faut vite faire quelque chose. ",
+	"done": false,
 	"choices": [
 	  {
 		"name": "Meds : Utiliser la trousse de secours",
@@ -39,6 +40,7 @@
   },
   {
 	"dilemma": "Une personne a été piégé dans l’incendie et est dans un état critique. Elle est gravement affaiblie et a besoin d’une aide urgente. ",
+	"done": false,
 	"choices": [
 	  {
 		"name": "Nourriture : La revitaliser avec un bon repas",
@@ -77,6 +79,7 @@
   },
   {
 	"dilemma": "La sècheresse ne vous laisse pas indifférents vous ressentez la faim comme jamais auparavant. ",
+	"done": false,
 	"choices": [
 	  {
 		"name": "Nourriture : Ouvrir une conserve",
@@ -115,6 +118,7 @@
   },
   {
 	"dilemma": "Un épais nuage de pollution traverse le ciel tandis que les nuages se noircissent, une pluie acide fait rage mais vous n’avez aucun abri.  ",
+	"done": false,
 	"choices": [
 	  {
 		"name": "Tente : Monter une tente en prévision des pluies acides",
@@ -153,6 +157,7 @@
   },
   {
 	"dilemma": "Les experts prévoient un hiver particulièrement froid et vous n’avez pas d’endroit où vous abriter.  ",
+	"done": false,
 	"choices": [
 	  {
 		"name": "Vêtements chauds : Se couvrir chaudement",
@@ -191,6 +196,7 @@
   },
   {
 	"dilemma": " La chaleur bat encore son record, et ce, de plus en plus tôt dans l’année. Vous n’êtes pas proche de zone d’ombre et le soleil est au zénith ",
+	"done": false,
 	"choices": [
 	  {
 		"name": "Vêtements chauds : Se protéger du soleil",
@@ -228,32 +234,72 @@
 	]
   },
   {
-	"dilemma": "Un épais nuage de pollution traverse le ciel tandis que les nuages se noircissent, une pluie acide fait rage mais vous n’avez aucun abri.  ",
+	"dilemma": "Cela semble faire une éternité que vous n’avez pas adressé la parole quelqu’un, vous vous sentez plus seuls que jamais et cela commence à vous peser en vous. ",
+	"done": false,
 	"choices": [
 	  {
-		"name": "Tente : Monter une tente en prévision des pluies acides",
-		"item" : "tent",
+		"name": " Telephone : Appeler un proche",
+		"item" : "phone",
+		"description": "blabliblu",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 2,
+		"healthCondition": 0,
+		"purchasingPower": 0
+	  },
+	  {
+		"name": "lien social : rendre visite à une connaissance que vous savez proche",
+		"item" : "",
+		"description": "lalalalalala",
+		"socialTiesNeeded" : 3,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": 1,
+		"healthCondition": -1,
+		"purchasingPower": 0
+	  },
+	  {
+		"name": "Passer outre et faire avec",
+		"item" : "",
+		"description": ",egfl;ddfl;m",
+		"socialTiesNeeded" : -5,
+		"healthConditionsNeeded" : -5,
+		"purchasingPowerNeeded" : -5,
+		"socialTies": -1,
+		"healthCondition": 0,
+		"purchasingPower": 0
+	  }
+	]
+  },
+  {
+	"dilemma": "Vous vous apprêtez à migrer dans une autre ville, mais la voiture que vous utilisez n’a plus d’essence. ",
+	"done": false,
+	"choices": [
+	  {
+		"name": "CB : Faire le plein",
+		"item" : "creditCard",
 		"description": "blabliblu",
 		"socialTiesNeeded" : -5,
 		"healthConditionsNeeded" : -5,
 		"purchasingPowerNeeded" : -5,
 		"socialTies": 0,
 		"healthCondition": 1,
-		"purchasingPower": 0
+		"purchasingPower": -1
 	  },
 	  {
-		"name": " pouvoir d’achat : vous avez prévu le coup avec une tenue imperméable",
+		"name": "lien social : Un proche peut vous y emmener",
 		"item" : "",
 		"description": "lalalalalala",
-		"socialTiesNeeded" : -5,
+		"socialTiesNeeded" : 3,
 		"healthConditionsNeeded" : -5,
-		"purchasingPowerNeeded" : 2,
+		"purchasingPowerNeeded" : -5,
 		"socialTies": 0,
 		"healthCondition": 0,
 		"purchasingPower": 0
 	  },
 	  {
-		"name": "Accélérer le pas",
+		"name": "Vous êtes contraint d’y aller à pieds",
 		"item" : "",
 		"description": ",egfl;ddfl;m",
 		"socialTiesNeeded" : -5,
@@ -261,16 +307,17 @@
 		"purchasingPowerNeeded" : -5,
 		"socialTies": 0,
 		"healthCondition": -1,
-		"purchasingPower": 0
+		"purchasingPower": 1
 	  }
 	]
   },
   {
-	"dilemma": "Un épais nuage de pollution traverse le ciel tandis que les nuages se noircissent, une pluie acide fait rage mais vous n’avez aucun abri.  ",
+	"dilemma": "A la suite à une inondation vous êtes forcé de vous déplacer sur un radeau de fortune.",
+	"done": false,
 	"choices": [
 	  {
-		"name": "Tente : Monter une tente en prévision des pluies acides",
-		"item" : "tent",
+		"name": "Hache : Libérer des rames coincées dans des décombres",
+		"item" : "axe",
 		"description": "blabliblu",
 		"socialTiesNeeded" : -5,
 		"healthConditionsNeeded" : -5,
@@ -280,18 +327,18 @@
 		"purchasingPower": 0
 	  },
 	  {
-		"name": " pouvoir d’achat : vous avez prévu le coup avec une tenue imperméable",
+		"name": "condition de vie : Les retirer de force",
 		"item" : "",
 		"description": "lalalalalala",
 		"socialTiesNeeded" : -5,
-		"healthConditionsNeeded" : -5,
-		"purchasingPowerNeeded" : 2,
+		"healthConditionsNeeded" : 3,
+		"purchasingPowerNeeded" : -5,
 		"socialTies": 0,
 		"healthCondition": 0,
 		"purchasingPower": 0
 	  },
 	  {
-		"name": "Accélérer le pas",
+		"name": "Naviguer dans l’eau glacée avec ses bras",
 		"item" : "",
 		"description": ",egfl;ddfl;m",
 		"socialTiesNeeded" : -5,

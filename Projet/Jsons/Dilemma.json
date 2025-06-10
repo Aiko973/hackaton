@@ -4,7 +4,7 @@
 	"choices": [
 	  {
 		"name": "Choice 1",
-		"item" : "meds",
+		"item" : "axe",
 		"description": "blabliblu",
 		"socialTiesNeeded" : 0,
 		"healthConditionsNeeded" : 0,

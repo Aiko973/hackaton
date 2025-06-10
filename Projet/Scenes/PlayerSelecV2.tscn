@@ -1,8 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://r2o2a80wcaxb"]
+[gd_scene load_steps=41 format=3 uid="uid://cnut1g6cr53uq"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerSelec.cs" id="1_yh66s"]
 [ext_resource type="Texture2D" uid="uid://dhatlptnuajeo" path="res://Assets/UI/ITEM_CONTOUR.png" id="2_fg3ko"]
-[ext_resource type="LabelSettings" path="res://fontBarr.tres" id="2_nr5jq"]
+[ext_resource type="LabelSettings" uid="uid://cxd12wj72agrg" path="res://fontBarr.tres" id="2_nr5jq"]
 [ext_resource type="Texture2D" uid="uid://dyt5vyridv7al" path="res://Assets/Character/Camille sprite 1.png" id="3_10eyt"]
 [ext_resource type="Texture2D" uid="uid://busitbh44fuha" path="res://Assets/Character/Claude sprite 1.png" id="4_hstai"]
 [ext_resource type="Texture2D" uid="uid://d05csnrdsrrgh" path="res://Assets/UI/arrow.png" id="5_qm7ps"]
@@ -15,16 +15,23 @@
 [ext_resource type="Texture2D" uid="uid://dqptdhg8adaue" path="res://Assets/UI/Bar/BARRE_VIDE_POUVOIR_ACHAT.png" id="12_gtgsu"]
 [ext_resource type="Texture2D" uid="uid://ce5b3r1qy743h" path="res://Assets/UI/Bar/BARRE_PLEINE_POUVOIR_ACHAT.png" id="13_mx5s2"]
 [ext_resource type="Texture2D" uid="uid://dpabw7d3hxo7f" path="res://Assets/UI/CHOIX_DIALOGUE.png" id="14_dahdn"]
-[ext_resource type="Texture2D" uid="uid://crhrqonea4tja" path="res://Assets/icon.svg" id="15_asgc4"]
 [ext_resource type="Script" path="res://Scripts/Items/Meds.cs" id="16_wbnjf"]
 [ext_resource type="Script" path="res://Scripts/ButtonRemoveItem.cs" id="16_y41hj"]
 [ext_resource type="Script" path="res://Scripts/Items/CreditCard.cs" id="17_oys36"]
+[ext_resource type="Texture2D" uid="uid://d2rs5f2x21mlf" path="res://Assets/Items/icon03.png" id="18_7y1sh"]
 [ext_resource type="Script" path="res://Scripts/Items/Tent.cs" id="18_hirqt"]
 [ext_resource type="Script" path="res://Scripts/Items/Clothes.cs" id="19_4d30y"]
+[ext_resource type="Texture2D" uid="uid://dp2u1pmq45b8h" path="res://Assets/Items/icon00.png" id="20_n00uy"]
 [ext_resource type="Script" path="res://Scripts/Items/Passport.cs" id="20_ubyv1"]
 [ext_resource type="Script" path="res://Scripts/Items/Phone.cs" id="21_cfu8k"]
 [ext_resource type="Script" path="res://Scripts/Items/Food.cs" id="22_gsivs"]
+[ext_resource type="Texture2D" uid="uid://bq56t18t76plv" path="res://Assets/Items/icon07.png" id="22_pkqmu"]
 [ext_resource type="Script" path="res://Scripts/Items/Axe.cs" id="23_ggq4l"]
+[ext_resource type="Texture2D" uid="uid://di0rxt8gvxv8" path="res://Assets/Items/icon08.png" id="24_3lraa"]
+[ext_resource type="Texture2D" uid="uid://rga7fgvvro6" path="res://Assets/Items/icon04.png" id="26_uf056"]
+[ext_resource type="Texture2D" uid="uid://h8q3w0h3iyb4" path="res://Assets/Items/icon06.png" id="28_f7nvn"]
+[ext_resource type="Texture2D" uid="uid://htjud7y1vt8w" path="res://Assets/Items/icon01.png" id="30_tiryx"]
+[ext_resource type="Texture2D" uid="uid://bg4vt6sjtcyy3" path="res://Assets/Items/icon02.png" id="33_oc7eo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6kme5"]
 font_size = 36
@@ -56,7 +63,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yh66s")
-takenObjects = [NodePath("BackGround/inventaire/slot/renderSelected"), NodePath("BackGround/inventaire/slot2/renderSelected"), NodePath("BackGround/inventaire/slot3/renderSelected"), NodePath("BackGround/inventaire/slot4/renderSelected")]
+takenObjects = [NodePath("BackGround/inventaire/slot/renderSelected"), NodePath("BackGround/inventaire/slot2/renderSelected2"), NodePath("BackGround/inventaire/slot3/renderSelected"), NodePath("BackGround/inventaire/slot4/renderSelected2")]
 itemsButtons = [NodePath("VBoxContainer/HBoxContainer2/Meds/TextureButton"), NodePath("VBoxContainer/HBoxContainer2/Creditcard/TextureButton"), NodePath("VBoxContainer/HBoxContainer2/Tent/TextureButton"), NodePath("VBoxContainer/HBoxContainer2/Clothes/TextureButton"), NodePath("VBoxContainer/HBoxContainer3/Passport/TextureButton"), NodePath("VBoxContainer/HBoxContainer3/Phone/TextureButton"), NodePath("VBoxContainer/HBoxContainer3/Food/TextureButton"), NodePath("VBoxContainer/HBoxContainer3/Axe/TextureButton")]
 items = [NodePath("VBoxContainer/HBoxContainer2/Meds"), NodePath("VBoxContainer/HBoxContainer2/Creditcard"), NodePath("VBoxContainer/HBoxContainer2/Tent"), NodePath("VBoxContainer/HBoxContainer2/Clothes"), NodePath("VBoxContainer/HBoxContainer3/Passport"), NodePath("VBoxContainer/HBoxContainer3/Phone"), NodePath("VBoxContainer/HBoxContainer3/Food"), NodePath("VBoxContainer/HBoxContainer3/Axe")]
 rightArrow = NodePath("BackGround/Arrow/RightArrow")
@@ -350,10 +357,20 @@ layout_mode = 2
 texture = ExtResource("2_fg3ko")
 
 [node name="renderSelected" type="TextureRect" parent="BackGround/inventaire/slot"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-offset_right = 193.0
-offset_bottom = 200.0
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -57.75
+offset_right = 56.5
+offset_bottom = 70.25
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Button" type="Button" parent="BackGround/inventaire/slot"]
 layout_mode = 0
@@ -371,12 +388,6 @@ script = ExtResource("16_y41hj")
 layout_mode = 2
 texture = ExtResource("2_fg3ko")
 
-[node name="renderSelected" type="TextureRect" parent="BackGround/inventaire/slot2"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 0
-offset_right = 193.0
-offset_bottom = 200.0
-
 [node name="Button2" type="Button" parent="BackGround/inventaire/slot2"]
 layout_mode = 0
 offset_left = -1.25
@@ -390,15 +401,25 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_lo8pt")
 script = ExtResource("16_y41hj")
 index = 1
 
+[node name="renderSelected2" type="TextureRect" parent="BackGround/inventaire/slot2"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -57.75
+offset_right = 56.5
+offset_bottom = 70.25
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [node name="slot3" type="TextureRect" parent="BackGround/inventaire"]
 layout_mode = 2
 texture = ExtResource("2_fg3ko")
-
-[node name="renderSelected" type="TextureRect" parent="BackGround/inventaire/slot3"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 0
-offset_right = 193.0
-offset_bottom = 200.0
 
 [node name="Button2" type="Button" parent="BackGround/inventaire/slot3"]
 layout_mode = 0
@@ -413,15 +434,25 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_lo8pt")
 script = ExtResource("16_y41hj")
 index = 2
 
+[node name="renderSelected" type="TextureRect" parent="BackGround/inventaire/slot3"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -57.75
+offset_right = 56.5
+offset_bottom = 70.25
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [node name="slot4" type="TextureRect" parent="BackGround/inventaire"]
 layout_mode = 2
 texture = ExtResource("2_fg3ko")
-
-[node name="renderSelected" type="TextureRect" parent="BackGround/inventaire/slot4"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 0
-offset_right = 193.0
-offset_bottom = 200.0
 
 [node name="Button2" type="Button" parent="BackGround/inventaire/slot4"]
 layout_mode = 0
@@ -435,6 +466,22 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_y8vl3")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lo8pt")
 script = ExtResource("16_y41hj")
 index = 3
+
+[node name="renderSelected2" type="TextureRect" parent="BackGround/inventaire/slot4"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -57.75
+offset_right = 56.5
+offset_bottom = 70.25
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -452,7 +499,7 @@ theme_override_constants/separation = 20
 [node name="Meds" type="TextureButton" parent="VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("textTexture")]
 layout_mode = 2
 disabled = true
-texture_normal = ExtResource("15_asgc4")
+texture_normal = ExtResource("18_7y1sh")
 script = ExtResource("16_wbnjf")
 textTexture = NodePath("../../../ItemsDescription/MedsDescription")
 
@@ -468,7 +515,7 @@ disabled = true
 [node name="Creditcard" type="TextureButton" parent="VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("textTexture")]
 layout_mode = 2
 disabled = true
-texture_normal = ExtResource("15_asgc4")
+texture_normal = ExtResource("20_n00uy")
 script = ExtResource("17_oys36")
 textTexture = NodePath("../../../ItemsDescription/CarteDescription")
 
@@ -484,7 +531,7 @@ disabled = true
 [node name="Tent" type="TextureButton" parent="VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("textTexture")]
 layout_mode = 2
 disabled = true
-texture_normal = ExtResource("15_asgc4")
+texture_normal = ExtResource("22_pkqmu")
 script = ExtResource("18_hirqt")
 textTexture = NodePath("../../../ItemsDescription/TenteDescription")
 
@@ -500,7 +547,7 @@ disabled = true
 [node name="Clothes" type="TextureButton" parent="VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("textTexture")]
 layout_mode = 2
 disabled = true
-texture_normal = ExtResource("15_asgc4")
+texture_normal = ExtResource("24_3lraa")
 script = ExtResource("19_4d30y")
 textTexture = NodePath("../../../ItemsDescription/VetsDescription")
 
@@ -520,7 +567,7 @@ theme_override_constants/separation = 20
 [node name="Passport" type="TextureButton" parent="VBoxContainer/HBoxContainer3" node_paths=PackedStringArray("textTexture")]
 layout_mode = 2
 disabled = true
-texture_normal = ExtResource("15_asgc4")
+texture_normal = ExtResource("26_uf056")
 script = ExtResource("20_ubyv1")
 textTexture = NodePath("../../../ItemsDescription/PassPDescription")
 
@@ -536,7 +583,7 @@ disabled = true
 [node name="Phone" type="TextureButton" parent="VBoxContainer/HBoxContainer3" node_paths=PackedStringArray("textTexture")]
 layout_mode = 2
 disabled = true
-texture_normal = ExtResource("15_asgc4")
+texture_normal = ExtResource("28_f7nvn")
 script = ExtResource("21_cfu8k")
 textTexture = NodePath("../../../ItemsDescription/TelDescription")
 
@@ -552,7 +599,7 @@ disabled = true
 [node name="Food" type="TextureButton" parent="VBoxContainer/HBoxContainer3" node_paths=PackedStringArray("textTexture")]
 layout_mode = 2
 disabled = true
-texture_normal = ExtResource("15_asgc4")
+texture_normal = ExtResource("30_tiryx")
 script = ExtResource("22_gsivs")
 textTexture = NodePath("../../../ItemsDescription/NourDescription")
 
@@ -568,7 +615,7 @@ disabled = true
 [node name="Axe" type="TextureButton" parent="VBoxContainer/HBoxContainer3" node_paths=PackedStringArray("textTexture")]
 layout_mode = 2
 disabled = true
-texture_normal = ExtResource("15_asgc4")
+texture_normal = ExtResource("33_oc7eo")
 script = ExtResource("23_ggq4l")
 textTexture = NodePath("../../../ItemsDescription/AxeDescription")
 

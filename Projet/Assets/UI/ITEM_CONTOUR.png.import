@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxsrnoiew0a70"
-path="res://.godot/imported/BARRE_PLEINE_CONDITION_VIE.png-62aef33381075c3fdbe0343916f1a7ca.ctex"
+uid="uid://dhatlptnuajeo"
+path="res://.godot/imported/ITEM_CONTOUR.png-1086df0135d3cda77f5e3e236ce3893f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/BARRE_PLEINE_CONDITION_VIE.png"
-dest_files=["res://.godot/imported/BARRE_PLEINE_CONDITION_VIE.png-62aef33381075c3fdbe0343916f1a7ca.ctex"]
+source_file="res://Assets/UI/ITEM_CONTOUR.png"
+dest_files=["res://.godot/imported/ITEM_CONTOUR.png-1086df0135d3cda77f5e3e236ce3893f.ctex"]
 
 [params]
 

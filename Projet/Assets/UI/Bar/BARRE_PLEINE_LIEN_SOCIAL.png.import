@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwycnp6v2qlbb"
-path="res://.godot/imported/BARRE_VIDE_CONDITION_VIE.png-09fd01b3b0fecc96d1875207e6854c15.ctex"
+uid="uid://svu01bq7y1tt"
+path="res://.godot/imported/BARRE_PLEINE_LIEN_SOCIAL.png-9fd5c9bdf99159cf42e82550ec563690.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/BARRE_VIDE_CONDITION_VIE.png"
-dest_files=["res://.godot/imported/BARRE_VIDE_CONDITION_VIE.png-09fd01b3b0fecc96d1875207e6854c15.ctex"]
+source_file="res://Assets/UI/Bar/BARRE_PLEINE_LIEN_SOCIAL.png"
+dest_files=["res://.godot/imported/BARRE_PLEINE_LIEN_SOCIAL.png-9fd5c9bdf99159cf42e82550ec563690.ctex"]
 
 [params]
 

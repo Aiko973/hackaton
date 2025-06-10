@@ -14,6 +14,7 @@ namespace Com.IsartDigital.Hackaton.Libraries
 
         // Paths for Scenes
         public const string MAIN = "res://Scenes/Main.tscn";
+        public const string PLAYER_SELEC = "res://Scenes/PlayerSelec.tscn";
 
         // Paths for Node in Main
     }

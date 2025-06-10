@@ -1,22 +1,23 @@
-[gd_scene load_steps=23 format=3 uid="uid://dnp0qihnh8t4b"]
+[gd_scene load_steps=24 format=3 uid="uid://dnp0qihnh8t4b"]
 
 [ext_resource type="Script" path="res://Scripts/Utils/BarInformation.cs" id="1_1tcxi"]
 [ext_resource type="Script" path="res://Scripts/PlayerSelec.cs" id="1_8fkp7"]
 [ext_resource type="Texture2D" uid="uid://dyt5vyridv7al" path="res://Assets/Character/Camille sprite 1.png" id="2_8k4v4"]
 [ext_resource type="Texture2D" uid="uid://d05csnrdsrrgh" path="res://Assets/arrow.png" id="3_62j6l"]
+[ext_resource type="Texture2D" uid="uid://busitbh44fuha" path="res://Assets/Character/Claude sprite 1.png" id="3_mqikj"]
 [ext_resource type="Texture2D" uid="uid://crhrqonea4tja" path="res://Assets/icon.svg" id="3_nop22"]
 [ext_resource type="Texture2D" uid="uid://bbct71yhmqryx" path="res://Assets/arrow pressed.png" id="4_7qsfh"]
-[ext_resource type="Texture2D" uid="uid://c6hnndourgqmj" path="res://Assets/UI/BARRE_VIDE_LIEN_SOCIAL.png" id="5_k0jgf"]
+[ext_resource type="Texture2D" uid="uid://c6hnndourgqmj" path="res://Assets/UI/Bar/BARRE_VIDE_LIEN_SOCIAL.png" id="5_k0jgf"]
 [ext_resource type="Script" path="res://Scripts/Items/Meds.cs" id="6_vsav8"]
-[ext_resource type="Texture2D" uid="uid://svu01bq7y1tt" path="res://Assets/UI/BARRE_PLEINE_LIEN_SOCIAL.png" id="6_wm3p3"]
+[ext_resource type="Texture2D" uid="uid://svu01bq7y1tt" path="res://Assets/UI/Bar/BARRE_PLEINE_LIEN_SOCIAL.png" id="6_wm3p3"]
 [ext_resource type="Script" path="res://Scripts/Items/CreditCard.cs" id="7_ocqka"]
-[ext_resource type="Texture2D" uid="uid://cwycnp6v2qlbb" path="res://Assets/UI/BARRE_VIDE_CONDITION_VIE.png" id="8_6g5iv"]
+[ext_resource type="Texture2D" uid="uid://cwycnp6v2qlbb" path="res://Assets/UI/Bar/BARRE_VIDE_CONDITION_VIE.png" id="8_6g5iv"]
 [ext_resource type="Script" path="res://Scripts/Items/Tent.cs" id="8_dwkvc"]
 [ext_resource type="Script" path="res://Scripts/Items/Clothes.cs" id="9_g4wia"]
-[ext_resource type="Texture2D" uid="uid://dxsrnoiew0a70" path="res://Assets/UI/BARRE_PLEINE_CONDITION_VIE.png" id="9_srath"]
-[ext_resource type="Texture2D" uid="uid://dqptdhg8adaue" path="res://Assets/UI/BARRE_VIDE_POUVOIR_ACHAT.png" id="10_lrpvp"]
+[ext_resource type="Texture2D" uid="uid://dxsrnoiew0a70" path="res://Assets/UI/Bar/BARRE_PLEINE_CONDITION_VIE.png" id="9_srath"]
+[ext_resource type="Texture2D" uid="uid://dqptdhg8adaue" path="res://Assets/UI/Bar/BARRE_VIDE_POUVOIR_ACHAT.png" id="10_lrpvp"]
 [ext_resource type="Script" path="res://Scripts/Items/Passport.cs" id="10_x2cpr"]
-[ext_resource type="Texture2D" uid="uid://ce5b3r1qy743h" path="res://Assets/UI/BARRE_PLEINE_POUVOIR_ACHAT.png" id="11_hj2r3"]
+[ext_resource type="Texture2D" uid="uid://ce5b3r1qy743h" path="res://Assets/UI/Bar/BARRE_PLEINE_POUVOIR_ACHAT.png" id="11_hj2r3"]
 [ext_resource type="Script" path="res://Scripts/Items/Phone.cs" id="11_i2o3g"]
 [ext_resource type="Script" path="res://Scripts/Items/Food.cs" id="12_vcg34"]
 [ext_resource type="Script" path="res://Scripts/Items/Axe.cs" id="13_dwr5i"]
@@ -72,10 +73,13 @@ scale = Vector2(0.339359, 0.339359)
 texture = ExtResource("2_8k4v4")
 
 [node name="Character2" type="Sprite2D" parent="BackGround"]
-position = Vector2(232, 506)
-scale = Vector2(0.268222, 0.268222)
+visible = false
+position = Vector2(278, 456)
+scale = Vector2(0.307302, 0.307302)
+texture = ExtResource("3_mqikj")
 
 [node name="Character3" type="Sprite2D" parent="BackGround"]
+visible = false
 position = Vector2(232, 506)
 scale = Vector2(0.268222, 0.268222)
 

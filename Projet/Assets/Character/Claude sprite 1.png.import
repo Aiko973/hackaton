@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce5b3r1qy743h"
-path="res://.godot/imported/BARRE_PLEINE_POUVOIR_ACHAT.png-6a902e1b4252bbda14271da1c9649c05.ctex"
+uid="uid://busitbh44fuha"
+path="res://.godot/imported/Claude sprite 1.png-68537070d4b305edeaa15d9d36255065.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/BARRE_PLEINE_POUVOIR_ACHAT.png"
-dest_files=["res://.godot/imported/BARRE_PLEINE_POUVOIR_ACHAT.png-6a902e1b4252bbda14271da1c9649c05.ctex"]
+source_file="res://Assets/Character/Claude sprite 1.png"
+dest_files=["res://.godot/imported/Claude sprite 1.png-68537070d4b305edeaa15d9d36255065.ctex"]
 
 [params]
 

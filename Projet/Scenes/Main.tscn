@@ -1,21 +1,22 @@
-[gd_scene load_steps=21 format=3 uid="uid://bjtjkwm3iy7cb"]
+[gd_scene load_steps=22 format=3 uid="uid://bjtjkwm3iy7cb"]
 
 [ext_resource type="Script" path="res://Scripts/Main.cs" id="1_3dioo"]
 [ext_resource type="Script" path="res://Scripts/Utils/ButtonEffect.cs" id="2_6hsv3"]
+[ext_resource type="Texture2D" uid="uid://dhatlptnuajeo" path="res://Assets/UI/ITEM_CONTOUR.png" id="2_j6ds6"]
 [ext_resource type="Script" path="res://Scripts/Utils/BarInformation.cs" id="2_rpol3"]
 [ext_resource type="Texture2D" uid="uid://crhrqonea4tja" path="res://Assets/icon.svg" id="2_vvamr"]
-[ext_resource type="Texture2D" uid="uid://c6hnndourgqmj" path="res://Assets/UI/BARRE_VIDE_LIEN_SOCIAL.png" id="2_wgtv3"]
-[ext_resource type="Texture2D" uid="uid://svu01bq7y1tt" path="res://Assets/UI/BARRE_PLEINE_LIEN_SOCIAL.png" id="3_5v0dg"]
+[ext_resource type="Texture2D" uid="uid://c6hnndourgqmj" path="res://Assets/UI/Bar/BARRE_VIDE_LIEN_SOCIAL.png" id="2_wgtv3"]
+[ext_resource type="Texture2D" uid="uid://svu01bq7y1tt" path="res://Assets/UI/Bar/BARRE_PLEINE_LIEN_SOCIAL.png" id="3_5v0dg"]
 [ext_resource type="Script" path="res://Scripts/Items/Meds.cs" id="3_qhlhc"]
 [ext_resource type="Script" path="res://Scripts/Items/CreditCard.cs" id="4_oanvu"]
-[ext_resource type="Texture2D" uid="uid://cwycnp6v2qlbb" path="res://Assets/UI/BARRE_VIDE_CONDITION_VIE.png" id="5_afvkq"]
+[ext_resource type="Texture2D" uid="uid://cwycnp6v2qlbb" path="res://Assets/UI/Bar/BARRE_VIDE_CONDITION_VIE.png" id="5_afvkq"]
 [ext_resource type="Script" path="res://Scripts/Items/Tent.cs" id="5_ay2cy"]
-[ext_resource type="Texture2D" uid="uid://dxsrnoiew0a70" path="res://Assets/UI/BARRE_PLEINE_CONDITION_VIE.png" id="6_1fopa"]
+[ext_resource type="Texture2D" uid="uid://dxsrnoiew0a70" path="res://Assets/UI/Bar/BARRE_PLEINE_CONDITION_VIE.png" id="6_1fopa"]
 [ext_resource type="Script" path="res://Scripts/Items/Clothes.cs" id="6_xq2oy"]
 [ext_resource type="Script" path="res://Scripts/Items/Passport.cs" id="7_6mdth"]
-[ext_resource type="Texture2D" uid="uid://dqptdhg8adaue" path="res://Assets/UI/BARRE_VIDE_POUVOIR_ACHAT.png" id="7_cbaot"]
+[ext_resource type="Texture2D" uid="uid://dqptdhg8adaue" path="res://Assets/UI/Bar/BARRE_VIDE_POUVOIR_ACHAT.png" id="7_cbaot"]
 [ext_resource type="Script" path="res://Scripts/Items/Phone.cs" id="8_01fr0"]
-[ext_resource type="Texture2D" uid="uid://ce5b3r1qy743h" path="res://Assets/UI/BARRE_PLEINE_POUVOIR_ACHAT.png" id="8_e3aci"]
+[ext_resource type="Texture2D" uid="uid://ce5b3r1qy743h" path="res://Assets/UI/Bar/BARRE_PLEINE_POUVOIR_ACHAT.png" id="8_e3aci"]
 [ext_resource type="Script" path="res://Scripts/Items/Food.cs" id="9_bxxsd"]
 [ext_resource type="Script" path="res://Scripts/Items/Axe.cs" id="12_ytu63"]
 
@@ -40,6 +41,46 @@ itemSpriteList = NodePath("CanvasLayer/ItemsSpriteList")
 itemNeeded = NodePath("CanvasLayer/BackGroundChoice/ItemNeeded")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ItemContour" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(133, 86)
+scale = Vector2(0.038424, 0.038424)
+texture = ExtResource("2_j6ds6")
+
+[node name="ItemContour2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(256.51, 86)
+scale = Vector2(0.038424, 0.038424)
+texture = ExtResource("2_j6ds6")
+
+[node name="ItemContour3" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(380.295, 86)
+scale = Vector2(0.038424, 0.038424)
+texture = ExtResource("2_j6ds6")
+
+[node name="ItemContour4" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(503.85, 86)
+scale = Vector2(0.038424, 0.038424)
+texture = ExtResource("2_j6ds6")
+
+[node name="ItemContour5" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(626.87, 86)
+scale = Vector2(0.038424, 0.038424)
+texture = ExtResource("2_j6ds6")
+
+[node name="ItemContour6" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(749.805, 86)
+scale = Vector2(0.038424, 0.038424)
+texture = ExtResource("2_j6ds6")
+
+[node name="ItemContour7" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(872.605, 86)
+scale = Vector2(0.038424, 0.038424)
+texture = ExtResource("2_j6ds6")
+
+[node name="ItemContour8" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(993.5, 86)
+scale = Vector2(0.038424, 0.038424)
+texture = ExtResource("2_j6ds6")
 
 [node name="Character" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(331, 558)
@@ -300,7 +341,6 @@ grow_vertical = 2
 [node name="ItemsSpriteList" type="Node" parent="CanvasLayer"]
 
 [node name="Meds" type="TextureButton" parent="CanvasLayer/ItemsSpriteList" node_paths=PackedStringArray("textTexture")]
-visible = false
 offset_left = 64.0
 offset_top = 26.0
 offset_right = 192.0
@@ -329,11 +369,10 @@ theme_override_font_sizes/font_size = 36
 text = "Med"
 
 [node name="Creditcard" type="TextureButton" parent="CanvasLayer/ItemsSpriteList" node_paths=PackedStringArray("textTexture")]
-visible = false
-offset_left = 202.0
-offset_top = 45.0
-offset_right = 282.0
-offset_bottom = 125.0
+offset_left = 207.0
+offset_top = 43.0
+offset_right = 335.0
+offset_bottom = 171.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("2_vvamr")
 script = ExtResource("4_oanvu")
@@ -357,11 +396,10 @@ theme_override_font_sizes/font_size = 36
 text = "Carte"
 
 [node name="Tent" type="TextureButton" parent="CanvasLayer/ItemsSpriteList" node_paths=PackedStringArray("textTexture")]
-visible = false
-offset_left = 328.0
-offset_top = 49.0
-offset_right = 408.0
-offset_bottom = 129.0
+offset_left = 332.0
+offset_top = 43.0
+offset_right = 460.0
+offset_bottom = 171.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("2_vvamr")
 script = ExtResource("5_ay2cy")
@@ -385,11 +423,10 @@ theme_override_font_sizes/font_size = 36
 text = "Tente"
 
 [node name="Clothes" type="TextureButton" parent="CanvasLayer/ItemsSpriteList" node_paths=PackedStringArray("textTexture")]
-visible = false
-offset_left = 446.0
-offset_top = 49.0
-offset_right = 526.0
-offset_bottom = 129.0
+offset_left = 454.0
+offset_top = 43.0
+offset_right = 582.0
+offset_bottom = 171.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("2_vvamr")
 script = ExtResource("6_xq2oy")
@@ -413,11 +450,10 @@ theme_override_font_sizes/font_size = 36
 text = "Vets"
 
 [node name="Passport" type="TextureButton" parent="CanvasLayer/ItemsSpriteList" node_paths=PackedStringArray("textTexture")]
-visible = false
-offset_left = 571.0
-offset_top = 48.0
-offset_right = 651.0
-offset_bottom = 128.0
+offset_left = 578.0
+offset_top = 43.0
+offset_right = 706.0
+offset_bottom = 171.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("2_vvamr")
 script = ExtResource("7_6mdth")
@@ -441,11 +477,10 @@ theme_override_font_sizes/font_size = 36
 text = "PassP"
 
 [node name="Phone" type="TextureButton" parent="CanvasLayer/ItemsSpriteList" node_paths=PackedStringArray("textTexture")]
-visible = false
-offset_left = 700.0
-offset_top = 48.0
-offset_right = 780.0
-offset_bottom = 128.0
+offset_left = 702.0
+offset_top = 43.0
+offset_right = 830.0
+offset_bottom = 171.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("2_vvamr")
 script = ExtResource("8_01fr0")
@@ -469,11 +504,10 @@ theme_override_font_sizes/font_size = 36
 text = "Tel"
 
 [node name="Food" type="TextureButton" parent="CanvasLayer/ItemsSpriteList" node_paths=PackedStringArray("textTexture")]
-visible = false
-offset_left = 828.0
-offset_top = 49.0
-offset_right = 908.0
-offset_bottom = 129.0
+offset_left = 823.0
+offset_top = 43.0
+offset_right = 951.0
+offset_bottom = 171.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("2_vvamr")
 script = ExtResource("9_bxxsd")
@@ -497,11 +531,10 @@ theme_override_font_sizes/font_size = 36
 text = "Nour"
 
 [node name="Axe" type="TextureButton" parent="CanvasLayer/ItemsSpriteList" node_paths=PackedStringArray("textTexture")]
-visible = false
-offset_left = 951.0
-offset_top = 49.0
-offset_right = 1031.0
-offset_bottom = 129.0
+offset_left = 945.0
+offset_top = 44.0
+offset_right = 1073.0
+offset_bottom = 172.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("2_vvamr")
 script = ExtResource("12_ytu63")

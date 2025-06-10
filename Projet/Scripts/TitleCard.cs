@@ -42,7 +42,7 @@ namespace Com.IsartDigital.Hackaton
 		
 		private void ChangeScene()
 		{
-			GetTree().ChangeSceneToFile(Path.MAIN);
+			GetTree().ChangeSceneToFile(Path.PLAYER_SELEC);
 		}
 
 		protected override void Dispose(bool pDisposing)

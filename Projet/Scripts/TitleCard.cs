@@ -38,11 +38,13 @@ namespace Com.IsartDigital.Hackaton
 
 			button.Pressed += ChangeScene;
 
+			SoundManager.GetInstance().PlayMusic(Tracks.music);
+
         }
 		
 		private void ChangeScene()
 		{
-			GetTree().ChangeSceneToFile(Path.PLAYER_SELEC);
+			GetTree().ChangeSceneToFile("res://Scenes/PlayerSelecV2.tscn");
 		}
 
 		protected override void Dispose(bool pDisposing)

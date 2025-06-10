@@ -75,14 +75,14 @@ namespace Com.IsartDigital.Hackaton
             }
         }
 
-        public void PlayAmbience()
-        {
-            string lMusicName = Tracks.ambience.ToString();
-            AudioStreamOggVorbis lSong = GD.Load<AudioStreamOggVorbis>("Assets/Audio/Tracks/" + lMusicName + ".ogg");
-            lSong.Loop = true;
+        //public void PlayAmbience()
+        //{
+        //    string lMusicName = Tracks.ambience.ToString();
+        //    AudioStreamOggVorbis lSong = GD.Load<AudioStreamOggVorbis>("Assets/Audio/Tracks/" + lMusicName + ".ogg");
+        //    lSong.Loop = true;
 
-            ambiencePlayer.Play();
-        }
+        //    ambiencePlayer.Play();
+        //}
 
         public void StopMusic()
         {

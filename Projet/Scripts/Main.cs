@@ -38,7 +38,7 @@ namespace Com.IsartDigital.ProjectName
 
 		[Export] Node itemSpriteList;
 
-		[Export] TextureRect itemNeeded;
+		[Export] Sprite2D itemNeeded;
 
 		private int nbDilemma;
 		private int nbDilemmaDone;

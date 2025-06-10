@@ -7,6 +7,6 @@ namespace Com.IsartDigital.Hackaton.Libraries
 {
 	public enum Tracks
 	{
-		ambience
+		music
 	}
 }

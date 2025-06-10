@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bjtjkwm3iy7cb"]
+[gd_scene load_steps=34 format=3 uid="uid://bjtjkwm3iy7cb"]
 
 [ext_resource type="Script" path="res://Scripts/Main.cs" id="1_3dioo"]
 [ext_resource type="Script" path="res://Scripts/Utils/ButtonEffect.cs" id="2_6hsv3"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bd2ymf25k6f5b" path="res://Assets/Items/TENTE_ITEM.png" id="18_dulns"]
 [ext_resource type="Texture2D" uid="uid://cxetla4gekrya" path="res://Assets/Items/TSHIRT_ITEM.png" id="20_64vfv"]
 [ext_resource type="Texture2D" uid="uid://btdrkomg0riua" path="res://Assets/Items/PASSPORT_ITEM.png" id="22_8wdii"]
+[ext_resource type="LabelSettings" path="res://fontBarr.tres" id="23_87qtf"]
 [ext_resource type="Texture2D" uid="uid://bi74qptcpr8gf" path="res://Assets/Items/TELEPHONE_ITEM.png" id="24_sq1or"]
 [ext_resource type="Texture2D" uid="uid://cle3qs4qdur6e" path="res://Assets/Items/CONSERVE_ITEM.png" id="26_02i35"]
 [ext_resource type="Texture2D" uid="uid://c1txe522gkusv" path="res://Assets/Items/HACHE_ITEM.png" id="28_5v3fg"]
@@ -37,11 +38,14 @@ colors = PackedColorArray(0.194349, 0.194349, 0.194349, 0.360784)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_j70ue"]
 gradient = SubResource("Gradient_sxst2")
 
+[sub_resource type="LabelSettings" id="LabelSettings_nt8fp"]
+font_size = 36
+
 [node name="Main" type="Node2D" node_paths=PackedStringArray("socialBar", "lifeBar", "moneyBar", "firstChoiceButton", "secondChoiceButton", "thirdChoiceButton", "firstChoice", "secondChoice", "thirdChoice", "characterName", "characterSprite", "contextLabel", "itemSpriteList", "itemNeeded")]
 script = ExtResource("1_3dioo")
-socialBar = NodePath("CanvasLayer/SocialTiesBar")
-lifeBar = NodePath("CanvasLayer/LifeConBar")
-moneyBar = NodePath("CanvasLayer/PurchasePowBar")
+socialBar = NodePath("CanvasLayer/stats/Social/SocialTiesBar")
+lifeBar = NodePath("CanvasLayer/stats/life/LifeConBar")
+moneyBar = NodePath("CanvasLayer/stats/money/PurchasePowBar")
 firstChoiceButton = NodePath("CanvasLayer/Choix1Button")
 secondChoiceButton = NodePath("CanvasLayer/Choix2Button")
 thirdChoiceButton = NodePath("CanvasLayer/Choix3Button")
@@ -58,205 +62,47 @@ itemNeeded = NodePath("CanvasLayer/ItemNeeded")
 
 [node name="ItemContour" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(133, 86)
-scale = Vector2(0.038424, 0.038424)
+scale = Vector2(0.590674, 0.590674)
 texture = ExtResource("2_j6ds6")
 
 [node name="ItemContour2" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(256.51, 86)
-scale = Vector2(0.038424, 0.038424)
+position = Vector2(257.44, 86)
+scale = Vector2(0.590674, 0.590674)
 texture = ExtResource("2_j6ds6")
 
 [node name="ItemContour3" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(380.295, 86)
-scale = Vector2(0.038424, 0.038424)
+position = Vector2(379.42, 86)
+scale = Vector2(0.590674, 0.590674)
 texture = ExtResource("2_j6ds6")
 
 [node name="ItemContour4" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(503.85, 86)
-scale = Vector2(0.038424, 0.038424)
+position = Vector2(502.85, 86)
+scale = Vector2(0.590674, 0.590674)
 texture = ExtResource("2_j6ds6")
 
 [node name="ItemContour5" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(626.87, 86)
-scale = Vector2(0.038424, 0.038424)
+position = Vector2(626.255, 86)
+scale = Vector2(0.590674, 0.590674)
 texture = ExtResource("2_j6ds6")
 
 [node name="ItemContour6" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(749.805, 86)
-scale = Vector2(0.038424, 0.038424)
+position = Vector2(750.085, 86)
+scale = Vector2(0.590674, 0.590674)
 texture = ExtResource("2_j6ds6")
 
 [node name="ItemContour7" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(872.605, 86)
-scale = Vector2(0.038424, 0.038424)
+position = Vector2(874.56, 86)
+scale = Vector2(0.590674, 0.590674)
 texture = ExtResource("2_j6ds6")
 
 [node name="ItemContour8" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(993.5, 86)
-scale = Vector2(0.038424, 0.038424)
+position = Vector2(996.265, 86)
+scale = Vector2(0.590674, 0.590674)
 texture = ExtResource("2_j6ds6")
 
 [node name="Character" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(420, 648)
 scale = Vector2(0.308, 0.308)
-
-[node name="SocialTiesBar" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("barValue")]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -1891.0
-offset_top = -1381.0
-offset_right = 1180.0
-offset_bottom = 2517.0
-grow_horizontal = 0
-rotation = -1.54462
-scale = Vector2(0.21, 0.21)
-pivot_offset = Vector2(1535, 1449)
-min_value = -5.0
-max_value = 5.0
-fill_mode = 2
-texture_under = ExtResource("2_wgtv3")
-texture_progress = ExtResource("3_5v0dg")
-script = ExtResource("2_rpol3")
-barValue = NodePath("Label")
-
-[node name="Label" type="Label" parent="CanvasLayer/SocialTiesBar"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 15.923
-offset_top = -600.464
-offset_right = 175.923
-offset_bottom = -407.464
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 1.5708
-theme_override_font_sizes/font_size = 141
-metadata/_edit_use_anchors_ = true
-
-[node name="LifeConBar" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("barValue")]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -1891.0
-offset_top = -1292.0
-offset_right = 1180.0
-offset_bottom = 2606.0
-grow_horizontal = 0
-rotation = -1.54462
-scale = Vector2(0.21, 0.21)
-pivot_offset = Vector2(1535, 1449)
-min_value = -5.0
-max_value = 5.0
-fill_mode = 2
-texture_under = ExtResource("5_afvkq")
-texture_progress = ExtResource("6_1fopa")
-script = ExtResource("2_rpol3")
-barValue = NodePath("Label")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="CanvasLayer/LifeConBar"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 15.923
-offset_top = -600.464
-offset_right = 175.923
-offset_bottom = -407.464
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 1.5708
-theme_override_font_sizes/font_size = 141
-metadata/_edit_use_anchors_ = true
-
-[node name="PurchasePowBar" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("barValue")]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -1893.0
-offset_top = -1202.0
-offset_right = 1178.0
-offset_bottom = 2696.0
-grow_horizontal = 0
-rotation = -1.54462
-scale = Vector2(0.21, 0.21)
-pivot_offset = Vector2(1535, 1449)
-min_value = -5.0
-max_value = 5.0
-fill_mode = 2
-texture_under = ExtResource("7_cbaot")
-texture_progress = ExtResource("8_e3aci")
-script = ExtResource("2_rpol3")
-barValue = NodePath("Label")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="CanvasLayer/PurchasePowBar"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 15.923
-offset_top = -600.464
-offset_right = 175.923
-offset_bottom = -407.464
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 1.5708
-theme_override_font_sizes/font_size = 141
-metadata/_edit_use_anchors_ = true
-
-[node name="SocialLabel" type="Label" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -745.0
-offset_top = 51.0
-offset_right = -668.0
-offset_bottom = 114.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 21
-text = "Lien
-Social"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="LifeLabel" type="Label" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -757.0
-offset_top = 146.0
-offset_right = -659.0
-offset_bottom = 209.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 21
-text = "Condition 
-de Vie"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="MoneyLabel" type="Label" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -758.0
-offset_top = 232.0
-offset_right = -660.0
-offset_bottom = 295.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 21
-text = "Pouvoir
-D'achat"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="BackGroundChoice" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 7
@@ -385,19 +231,9 @@ vertical_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="ItemNeeded" type="TextureRect" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -878.0
-offset_top = 417.0
-offset_right = -835.0
-offset_bottom = 457.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+[node name="ItemNeeded" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(114, 981)
+scale = Vector2(0.05, 0.05)
 
 [node name="ItemsSpriteList" type="Node" parent="CanvasLayer"]
 
@@ -827,3 +663,125 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 51
 text = "Claude"
 metadata/_edit_use_anchors_ = true
+
+[node name="stats" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 1212.0
+offset_top = 60.0
+offset_right = 1884.0
+offset_bottom = 491.0
+scale = Vector2(0.9, 0.9)
+theme_override_constants/separation = 25
+
+[node name="Social" type="VBoxContainer" parent="CanvasLayer/stats"]
+layout_mode = 2
+
+[node name="SocialLabel" type="Label" parent="CanvasLayer/stats/Social"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Lien Social"
+label_settings = ExtResource("23_87qtf")
+horizontal_alignment = 1
+
+[node name="SocialTiesBar" type="TextureProgressBar" parent="CanvasLayer/stats/Social" node_paths=PackedStringArray("barValue")]
+layout_mode = 2
+min_value = -5.0
+max_value = 5.0
+texture_under = ExtResource("2_wgtv3")
+texture_progress = ExtResource("3_5v0dg")
+script = ExtResource("2_rpol3")
+barValue = NodePath("Label")
+
+[node name="Label" type="Label" parent="CanvasLayer/stats/Social/SocialTiesBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -96.5
+offset_right = 80.0
+offset_bottom = 96.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 141
+text = "0"
+label_settings = SubResource("LabelSettings_nt8fp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="life" type="VBoxContainer" parent="CanvasLayer/stats"]
+layout_mode = 2
+
+[node name="LifeLabel" type="Label" parent="CanvasLayer/stats/life"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Condition de Vie"
+label_settings = ExtResource("23_87qtf")
+horizontal_alignment = 1
+
+[node name="LifeConBar" type="TextureProgressBar" parent="CanvasLayer/stats/life" node_paths=PackedStringArray("barValue")]
+layout_mode = 2
+min_value = -5.0
+max_value = 5.0
+texture_under = ExtResource("5_afvkq")
+texture_progress = ExtResource("6_1fopa")
+script = ExtResource("2_rpol3")
+barValue = NodePath("Label")
+
+[node name="Label" type="Label" parent="CanvasLayer/stats/life/LifeConBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -96.5
+offset_right = 80.0
+offset_bottom = 96.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 141
+text = "0"
+label_settings = SubResource("LabelSettings_nt8fp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="money" type="VBoxContainer" parent="CanvasLayer/stats"]
+layout_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="CanvasLayer/stats/money"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Pouvoir d'achat"
+label_settings = ExtResource("23_87qtf")
+horizontal_alignment = 1
+
+[node name="PurchasePowBar" type="TextureProgressBar" parent="CanvasLayer/stats/money" node_paths=PackedStringArray("barValue")]
+layout_mode = 2
+min_value = -5.0
+max_value = 5.0
+texture_under = ExtResource("7_cbaot")
+texture_progress = ExtResource("8_e3aci")
+script = ExtResource("2_rpol3")
+barValue = NodePath("Label")
+
+[node name="Label" type="Label" parent="CanvasLayer/stats/money/PurchasePowBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -96.5
+offset_right = 80.0
+offset_bottom = 96.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 141
+text = "0"
+label_settings = SubResource("LabelSettings_nt8fp")
+horizontal_alignment = 1
+vertical_alignment = 1

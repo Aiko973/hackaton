@@ -26,7 +26,7 @@ colors = PackedColorArray(0.194349, 0.194349, 0.194349, 0.360784)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_j70ue"]
 gradient = SubResource("Gradient_sxst2")
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("socialBar", "lifeBar", "moneyBar", "firstChoiceButton", "secondChoiceButton", "thirdChoiceButton", "characterSprite", "contextLabel", "itemSpriteList", "itemNeeded")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("socialBar", "lifeBar", "moneyBar", "firstChoiceButton", "secondChoiceButton", "thirdChoiceButton", "firstChoice", "secondChoice", "thirdChoice", "characterSprite", "contextLabel", "itemSpriteList", "itemNeeded")]
 script = ExtResource("1_3dioo")
 socialBar = NodePath("CanvasLayer/SocialTiesBar")
 lifeBar = NodePath("CanvasLayer/LifeConBar")
@@ -34,6 +34,9 @@ moneyBar = NodePath("CanvasLayer/PurchasePowBar")
 firstChoiceButton = NodePath("CanvasLayer/BackGroundChoice/Choix1Button")
 secondChoiceButton = NodePath("CanvasLayer/BackGroundChoice/Choix2Button")
 thirdChoiceButton = NodePath("CanvasLayer/BackGroundChoice/Choix3Button")
+firstChoice = NodePath("CanvasLayer/BackGroundChoice/Choix1Button/choice1Label")
+secondChoice = NodePath("CanvasLayer/BackGroundChoice/Choix2Button/choice2Label")
+thirdChoice = NodePath("CanvasLayer/BackGroundChoice/Choix3Button/choice3Label")
 characterSprite = NodePath("CanvasLayer/Character")
 contextLabel = NodePath("CanvasLayer/BackGroundChoice/ContextLabel")
 itemSpriteList = NodePath("CanvasLayer/ItemsSpriteList")
@@ -241,9 +244,15 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(147, 62)
 theme_override_font_sizes/font_size = 16
-text = "CHOIX 1 
-AVEC OBJETS"
 script = ExtResource("2_6hsv3")
+
+[node name="choice1Label" type="Label" parent="CanvasLayer/BackGroundChoice/Choix1Button"]
+offset_right = 295.0
+offset_bottom = 124.0
+pivot_offset = Vector2(147, 62)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="Choix2Button" type="Button" parent="CanvasLayer/BackGroundChoice"]
 layout_mode = 1
@@ -260,9 +269,16 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(147, 62)
 theme_override_font_sizes/font_size = 16
-text = "CHOIX 2
-AVEC STATS"
 script = ExtResource("2_6hsv3")
+
+[node name="choice2Label" type="Label" parent="CanvasLayer/BackGroundChoice/Choix2Button"]
+offset_left = -1.0
+offset_right = 294.0
+offset_bottom = 124.0
+pivot_offset = Vector2(147, 62)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="Choix3Button" type="Button" parent="CanvasLayer/BackGroundChoice"]
 layout_mode = 1
@@ -279,9 +295,15 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(147, 62)
 theme_override_font_sizes/font_size = 16
-text = "CHOIX 3
-SANS RIEN"
 script = ExtResource("2_6hsv3")
+
+[node name="choice3Label" type="Label" parent="CanvasLayer/BackGroundChoice/Choix3Button"]
+offset_right = 295.0
+offset_bottom = 124.0
+pivot_offset = Vector2(147, 62)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="ItemNeeded" type="TextureRect" parent="CanvasLayer/BackGroundChoice"]
 layout_mode = 1

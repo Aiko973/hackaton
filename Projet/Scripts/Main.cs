@@ -32,6 +32,9 @@ namespace Com.IsartDigital.ProjectName
 		[Export] Button secondChoiceButton;
 		[Export] Button thirdChoiceButton;
 
+		[Export] Label firstChoice, secondChoice, thirdChoice;
+
+
 		[Export] Sprite2D characterSprite;
 
 		[Export] Label contextLabel;
@@ -157,15 +160,15 @@ namespace Com.IsartDigital.ProjectName
 
             contextLabel.Text = currentDilemma.dilemma;
 
-            firstChoiceButton.Text = currentDilemma.choices[0].name + "   " + currentDilemma.choices[0].item + " besoin";
+            firstChoice.Text = currentDilemma.choices[0].name + "   " + currentDilemma.choices[0].item + " besoin";
 
-            secondChoiceButton.Text = currentDilemma.choices[1].name + "\n Besoin de ";
+            secondChoice.Text = currentDilemma.choices[1].name + "\n Besoin de ";
 
-            if (currentDilemma.choices[1].socialTiesNeeded != -5) secondChoiceButton.Text += currentDilemma.choices[1].socialTiesNeeded + " Vie Sociale";
-            if (currentDilemma.choices[1].healthConditionsNeeded != -5) secondChoiceButton.Text += currentDilemma.choices[1].healthConditionsNeeded + " Conditions de vie";
-            if (currentDilemma.choices[1].purchasingPowerNeeded != -5) secondChoiceButton.Text += currentDilemma.choices[1].purchasingPowerNeeded + " Pouvoir d'achat";
+            if (currentDilemma.choices[1].socialTiesNeeded != -5) secondChoice.Text += currentDilemma.choices[1].socialTiesNeeded + " Vie Sociale";
+            if (currentDilemma.choices[1].healthConditionsNeeded != -5) secondChoice.Text += currentDilemma.choices[1].healthConditionsNeeded + " Conditions de vie";
+            if (currentDilemma.choices[1].purchasingPowerNeeded != -5) secondChoice.Text += currentDilemma.choices[1].purchasingPowerNeeded + " Pouvoir d'achat";
 
-            thirdChoiceButton.Text = currentDilemma.choices[2].name;
+            thirdChoice.Text = currentDilemma.choices[2].name;
 
         }
 

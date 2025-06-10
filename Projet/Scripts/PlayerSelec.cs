@@ -3,6 +3,7 @@ using Com.IsartDigital.Hackaton.Libraries;
 using Godot;
 using System;
 using System.Collections.Generic;
+using static Godot.Projection;
 
 // Author : Dorian Simon
 
@@ -16,11 +17,11 @@ namespace Com.IsartDigital.ProjectName {
         [Export] TextureButton rightArrow;
         [Export] TextureButton leftArrow;
 
-		[Export] Button UnselectButton, lockPlayerButton, playButton;
+		[Export] Button playButton;
 
-        [Export] Sprite2D P1;
-        [Export] Sprite2D P2;
-        [Export] Sprite2D P3;
+        [Export] TextureRect P1;
+        [Export] TextureRect P2;
+        [Export] TextureRect P3;
 
         [Export] TextureProgressBar socialBar, lifeBar, moneyBar;
 
@@ -32,12 +33,15 @@ namespace Com.IsartDigital.ProjectName {
         static public Sprite2D currentCharacterSprite = new Sprite2D();
         public static string characterName;
 
-		List<Items> textureButton = new List<Items>();
+		List<Items> listItems = new List<Items>();
 
         List<PlayerProfiles> players = FileManager.GetPlayersProfilesFromJson(Path.PLAYER_PROFILES);
 
+        public static PlayerSelec instance;
+
         public override void _Ready()
 		{
+            instance = this;
 			currentPlayer = players[currentPlayerIndex];
             currentCharacterSprite.Texture = P1.Texture;
             AddItemsIntoPlayer(currentPlayer);
@@ -49,20 +53,18 @@ namespace Com.IsartDigital.ProjectName {
 				itemsButtons[i].Pressed += () => ButtonPressed(index);
             }
 
-            UnselectButton.Pressed += UnselectButtonPressed;
-
             leftArrow.Pressed += LeftArrowPressed;
             rightArrow.Pressed += RightArrowPressed;
-            lockPlayerButton.Pressed += LockPlayerButtonPressed;
             playButton.Pressed += PlayButtonPressed;
-            
-		}
+
+            LockPlayerButtonPressed();
+        }
 
         private void PlayButtonPressed()
         {
             for (int i = 0; i < currentPlayer.itemsList.Count; i++)
             {
-                foreach (Items itemSelected in textureButton)
+                foreach (Items itemSelected in listItems)
                 {
                     if (currentPlayer.itemsList[i].GetType().Name == itemSelected.GetType().Name)
                     {
@@ -76,7 +78,7 @@ namespace Com.IsartDigital.ProjectName {
 
         private void LockPlayerButtonPressed()
         {
-            rightArrow.Disabled = leftArrow.Disabled = true;
+            //rightArrow.Disabled = leftArrow.Disabled = true;
             foreach (TextureButton itemButton in itemsButtons)
             {
                 itemButton.Disabled = false;
@@ -88,6 +90,7 @@ namespace Com.IsartDigital.ProjectName {
             if (currentPlayerIndex < 2)
             {
                 currentPlayerIndex++;
+                players[currentPlayerIndex].CopyStuff(currentPlayer);
                 currentPlayer = players[currentPlayerIndex];
                 UpdateBalancebar(currentPlayer);
                 UpdatePlayerSprite();
@@ -100,6 +103,7 @@ namespace Com.IsartDigital.ProjectName {
             if (currentPlayerIndex > 0)
             {                    
                 currentPlayerIndex--;
+                players[currentPlayerIndex].CopyStuff(currentPlayer);
                 currentPlayer = players[currentPlayerIndex];
                 UpdateBalancebar(currentPlayer);
                 UpdatePlayerSprite();
@@ -108,20 +112,28 @@ namespace Com.IsartDigital.ProjectName {
 
         private void UnselectButtonPressed()
         {
-            if (textureButton.Count > 0)
+            if (listItems.Count > 0)
 			{
-                int lastIndex = textureButton.Count - 1;
+                int lastIndex = listItems.Count - 1;
                 takenObjects[lastIndex].Texture = null;
-                textureButton.RemoveAt(lastIndex);
+                listItems.RemoveAt(lastIndex);
             }
+        }
+
+        public void RemoveItemAt(int pIndex)
+        {
+            if (listItems.Count - 1 != pIndex) return;
+    
+            takenObjects[pIndex].Texture = null;
+            listItems.RemoveAt(pIndex);
         }
 
         private void ButtonPressed(int pIndex)
         {
-            if (textureButton.Count < 4) textureButton.Add(items[pIndex]);
-            for (int i = 0; i < textureButton.Count; i++)
+            if (listItems.Count < 4) listItems.Add(items[pIndex]);
+            for (int i = 0; i < listItems.Count; i++)
             {
-                takenObjects[i].Texture = textureButton[i].TextureNormal;
+                takenObjects[i].Texture = listItems[i].TextureNormal;
             }
         }
 

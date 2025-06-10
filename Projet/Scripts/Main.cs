@@ -127,7 +127,7 @@ namespace Com.IsartDigital.ProjectName
 		{
 			for (int i = 0; i < pPlayer.itemsList.Count; i++)
 			{
-				Items lItems = (Items) itemSpriteList.GetChild(i);
+				Items lItems = (Items)itemSpriteList.GetChild(i);
 				lItems.Visible = currentPlayer.itemsList[i].owned;
 			}
 		}

@@ -7,6 +7,6 @@ namespace Com.IsartDigital.Hackaton
 {
 	public partial class Meds : Items
     {
-
-	}
+        
+    }
 }

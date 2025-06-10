@@ -3,7 +3,7 @@
 	"meds": { "owned": true },
 	"creditCard": { "owned": true },
 	"tent": { "owned": true },
-	"clothes": { "owned": false },
+	"clothes": { "owned": true },
 	"passport": { "owned": true },
 	"phone": { "owned": true },
 	"food": { "owned": true },

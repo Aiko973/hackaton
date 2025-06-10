@@ -59,21 +59,20 @@ namespace Com.IsartDigital.ProjectName
 			rand.Randomize();
 
 			List<Dilemma> dilemma = FileManager.GetDilemmaFromJson(Path.DILEMMA);
-			List<PlayerProfiles> players = FileManager.GetPlayersProfilesFromJson(Path.PLAYER_PROFILES);
 
 			currentDilemma = dilemma[0];
-			currentPlayer = players[0];
-			AddItemsIntoPlayer(currentPlayer);
+			currentPlayer = PlayerSelec.currentPlayer;
 			
 			contextLabel.Text = currentDilemma.dilemma;
 
 			firstChoiceButton.Text = currentDilemma.choices[0].name + "   "+ currentDilemma.choices[0].item + " besoin";
 
-			secondChoiceButton.Text = currentDilemma.choices[1].name + ", Besoin de \n" +
-				 + currentDilemma.choices[1].socialTiesNeeded + " Vie Sociale \n"+
-				 + currentDilemma.choices[1].healthConditionsNeeded + " Conditions de vie \n"+
-				 + currentDilemma.choices[1].purchasingPowerNeeded + " Pouvoir d'achat";
+			secondChoiceButton.Text = currentDilemma.choices[1].name + ", Besoin de \n";
 
+			if (currentDilemma.choices[1].socialTiesNeeded != -5) secondChoiceButton.Text += currentDilemma.choices[1].socialTiesNeeded + " Vie Sociale";
+			if (currentDilemma.choices[1].healthConditionsNeeded != -5) secondChoiceButton.Text += currentDilemma.choices[1].healthConditionsNeeded + " Conditions de vie";
+			if (currentDilemma.choices[1].purchasingPowerNeeded != -5) secondChoiceButton.Text += currentDilemma.choices[1].purchasingPowerNeeded + " Pouvoir d'achat";
+                 
 			thirdChoiceButton.Text = currentDilemma.choices[2].name;
 
             firstChoiceButton.Pressed += FirstChoiceButtonPressed;
@@ -146,17 +145,6 @@ namespace Com.IsartDigital.ProjectName
             currentPlayer.purchasingPower = Math.Clamp(currentPlayer.purchasingPower + currentDilemma.choices[pChoiceIndex].purchasingPower, -5, 5);
 
 			UpdateBalancebar(pPlayer);
-        }
-
-		private void AddItemsIntoPlayer(PlayerProfiles pPlayer)
-		{
-            pPlayer.itemsList.Add(pPlayer.meds);
-            pPlayer.itemsList.Add(pPlayer.creditCard);
-            pPlayer.itemsList.Add(pPlayer.tent);
-            pPlayer.itemsList.Add(pPlayer.clothes);
-            pPlayer.itemsList.Add(pPlayer.passport);
-            pPlayer.itemsList.Add(pPlayer.phone);
-            pPlayer.itemsList.Add(pPlayer.food);
         }
 
         public override void _Process(double pDelta)

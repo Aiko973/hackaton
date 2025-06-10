@@ -1,16 +1,17 @@
 [
   {
-	"meds": { "owned": true },
-	"creditCard": { "owned": true },
-	"tent": { "owned": true },
+	"meds": { "owned": false},
+	"creditCard": { "owned": false },
+	"tent": { "owned": false },
 	"clothes": { "owned": false },
-	"passport": { "owned": true },
-	"phone": { "owned": true },
-	"food": { "owned": true },
+	"passport": { "owned": false },
+	"phone": { "owned": false },
+	"food": { "owned": false },
+	"axe": { "owned": true },
 	
-	"socialTies": 1,
+	"socialTies": 4,
 	"healthCondition": 2,
-	"purchasingPower": 3
+	"purchasingPower": 2
   },
   {
 	"meds": { "owned": false },
@@ -20,10 +21,11 @@
 	"passport": { "owned": false },
 	"phone": { "owned": false },
 	"food": { "owned": false },
+	"axe": { "owned": false },
 	
-	"socialTies": 1,
-	"healthCondition": 7,
-	"purchasingPower": 3
+	"socialTies": 2,
+	"healthCondition": 4,
+	"purchasingPower": 2
   },
   {
 	"meds": { "owned": false },
@@ -33,9 +35,10 @@
 	"passport": { "owned": false },
 	"phone": { "owned": false },
 	"food": { "owned": false },
+	"axe": { "owned": false },
 	
-	"socialTies": -4,
-	"healthCondition": 2,
+	"socialTies": 3,
+	"healthCondition": 3,
 	"purchasingPower": 3
   }
 ]

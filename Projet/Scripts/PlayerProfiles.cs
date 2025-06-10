@@ -1,3 +1,4 @@
+using Com.IsartDigital.ProjectName;
 using Godot;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace Com.IsartDigital.Hackaton
 		public Passport passport { get; set; }
 		public Phone phone { get; set; }
 		public Food food { get; set; }
+		public Axe axe { get; set; }
 		
 
 		public List<Items> itemsList = new List<Items>();

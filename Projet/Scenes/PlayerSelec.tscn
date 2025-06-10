@@ -1,0 +1,697 @@
+[gd_scene load_steps=14 format=3 uid="uid://clniwqocdro88"]
+
+[ext_resource type="Script" path="res://Scripts/Utils/BarInformation.cs" id="1_1tcxi"]
+[ext_resource type="Script" path="res://Scripts/PlayerSelec.cs" id="1_8fkp7"]
+[ext_resource type="Texture2D" uid="uid://d05csnrdsrrgh" path="res://Assets/arrow.png" id="3_62j6l"]
+[ext_resource type="Texture2D" uid="uid://crhrqonea4tja" path="res://Assets/icon.svg" id="3_nop22"]
+[ext_resource type="Texture2D" uid="uid://bbct71yhmqryx" path="res://Assets/arrow pressed.png" id="4_7qsfh"]
+[ext_resource type="Script" path="res://Scripts/Items/Meds.cs" id="6_vsav8"]
+[ext_resource type="Script" path="res://Scripts/Items/CreditCard.cs" id="7_ocqka"]
+[ext_resource type="Script" path="res://Scripts/Items/Tent.cs" id="8_dwkvc"]
+[ext_resource type="Script" path="res://Scripts/Items/Clothes.cs" id="9_g4wia"]
+[ext_resource type="Script" path="res://Scripts/Items/Passport.cs" id="10_x2cpr"]
+[ext_resource type="Script" path="res://Scripts/Items/Phone.cs" id="11_i2o3g"]
+[ext_resource type="Script" path="res://Scripts/Items/Food.cs" id="12_vcg34"]
+[ext_resource type="Script" path="res://Scripts/Items/Axe.cs" id="13_dwr5i"]
+
+[node name="PlayerSelec" type="Control" node_paths=PackedStringArray("medsButton", "takenObjects", "itemsButtons", "items", "rightArrow", "leftArrow", "UnselectButton", "lockPlayerButton", "playButton", "P1", "P2", "P3", "socialBar", "lifeBar", "moneyBar")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8fkp7")
+medsButton = NodePath("")
+takenObjects = [NodePath("SelectedObject/TakenObject1"), NodePath("SelectedObject/TakenObject2"), NodePath("SelectedObject/TakenObject3"), NodePath("SelectedObject/TakenObject4")]
+itemsButtons = [NodePath("Meds/TextureButton"), NodePath("Creditcard/TextureButton"), NodePath("Tent/TextureButton"), NodePath("Clothes/TextureButton"), NodePath("Passport/TextureButton"), NodePath("Phone/TextureButton"), NodePath("Food/TextureButton"), NodePath("Axe/TextureButton")]
+items = [NodePath("Meds"), NodePath("Creditcard"), NodePath("Tent"), NodePath("Clothes"), NodePath("Passport"), NodePath("Phone"), NodePath("Food"), NodePath("Axe")]
+rightArrow = NodePath("BackGround/RightArrow")
+leftArrow = NodePath("BackGround/LeftArrow")
+UnselectButton = NodePath("ItemsButtons/UnSelect")
+lockPlayerButton = NodePath("BackGround/LockPlayer")
+playButton = NodePath("BackGround/PlayButton")
+P1 = NodePath("BackGround/P1")
+P2 = NodePath("BackGround/P2")
+P3 = NodePath("BackGround/P3")
+socialBar = NodePath("BackGround/SocialBar")
+lifeBar = NodePath("BackGround/LifeBar")
+moneyBar = NodePath("BackGround/MoneyBar")
+
+[node name="BackGround" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -700.0
+offset_top = -443.0
+offset_right = 700.0
+offset_bottom = 443.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.470076, 0.470076, 0.470076, 1)
+
+[node name="P1" type="Control" parent="BackGround"]
+anchors_preset = 0
+
+[node name="Line2D" type="Line2D" parent="BackGround/P1"]
+position = Vector2(-319.37, -173.059)
+scale = Vector2(2.5053, 2.5053)
+points = PackedVector2Array(243, 201, 243, 200)
+width = 82.625
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D2" type="Line2D" parent="BackGround/P1"]
+position = Vector2(-635.37, -192.059)
+scale = Vector2(3.82003, 3.82003)
+points = PackedVector2Array(241.621, 280.103, 242.668, 203.14)
+width = 82.625
+joint_mode = 2
+end_cap_mode = 2
+
+[node name="P2" type="Control" parent="BackGround"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1400.0
+offset_bottom = -886.0
+
+[node name="Line2D" type="Line2D" parent="BackGround/P2"]
+position = Vector2(-321.37, -174.059)
+scale = Vector2(2.5053, 2.5053)
+points = PackedVector2Array(243, 201, 243, 200)
+width = 82.625
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D2" type="Line2D" parent="BackGround/P2"]
+position = Vector2(-637.37, -193.059)
+scale = Vector2(3.82003, 3.82003)
+points = PackedVector2Array(242.765, 281.95, 242.668, 203.14)
+width = 82.625
+joint_mode = 2
+end_cap_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="BackGround/P2"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 244.0
+offset_top = 358.0
+offset_right = 334.0
+offset_bottom = 421.0
+grow_vertical = 0
+color = Color(0.43134, 0.43134, 0.43134, 1)
+
+[node name="P3" type="Control" parent="BackGround"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1400.0
+offset_bottom = -886.0
+
+[node name="Line2D" type="Line2D" parent="BackGround/P3"]
+position = Vector2(-321.37, -174.059)
+scale = Vector2(2.5053, 2.5053)
+points = PackedVector2Array(243, 201, 243, 200)
+width = 82.625
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D2" type="Line2D" parent="BackGround/P3"]
+position = Vector2(-637.37, -193.059)
+scale = Vector2(3.82003, 3.82003)
+points = PackedVector2Array(242.765, 281.95, 242.668, 203.14)
+width = 82.625
+joint_mode = 2
+end_cap_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="BackGround/P3"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 198.0
+offset_top = 218.0
+offset_right = 377.0
+offset_bottom = 281.0
+grow_vertical = 0
+color = Color(0.43134, 0.43134, 0.43134, 1)
+
+[node name="SocialLabel" type="Label" parent="BackGround"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -748.0
+offset_top = 106.0
+offset_right = -671.0
+offset_bottom = 169.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 21
+text = "Lien
+Social"
+horizontal_alignment = 1
+
+[node name="LifeLabel" type="Label" parent="BackGround"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -760.0
+offset_top = 201.0
+offset_right = -662.0
+offset_bottom = 264.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 21
+text = "Condition 
+de Vie"
+horizontal_alignment = 1
+
+[node name="MoneyLabel" type="Label" parent="BackGround"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -761.0
+offset_top = 287.0
+offset_right = -663.0
+offset_bottom = 350.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 21
+text = "Pouvoir
+D'achat"
+horizontal_alignment = 1
+
+[node name="SocialBar" type="ProgressBar" parent="BackGround" node_paths=PackedStringArray("barValue")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -643.0
+offset_top = 117.0
+offset_right = -54.0
+offset_bottom = 165.0
+grow_horizontal = 0
+min_value = -5.0
+max_value = 5.0
+show_percentage = false
+script = ExtResource("1_1tcxi")
+barValue = NodePath("Label")
+
+[node name="Label" type="Label" parent="BackGround/SocialBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LifeBar" type="ProgressBar" parent="BackGround" node_paths=PackedStringArray("barValue")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -642.0
+offset_top = 209.0
+offset_right = -53.0
+offset_bottom = 257.0
+grow_horizontal = 0
+min_value = -5.0
+max_value = 5.0
+show_percentage = false
+script = ExtResource("1_1tcxi")
+barValue = NodePath("Label")
+
+[node name="Label" type="Label" parent="BackGround/LifeBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MoneyBar" type="ProgressBar" parent="BackGround" node_paths=PackedStringArray("barValue")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -643.0
+offset_top = 300.0
+offset_right = -54.0
+offset_bottom = 348.0
+grow_horizontal = 0
+min_value = -5.0
+max_value = 5.0
+show_percentage = false
+script = ExtResource("1_1tcxi")
+barValue = NodePath("Label")
+
+[node name="Label" type="Label" parent="BackGround/MoneyBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RightArrow" type="TextureButton" parent="BackGround"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = 158.0
+offset_right = -140.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_62j6l")
+texture_pressed = ExtResource("4_7qsfh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="LeftArrow" type="TextureButton" parent="BackGround"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -592.0
+offset_top = 163.0
+offset_right = -508.0
+offset_bottom = 247.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-1, 1)
+texture_normal = ExtResource("3_62j6l")
+texture_pressed = ExtResource("4_7qsfh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="LockPlayer" type="Button" parent="BackGround"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 483.0
+offset_top = -48.0
+offset_right = 640.0
+offset_bottom = -17.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Vérouiller le joueur"
+
+[node name="PlayButton" type="Button" parent="BackGround"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -158.0
+offset_top = -84.0
+offset_right = -27.0
+offset_bottom = -19.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 41
+text = "JOUER"
+
+[node name="ItemsButtons" type="Node" parent="."]
+
+[node name="UnSelect" type="Button" parent="ItemsButtons"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 478.0
+offset_top = 242.0
+offset_right = 672.0
+offset_bottom = 301.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Enlever Un Objet"
+
+[node name="SelectedObject" type="Node" parent="."]
+
+[node name="TakenObject1" type="TextureRect" parent="SelectedObject"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = 25.0
+offset_right = 78.0
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="TakenObject2" type="TextureRect" parent="SelectedObject"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 115.0
+offset_top = 27.0
+offset_right = 209.0
+offset_bottom = 121.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="TakenObject3" type="TextureRect" parent="SelectedObject"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 248.0
+offset_top = 27.0
+offset_right = 342.0
+offset_bottom = 121.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="TakenObject4" type="TextureRect" parent="SelectedObject"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 387.0
+offset_top = 26.0
+offset_right = 481.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Meds" type="TextureRect" parent="."]
+offset_left = 937.0
+offset_top = 693.0
+offset_right = 1017.0
+offset_bottom = 773.0
+texture = ExtResource("3_nop22")
+expand_mode = 1
+script = ExtResource("6_vsav8")
+
+[node name="Label" type="Label" parent="Meds"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Med"
+
+[node name="TextureButton" type="TextureButton" parent="Meds"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Creditcard" type="TextureRect" parent="."]
+offset_left = 1061.0
+offset_top = 691.0
+offset_right = 1141.0
+offset_bottom = 771.0
+texture = ExtResource("3_nop22")
+expand_mode = 1
+script = ExtResource("7_ocqka")
+
+[node name="Label" type="Label" parent="Creditcard"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Carte"
+
+[node name="TextureButton" type="TextureButton" parent="Creditcard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tent" type="TextureRect" parent="."]
+offset_left = 1187.0
+offset_top = 695.0
+offset_right = 1267.0
+offset_bottom = 775.0
+texture = ExtResource("3_nop22")
+expand_mode = 1
+script = ExtResource("8_dwkvc")
+
+[node name="Label" type="Label" parent="Tent"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Tente"
+
+[node name="TextureButton" type="TextureButton" parent="Tent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Clothes" type="TextureRect" parent="."]
+offset_left = 1305.0
+offset_top = 695.0
+offset_right = 1385.0
+offset_bottom = 775.0
+texture = ExtResource("3_nop22")
+expand_mode = 1
+script = ExtResource("9_g4wia")
+
+[node name="Label" type="Label" parent="Clothes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Vets"
+
+[node name="TextureButton" type="TextureButton" parent="Clothes"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Passport" type="TextureRect" parent="."]
+offset_left = 934.0
+offset_top = 793.0
+offset_right = 1014.0
+offset_bottom = 873.0
+texture = ExtResource("3_nop22")
+expand_mode = 1
+script = ExtResource("10_x2cpr")
+
+[node name="Label" type="Label" parent="Passport"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "PassP"
+
+[node name="TextureButton" type="TextureButton" parent="Passport"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Phone" type="TextureRect" parent="."]
+offset_left = 1063.0
+offset_top = 793.0
+offset_right = 1143.0
+offset_bottom = 873.0
+texture = ExtResource("3_nop22")
+expand_mode = 1
+script = ExtResource("11_i2o3g")
+
+[node name="Label" type="Label" parent="Phone"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Tel"
+
+[node name="TextureButton" type="TextureButton" parent="Phone"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Food" type="TextureRect" parent="."]
+offset_left = 1191.0
+offset_top = 794.0
+offset_right = 1271.0
+offset_bottom = 874.0
+texture = ExtResource("3_nop22")
+expand_mode = 1
+script = ExtResource("12_vcg34")
+
+[node name="Label" type="Label" parent="Food"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Nour"
+
+[node name="TextureButton" type="TextureButton" parent="Food"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Axe" type="TextureRect" parent="."]
+offset_left = 1305.0
+offset_top = 794.0
+offset_right = 1385.0
+offset_bottom = 874.0
+texture = ExtResource("3_nop22")
+expand_mode = 1
+script = ExtResource("13_dwr5i")
+
+[node name="Label" type="Label" parent="Axe"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Hache"
+
+[node name="TextureButton" type="TextureButton" parent="Axe"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

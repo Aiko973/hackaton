@@ -1,0 +1,930 @@
+[gd_scene load_steps=34 format=3 uid="uid://cnut1g6cr53uq"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerSelec.cs" id="1_yh66s"]
+[ext_resource type="Texture2D" uid="uid://dhatlptnuajeo" path="res://Assets/UI/ITEM_CONTOUR.png" id="2_fg3ko"]
+[ext_resource type="LabelSettings" uid="uid://cxd12wj72agrg" path="res://fontBarr.tres" id="2_nr5jq"]
+[ext_resource type="Texture2D" uid="uid://dyt5vyridv7al" path="res://Assets/Character/Camille sprite 1.png" id="3_10eyt"]
+[ext_resource type="Texture2D" uid="uid://busitbh44fuha" path="res://Assets/Character/Claude sprite 1.png" id="4_hstai"]
+[ext_resource type="Texture2D" uid="uid://d05csnrdsrrgh" path="res://Assets/arrow.png" id="5_qm7ps"]
+[ext_resource type="Texture2D" uid="uid://bbct71yhmqryx" path="res://Assets/arrow pressed.png" id="6_l4e0o"]
+[ext_resource type="Texture2D" uid="uid://c6hnndourgqmj" path="res://Assets/UI/Bar/BARRE_VIDE_LIEN_SOCIAL.png" id="7_4ublw"]
+[ext_resource type="Texture2D" uid="uid://svu01bq7y1tt" path="res://Assets/UI/Bar/BARRE_PLEINE_LIEN_SOCIAL.png" id="8_a7by4"]
+[ext_resource type="Script" path="res://Scripts/Utils/BarInformation.cs" id="9_1qf40"]
+[ext_resource type="Texture2D" uid="uid://cwycnp6v2qlbb" path="res://Assets/UI/Bar/BARRE_VIDE_CONDITION_VIE.png" id="10_j7xxi"]
+[ext_resource type="Texture2D" uid="uid://dxsrnoiew0a70" path="res://Assets/UI/Bar/BARRE_PLEINE_CONDITION_VIE.png" id="11_xr0lu"]
+[ext_resource type="Texture2D" uid="uid://dqptdhg8adaue" path="res://Assets/UI/Bar/BARRE_VIDE_POUVOIR_ACHAT.png" id="12_gtgsu"]
+[ext_resource type="Texture2D" uid="uid://ce5b3r1qy743h" path="res://Assets/UI/Bar/BARRE_PLEINE_POUVOIR_ACHAT.png" id="13_mx5s2"]
+[ext_resource type="Texture2D" uid="uid://dpabw7d3hxo7f" path="res://Assets/CHOIX_DIALOGUE.png" id="14_dahdn"]
+[ext_resource type="Texture2D" uid="uid://crhrqonea4tja" path="res://Assets/icon.svg" id="15_asgc4"]
+[ext_resource type="Script" path="res://Scripts/Items/Meds.cs" id="16_wbnjf"]
+[ext_resource type="Script" path="res://Scripts/ButtonRemoveItem.cs" id="16_y41hj"]
+[ext_resource type="Script" path="res://Scripts/Items/CreditCard.cs" id="17_oys36"]
+[ext_resource type="Script" path="res://Scripts/Items/Tent.cs" id="18_hirqt"]
+[ext_resource type="Script" path="res://Scripts/Items/Clothes.cs" id="19_4d30y"]
+[ext_resource type="Script" path="res://Scripts/Items/Passport.cs" id="20_ubyv1"]
+[ext_resource type="Script" path="res://Scripts/Items/Phone.cs" id="21_cfu8k"]
+[ext_resource type="Script" path="res://Scripts/Items/Food.cs" id="22_gsivs"]
+[ext_resource type="Script" path="res://Scripts/Items/Axe.cs" id="23_ggq4l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6kme5"]
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_2emjh"]
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cpwyh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aje1d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y8vl3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lo8pt"]
+
+[sub_resource type="Gradient" id="Gradient_30hc8"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.194349, 0.194349, 0.194349, 0.360784)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tklqu"]
+gradient = SubResource("Gradient_30hc8")
+
+[node name="PlayerSelec" type="Control" node_paths=PackedStringArray("takenObjects", "itemsButtons", "items", "rightArrow", "leftArrow", "playButton", "P1", "P2", "P3", "socialBar", "lifeBar", "moneyBar", "characterNameLabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yh66s")
+takenObjects = [NodePath("BackGround/inventaire/slot/renderSelected"), NodePath("BackGround/inventaire/slot2/renderSelected"), NodePath("BackGround/inventaire/slot3/renderSelected"), NodePath("BackGround/inventaire/slot4/renderSelected")]
+itemsButtons = [NodePath("VBoxContainer/HBoxContainer2/Meds/TextureButton"), NodePath("VBoxContainer/HBoxContainer2/Creditcard/TextureButton"), NodePath("VBoxContainer/HBoxContainer2/Tent/TextureButton"), NodePath("VBoxContainer/HBoxContainer2/Clothes/TextureButton"), NodePath("VBoxContainer/HBoxContainer3/Passport/TextureButton"), NodePath("VBoxContainer/HBoxContainer3/Phone/TextureButton"), NodePath("VBoxContainer/HBoxContainer3/Food/TextureButton"), NodePath("VBoxContainer/HBoxContainer3/Axe/TextureButton")]
+items = [NodePath("VBoxContainer/HBoxContainer2/Meds"), NodePath("VBoxContainer/HBoxContainer2/Creditcard"), NodePath("VBoxContainer/HBoxContainer2/Tent"), NodePath("VBoxContainer/HBoxContainer2/Clothes"), NodePath("VBoxContainer/HBoxContainer3/Passport"), NodePath("VBoxContainer/HBoxContainer3/Phone"), NodePath("VBoxContainer/HBoxContainer3/Food"), NodePath("VBoxContainer/HBoxContainer3/Axe")]
+rightArrow = NodePath("BackGround/Arrow/RightArrow")
+leftArrow = NodePath("BackGround/Arrow/LeftArrow")
+playButton = NodePath("BackGround/PlayButton")
+P1 = NodePath("BackGround/Character/Character1")
+P2 = NodePath("BackGround/Character/Character2")
+P3 = NodePath("BackGround/Character/Character3")
+socialBar = NodePath("BackGround/stats/Social/SocialTiesBar")
+lifeBar = NodePath("BackGround/stats/life/LifeConBar")
+moneyBar = NodePath("BackGround/stats/money/PurchasePowBar")
+characterNameLabel = NodePath("BackGround/Control/Name")
+
+[node name="BackGround" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -768.0
+offset_top = -432.0
+offset_right = 768.0
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.470076, 0.470076, 0.470076, 1)
+
+[node name="stats" type="VBoxContainer" parent="BackGround"]
+layout_mode = 0
+offset_left = 868.0
+offset_top = 41.0
+offset_right = 1540.0
+offset_bottom = 472.0
+scale = Vector2(0.9, 0.9)
+theme_override_constants/separation = 25
+
+[node name="Social" type="VBoxContainer" parent="BackGround/stats"]
+layout_mode = 2
+
+[node name="SocialLabel" type="Label" parent="BackGround/stats/Social"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Lien Social"
+label_settings = ExtResource("2_nr5jq")
+horizontal_alignment = 1
+
+[node name="SocialTiesBar" type="TextureProgressBar" parent="BackGround/stats/Social" node_paths=PackedStringArray("barValue")]
+layout_mode = 2
+min_value = -5.0
+max_value = 5.0
+texture_under = ExtResource("7_4ublw")
+texture_progress = ExtResource("8_a7by4")
+script = ExtResource("9_1qf40")
+barValue = NodePath("Label")
+
+[node name="Label" type="Label" parent="BackGround/stats/Social/SocialTiesBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -96.5
+offset_right = 80.0
+offset_bottom = 96.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 141
+text = "0"
+label_settings = SubResource("LabelSettings_6kme5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="life" type="VBoxContainer" parent="BackGround/stats"]
+layout_mode = 2
+
+[node name="LifeLabel" type="Label" parent="BackGround/stats/life"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Condition de Vie"
+label_settings = ExtResource("2_nr5jq")
+horizontal_alignment = 1
+
+[node name="LifeConBar" type="TextureProgressBar" parent="BackGround/stats/life" node_paths=PackedStringArray("barValue")]
+layout_mode = 2
+min_value = -5.0
+max_value = 5.0
+texture_under = ExtResource("10_j7xxi")
+texture_progress = ExtResource("11_xr0lu")
+script = ExtResource("9_1qf40")
+barValue = NodePath("Label")
+
+[node name="Label" type="Label" parent="BackGround/stats/life/LifeConBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -96.5
+offset_right = 80.0
+offset_bottom = 96.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 141
+text = "0"
+label_settings = SubResource("LabelSettings_6kme5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="money" type="VBoxContainer" parent="BackGround/stats"]
+layout_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="BackGround/stats/money"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Pouvoir d'achat"
+label_settings = ExtResource("2_nr5jq")
+horizontal_alignment = 1
+
+[node name="PurchasePowBar" type="TextureProgressBar" parent="BackGround/stats/money" node_paths=PackedStringArray("barValue")]
+layout_mode = 2
+min_value = -5.0
+max_value = 5.0
+texture_under = ExtResource("12_gtgsu")
+texture_progress = ExtResource("13_mx5s2")
+script = ExtResource("9_1qf40")
+barValue = NodePath("Label")
+
+[node name="Label" type="Label" parent="BackGround/stats/money/PurchasePowBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -96.5
+offset_right = 80.0
+offset_bottom = 96.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 141
+text = "0"
+label_settings = SubResource("LabelSettings_6kme5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Character" type="Control" parent="BackGround"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+mouse_filter = 2
+
+[node name="Character1" type="TextureRect" parent="BackGround/Character"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -710.222
+offset_top = -434.222
+offset_right = 1004.78
+offset_bottom = 2365.78
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_10eyt")
+
+[node name="Character2" type="TextureRect" parent="BackGround/Character"]
+visible = false
+layout_mode = 0
+offset_left = 132.222
+offset_top = 37.7778
+offset_right = 1707.22
+offset_bottom = 2837.78
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("4_hstai")
+
+[node name="Character3" type="TextureRect" parent="BackGround/Character"]
+visible = false
+layout_mode = 0
+offset_left = 232.0
+offset_top = 506.0
+offset_right = 232.0
+offset_bottom = 506.0
+scale = Vector2(0.268222, 0.268222)
+
+[node name="Arrow" type="HBoxContainer" parent="BackGround"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 429.0
+offset_right = 653.0
+offset_bottom = 513.0
+theme_override_constants/separation = 420
+
+[node name="LeftArrow" type="TextureButton" parent="BackGround/Arrow"]
+custom_minimum_size = Vector2(84, 84)
+layout_mode = 2
+texture_normal = ExtResource("5_qm7ps")
+texture_pressed = ExtResource("6_l4e0o")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[node name="RightArrow" type="TextureButton" parent="BackGround/Arrow"]
+custom_minimum_size = Vector2(84, 84)
+layout_mode = 2
+texture_normal = ExtResource("5_qm7ps")
+texture_pressed = ExtResource("6_l4e0o")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="PlayButton" type="Button" parent="BackGround"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -465.0
+offset_top = -124.0
+offset_right = -276.0
+offset_bottom = -33.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 60
+text = "JOUER"
+
+[node name="Control" type="Control" parent="BackGround"]
+anchors_preset = 0
+offset_left = 319.0
+offset_top = 768.0
+offset_right = 319.0
+offset_bottom = 768.0
+scale = Vector2(0.9, 0.9)
+
+[node name="TextureRect" type="TextureRect" parent="BackGround/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1949.0
+offset_top = -713.0
+offset_right = 1949.0
+offset_bottom = 713.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(1949, 713)
+texture = ExtResource("14_dahdn")
+
+[node name="Name" type="Label" parent="BackGround/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -34.5
+offset_right = 90.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Camille"
+label_settings = SubResource("LabelSettings_2emjh")
+
+[node name="inventaire" type="VBoxContainer" parent="BackGround"]
+layout_mode = 0
+offset_left = 667.0
+offset_top = 61.0
+offset_right = 860.0
+offset_bottom = 909.0
+scale = Vector2(0.8, 0.8)
+
+[node name="slot" type="TextureRect" parent="BackGround/inventaire"]
+layout_mode = 2
+texture = ExtResource("2_fg3ko")
+
+[node name="renderSelected" type="TextureRect" parent="BackGround/inventaire/slot"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+offset_right = 193.0
+offset_bottom = 200.0
+
+[node name="Button" type="Button" parent="BackGround/inventaire/slot"]
+layout_mode = 0
+offset_left = -1.25
+offset_top = 11.25
+offset_right = 176.75
+offset_bottom = 202.25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cpwyh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_aje1d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y8vl3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lo8pt")
+script = ExtResource("16_y41hj")
+
+[node name="slot2" type="TextureRect" parent="BackGround/inventaire"]
+layout_mode = 2
+texture = ExtResource("2_fg3ko")
+
+[node name="renderSelected" type="TextureRect" parent="BackGround/inventaire/slot2"]
+custom_minimum_size = Vector2(0, 200)
+offset_right = 193.0
+offset_bottom = 200.0
+
+[node name="Button2" type="Button" parent="BackGround/inventaire/slot2"]
+offset_left = -1.25
+offset_top = 11.25
+offset_right = 176.75
+offset_bottom = 202.25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cpwyh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_aje1d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y8vl3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lo8pt")
+script = ExtResource("16_y41hj")
+index = 1
+
+[node name="slot3" type="TextureRect" parent="BackGround/inventaire"]
+layout_mode = 2
+texture = ExtResource("2_fg3ko")
+
+[node name="renderSelected" type="TextureRect" parent="BackGround/inventaire/slot3"]
+custom_minimum_size = Vector2(0, 200)
+offset_right = 193.0
+offset_bottom = 200.0
+
+[node name="Button2" type="Button" parent="BackGround/inventaire/slot3"]
+offset_left = -1.25
+offset_top = 11.25
+offset_right = 176.75
+offset_bottom = 202.25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cpwyh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_aje1d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y8vl3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lo8pt")
+script = ExtResource("16_y41hj")
+index = 2
+
+[node name="slot4" type="TextureRect" parent="BackGround/inventaire"]
+layout_mode = 2
+texture = ExtResource("2_fg3ko")
+
+[node name="renderSelected" type="TextureRect" parent="BackGround/inventaire/slot4"]
+custom_minimum_size = Vector2(0, 200)
+offset_right = 193.0
+offset_bottom = 200.0
+
+[node name="Button2" type="Button" parent="BackGround/inventaire/slot4"]
+offset_left = -1.25
+offset_top = 11.25
+offset_right = 176.75
+offset_bottom = 202.25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cpwyh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_aje1d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y8vl3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lo8pt")
+script = ExtResource("16_y41hj")
+index = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1086.0
+offset_top = 553.0
+offset_right = 1658.0
+offset_bottom = 829.0
+scale = Vector2(0.95, 0.95)
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Meds" type="TextureButton" parent="VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("textTexture")]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("15_asgc4")
+script = ExtResource("16_wbnjf")
+textTexture = NodePath("../../../ItemsDescription/MedsDescription")
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/Meds"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Med"
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer2/Meds"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+
+[node name="Creditcard" type="TextureButton" parent="VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("textTexture")]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("15_asgc4")
+script = ExtResource("17_oys36")
+textTexture = NodePath("../../../ItemsDescription/CarteDescription")
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/Creditcard"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Carte"
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer2/Creditcard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+
+[node name="Tent" type="TextureButton" parent="VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("textTexture")]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("15_asgc4")
+script = ExtResource("18_hirqt")
+textTexture = NodePath("../../../ItemsDescription/TenteDescription")
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/Tent"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Tente"
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer2/Tent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+
+[node name="Clothes" type="TextureButton" parent="VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("textTexture")]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("15_asgc4")
+script = ExtResource("19_4d30y")
+textTexture = NodePath("../../../ItemsDescription/VetsDescription")
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/Clothes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Vets"
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer2/Clothes"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Passport" type="TextureButton" parent="VBoxContainer/HBoxContainer3" node_paths=PackedStringArray("textTexture")]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("15_asgc4")
+script = ExtResource("20_ubyv1")
+textTexture = NodePath("../../../ItemsDescription/PassPDescription")
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/Passport"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "PassP"
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer3/Passport"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+
+[node name="Phone" type="TextureButton" parent="VBoxContainer/HBoxContainer3" node_paths=PackedStringArray("textTexture")]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("15_asgc4")
+script = ExtResource("21_cfu8k")
+textTexture = NodePath("../../../ItemsDescription/TelDescription")
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/Phone"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Tel"
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer3/Phone"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+
+[node name="Food" type="TextureButton" parent="VBoxContainer/HBoxContainer3" node_paths=PackedStringArray("textTexture")]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("15_asgc4")
+script = ExtResource("22_gsivs")
+textTexture = NodePath("../../../ItemsDescription/NourDescription")
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/Food"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Nour"
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer3/Food"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+
+[node name="Axe" type="TextureButton" parent="VBoxContainer/HBoxContainer3" node_paths=PackedStringArray("textTexture")]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("15_asgc4")
+script = ExtResource("23_ggq4l")
+textTexture = NodePath("../../../ItemsDescription/AxeDescription")
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/Axe"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Hache"
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer3/Axe"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+
+[node name="ItemsDescription" type="Node" parent="."]
+
+[node name="MedsDescription" type="TextureRect" parent="ItemsDescription"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 45.0
+offset_top = 153.0
+offset_right = 301.0
+offset_bottom = 262.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(128, 54)
+texture = SubResource("GradientTexture1D_tklqu")
+
+[node name="Label" type="Label" parent="ItemsDescription/MedsDescription"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Médicament"
+
+[node name="CarteDescription" type="TextureRect" parent="ItemsDescription"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 173.0
+offset_top = 155.0
+offset_right = 429.0
+offset_bottom = 264.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(128, 54)
+texture = SubResource("GradientTexture1D_tklqu")
+
+[node name="Label" type="Label" parent="ItemsDescription/CarteDescription"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Carte Bleu"
+
+[node name="TenteDescription" type="TextureRect" parent="ItemsDescription"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 308.0
+offset_top = 149.0
+offset_right = 564.0
+offset_bottom = 258.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(128, 54)
+texture = SubResource("GradientTexture1D_tklqu")
+
+[node name="Label" type="Label" parent="ItemsDescription/TenteDescription"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Tente"
+
+[node name="VetsDescription" type="TextureRect" parent="ItemsDescription"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 424.0
+offset_top = 150.0
+offset_right = 680.0
+offset_bottom = 259.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(128, 54)
+texture = SubResource("GradientTexture1D_tklqu")
+
+[node name="Label" type="Label" parent="ItemsDescription/VetsDescription"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Vets"
+
+[node name="PassPDescription" type="TextureRect" parent="ItemsDescription"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 540.0
+offset_top = 152.0
+offset_right = 796.0
+offset_bottom = 261.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(128, 54)
+texture = SubResource("GradientTexture1D_tklqu")
+
+[node name="Label" type="Label" parent="ItemsDescription/PassPDescription"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Passport"
+
+[node name="TelDescription" type="TextureRect" parent="ItemsDescription"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 673.0
+offset_top = 148.0
+offset_right = 929.0
+offset_bottom = 257.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(128, 54)
+texture = SubResource("GradientTexture1D_tklqu")
+
+[node name="Label" type="Label" parent="ItemsDescription/TelDescription"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Téléphone"
+
+[node name="NourDescription" type="TextureRect" parent="ItemsDescription"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 804.0
+offset_top = 146.0
+offset_right = 1060.0
+offset_bottom = 255.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(128, 54)
+texture = SubResource("GradientTexture1D_tklqu")
+
+[node name="Label" type="Label" parent="ItemsDescription/NourDescription"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Nourriture"
+
+[node name="AxeDescription" type="TextureRect" parent="ItemsDescription"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 901.0
+offset_top = 144.0
+offset_right = 1157.0
+offset_bottom = 253.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(128, 54)
+texture = SubResource("GradientTexture1D_tklqu")
+
+[node name="Label" type="Label" parent="ItemsDescription/AxeDescription"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Hache"

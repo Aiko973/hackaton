@@ -26,5 +26,19 @@ namespace Com.IsartDigital.Hackaton
 		public int healthCondition { get; set; }
 		public int purchasingPower { get; set; }
 
+		public void CopyStuff(PlayerProfiles pPlayer)
+		{
+            meds = pPlayer.meds;
+			creditCard = pPlayer.creditCard;
+			tent = pPlayer.tent;
+			clothes = pPlayer.clothes;
+			passport = pPlayer.passport;
+			phone = pPlayer.phone;
+			food = pPlayer.food;
+			axe = pPlayer.axe;
+
+			itemsList = pPlayer.itemsList;
+        }
+
     }
 }

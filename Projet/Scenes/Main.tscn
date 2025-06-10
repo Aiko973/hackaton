@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://Scripts/Items/Phone.cs" id="8_01fr0"]
 [ext_resource type="Script" path="res://Scripts/Items/Food.cs" id="9_bxxsd"]
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("socialBar", "lifeBar", "moneyBar", "firstChoiceButton", "secondChoiceButton", "thirdChoiceButton", "contextLabel", "itemSpriteList")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("socialBar", "lifeBar", "moneyBar", "firstChoiceButton", "secondChoiceButton", "thirdChoiceButton", "contextLabel")]
 script = ExtResource("1_3dioo")
 socialBar = NodePath("CanvasLayer/SocialBar")
 lifeBar = NodePath("CanvasLayer/LifeBar")
@@ -20,7 +20,6 @@ firstChoiceButton = NodePath("CanvasLayer/BackGroundChoice/Choix1Button")
 secondChoiceButton = NodePath("CanvasLayer/BackGroundChoice/Choix2Button")
 thirdChoiceButton = NodePath("CanvasLayer/BackGroundChoice/Choix3Button")
 contextLabel = NodePath("CanvasLayer/BackGroundChoice/ContextLabel")
-itemSpriteList = NodePath("CanvasLayer/ItemsSpriteList")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

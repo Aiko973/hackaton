@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://s5sa3fcuoprr"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/SoundManager.cs" id="1_b0anc"]
+
+[node name="SoundManager" type="Node" node_paths=PackedStringArray("musicPlayer", "ambiencePlayer")]
+script = ExtResource("1_b0anc")
+musicPlayer = NodePath("MusicPlayer")
+ambiencePlayer = NodePath("AmbiencePlayer")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+
+[node name="AmbiencePlayer" type="AudioStreamPlayer" parent="."]

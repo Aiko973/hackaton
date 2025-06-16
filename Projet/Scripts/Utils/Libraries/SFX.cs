@@ -7,6 +7,8 @@ namespace Com.IsartDigital.Hackaton.Libraries
 {
 	public enum SFX
 	{
-		click
+		click,
+		hover,
+		itemClick
 	}
 }

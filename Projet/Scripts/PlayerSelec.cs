@@ -31,7 +31,7 @@ namespace Com.IsartDigital.ProjectName {
 
         static public PlayerProfiles currentPlayer;
         static public Sprite2D currentCharacterSprite = new Sprite2D();
-        public static string characterName;
+        public static string characterName = "Camille";
 
 		List<Items> listItems = new List<Items>();
 
@@ -93,7 +93,7 @@ namespace Com.IsartDigital.ProjectName {
                 players[currentPlayerIndex].CopyStuff(currentPlayer);
                 currentPlayer = players[currentPlayerIndex];
                 UpdateBalancebar(currentPlayer);
-                UpdatePlayerSprite();
+                UpdatePlayerSprite("right");
                 if (currentPlayer.itemsList.Count == 0) AddItemsIntoPlayer(currentPlayer);
             }
         }
@@ -106,7 +106,7 @@ namespace Com.IsartDigital.ProjectName {
                 players[currentPlayerIndex].CopyStuff(currentPlayer);
                 currentPlayer = players[currentPlayerIndex];
                 UpdateBalancebar(currentPlayer);
-                UpdatePlayerSprite();
+                UpdatePlayerSprite("left");
             }
         }
 
@@ -149,29 +149,62 @@ namespace Com.IsartDigital.ProjectName {
             moneyBar.Value = pPlayer.purchasingPower;
         }
 
-        private void UpdatePlayerSprite()
+        private void UpdatePlayerSprite(string pDirection)
         {
             if (currentPlayerIndex == 0)
             {
-                P1.Show();
-                P2.Hide();
-                P3.Hide();
+                if (pDirection == "left")
+                {
+                    Tween lTween = CreateTween().SetParallel();
+                    lTween.TweenProperty(P1, "position", new Vector2(190, 70), 1f).FromCurrent();
+                    lTween.TweenProperty(P1, "modulate", new Color(1, 1, 1, 1), 1f);
+                    lTween.TweenProperty(P2, "position", new Vector2(250,50), 1f).FromCurrent();
+                    lTween.TweenProperty(P2, "modulate", new Color(1, 1, 1, 0), 1f);
+                }
+
                 currentCharacterSprite.Texture = P1.Texture;
                 characterName = "Camille";
             }
             if (currentPlayerIndex == 1)
             {
-                P1.Hide();
-                P2.Show();
-                P3.Hide();
+                if (pDirection == "right")
+                {
+                    Tween lTween = CreateTween().SetParallel();
+                    lTween.TweenProperty(P1, "position", new Vector2(-10, 70), 1f).FromCurrent();
+                    lTween.TweenProperty(P1, "modulate", new Color(1,1,1,0),1f);
+                    lTween.TweenProperty(P2, "position", new Vector2(100, 50), 1f).FromCurrent();
+                    lTween.TweenProperty(P2, "modulate", new Color(1, 1, 1, 1), 1f);
+
+                    lTween.Finished += lTween.Kill;
+                }
+
+                if (pDirection == "left")
+                {
+                    Tween lTween = CreateTween().SetParallel();
+
+                    lTween.TweenProperty(P2, "position", new Vector2(100, 50), 1f).FromCurrent();
+                    lTween.TweenProperty(P2, "modulate", new Color(1, 1, 1, 1), 1f);
+                    lTween.TweenProperty(P3, "position", new Vector2(200, 80), 1f).FromCurrent();
+                    lTween.TweenProperty(P3, "modulate", new Color(1, 1, 1, 0), 1f);
+                    lTween.Finished += lTween.Kill;
+
+                }
+
                 currentCharacterSprite.Texture = P2.Texture;
                 characterName = "Claude";
             }
             if (currentPlayerIndex == 2)
             {
-                P1.Hide();
-                P2.Hide();
-                P3.Show();
+                if (pDirection == "right")
+                {
+                    Tween lTween = CreateTween().SetParallel();
+                    lTween.TweenProperty(P2, "position", new Vector2(-10, 50), 1f).FromCurrent();
+                    lTween.TweenProperty(P2, "modulate", new Color(1, 1, 1, 0), 1f);
+                    lTween.TweenProperty(P3, "position", new Vector2(100, 80), 1f).FromCurrent();
+                    lTween.TweenProperty(P3, "modulate", new Color(1, 1, 1, 1), 1f);
+                    lTween.Finished += lTween.Kill;
+                }
+
                 currentCharacterSprite.Texture = P3.Texture;
                 characterName = "Amira";
             }

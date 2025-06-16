@@ -26,6 +26,7 @@ namespace Com.IsartDigital.Hackaton
         }
         protected virtual void MouseHover()
 		{
+            SoundManager.GetInstance().PlaySound(Libraries.SFX.hover);
 			Tween lTween = CreateTween().SetParallel();
 			AnimUtils.AnimateScale(textTexture, currentScale * scaleUpValue, selectionDuration, pTween: lTween);
 			AnimUtils.AnimateModulate(textTexture, new Color(currentColor, 1), selectionDuration, pTween: lTween);

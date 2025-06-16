@@ -1,3 +1,4 @@
+using Com.IsartDigital.Hackaton;
 using Com.IsartDigital.OBG.Utils;
 using Godot;
 using System;
@@ -14,8 +15,10 @@ public partial class ButtonEffect : TextureButton
     private void ButtonSound_MouseEntered()
     {
         AnimUtils.AnimateScale(this, new Vector2(0.11f, 0.11f), 0.3f, Tween.TransitionType.Quart);
+        SoundManager.GetInstance().PlaySound(Com.IsartDigital.Hackaton.Libraries.SFX.hover);
+
     }
-    
+
     private void ButtonMouseExited()
     {
         AnimUtils.AnimateScale(this, new Vector2(0.09f,0.09f), 0.3f, Tween.TransitionType.Quart);
@@ -27,6 +30,7 @@ public partial class ButtonEffect : TextureButton
         lTween.TweenProperty(this, "modulate", new Color(0.6f,0.6f,0.6f), 0.1f);
         lTween.TweenProperty(this, "modulate", new Color(1f, 1f, 1f), 0.1f);
         lTween.Kill();
+        SoundManager.GetInstance().PlaySound(Com.IsartDigital.Hackaton.Libraries.SFX.click);
     }
 
 }

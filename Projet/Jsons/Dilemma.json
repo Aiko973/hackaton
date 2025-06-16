@@ -23,7 +23,7 @@
 		"purchasingPowerNeeded" : 2,
 		"socialTies": 1,
 		"healthCondition": 0,
-		"purchasingPower": -1
+		"purchasingPower": -2
 	  },
 	  {
 		"name": "Continuer son chemin malgré la douleur",
@@ -34,7 +34,7 @@
 		"purchasingPowerNeeded" : -5,
 		"socialTies": 0,
 		"healthCondition": -3,
-		"purchasingPower": 0
+		"purchasingPower": -1
 	  }
 	]
   },
@@ -62,7 +62,7 @@
 		"purchasingPowerNeeded" : -5,
 		"socialTies": 1,
 		"healthCondition": -1,
-		"purchasingPower": 0
+		"purchasingPower": -1
 	  },
 	  {
 		"name": "Faire du mieux qu’on peut, en vain",
@@ -73,7 +73,7 @@
 		"purchasingPowerNeeded" : -5,
 		"socialTies": -3,
 		"healthCondition": 0,
-		"purchasingPower": 0
+		"purchasingPower": -1
 	  }
 	]
   },
@@ -93,15 +93,15 @@
 		"purchasingPower": 0
 	  },
 	  {
-		"name": "lien social : Heureusement pour vous, un proche vous a glissé une conserve dans vos provisions",
+		"name": "Pouvoir d'achat : Heureusement pour vous, vous avez assez d'argent pour vous payez un repas",
 		"item" : "",
 		"description": "lalalalalala",
-		"socialTiesNeeded" : 3,
+		"socialTiesNeeded" : -5,
 		"healthConditionsNeeded" : -5,
-		"purchasingPowerNeeded" : -5,
+		"purchasingPowerNeeded" : 3,
 		"socialTies": 0,
 		"healthCondition": 1,
-		"purchasingPower": 0
+		"purchasingPower": -1
 	  },
 	  {
 		"name": "Avancer malgré la faim",
@@ -139,8 +139,8 @@
 		"healthConditionsNeeded" : -5,
 		"purchasingPowerNeeded" : 2,
 		"socialTies": 0,
-		"healthCondition": 0,
-		"purchasingPower": 0
+		"healthCondition": 1,
+		"purchasingPower": -1
 	  },
 	  {
 		"name": "Accélérer le pas",
@@ -151,7 +151,7 @@
 		"purchasingPowerNeeded" : -5,
 		"socialTies": 0,
 		"healthCondition": -1,
-		"purchasingPower": 0
+		"purchasingPower": -1
 	  }
 	]
   },
@@ -167,7 +167,7 @@
 		"healthConditionsNeeded" : -5,
 		"purchasingPowerNeeded" : -5,
 		"socialTies": 0,
-		"healthCondition": 2,
+		"healthCondition": 1,
 		"purchasingPower": 0
 	  },
 	  {
@@ -217,7 +217,7 @@
 		"healthConditionsNeeded" : -5,
 		"purchasingPowerNeeded" : -5,
 		"socialTies": 0,
-		"healthCondition": 1,
+		"healthCondition": 0,
 		"purchasingPower": 0
 	  },
 	  {
@@ -244,7 +244,7 @@
 		"socialTiesNeeded" : -5,
 		"healthConditionsNeeded" : -5,
 		"purchasingPowerNeeded" : -5,
-		"socialTies": 2,
+		"socialTies": 1,
 		"healthCondition": 0,
 		"purchasingPower": 0
 	  },
@@ -257,7 +257,7 @@
 		"purchasingPowerNeeded" : -5,
 		"socialTies": 1,
 		"healthCondition": -1,
-		"purchasingPower": 0
+		"purchasingPower": -1
 	  },
 	  {
 		"name": "Passer outre et faire avec",
@@ -266,8 +266,8 @@
 		"socialTiesNeeded" : -5,
 		"healthConditionsNeeded" : -5,
 		"purchasingPowerNeeded" : -5,
-		"socialTies": -1,
-		"healthCondition": 0,
+		"socialTies": -2,
+		"healthCondition": -1,
 		"purchasingPower": 0
 	  }
 	]
@@ -307,7 +307,7 @@
 		"purchasingPowerNeeded" : -5,
 		"socialTies": 0,
 		"healthCondition": -1,
-		"purchasingPower": 1
+		"purchasingPower": 0
 	  }
 	]
   },
@@ -334,7 +334,7 @@
 		"healthConditionsNeeded" : 3,
 		"purchasingPowerNeeded" : -5,
 		"socialTies": 0,
-		"healthCondition": 0,
+		"healthCondition": -1,
 		"purchasingPower": 0
 	  },
 	  {
@@ -344,9 +344,9 @@
 		"socialTiesNeeded" : -5,
 		"healthConditionsNeeded" : -5,
 		"purchasingPowerNeeded" : -5,
-		"socialTies": 0,
+		"socialTies": -1,
 		"healthCondition": -1,
-		"purchasingPower": 0
+		"purchasingPower": -1
 	  }
 	]
   },
@@ -363,7 +363,7 @@
 		"purchasingPowerNeeded" : -5,
 		"socialTies": 0,
 		"healthCondition": 2,
-		"purchasingPower": -1
+		"purchasingPower": -2
 	  },
 	  {
 		"name": "Vous arrivez à négocier une réduction des prix afin qu’elle corresponde à votre tirelire.",
@@ -383,7 +383,7 @@
 		"socialTiesNeeded" : -5,
 		"healthConditionsNeeded" : -5,
 		"purchasingPowerNeeded" : -5,
-		"socialTies": -1,
+		"socialTies": -2,
 		"healthCondition": -1,
 		"purchasingPower": 0
 	  }

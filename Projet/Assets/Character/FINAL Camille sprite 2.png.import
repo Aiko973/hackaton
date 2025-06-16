@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyt5vyridv7al"
-path="res://.godot/imported/Camille sprite 1.png-a8fb8d5d1dd80efef124311e49904b93.ctex"
+uid="uid://cocuitbdqtybb"
+path="res://.godot/imported/FINAL Camille sprite 2.png-2799ecabd4a063c6574f69a6ef71a8b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character/Camille sprite 1.png"
-dest_files=["res://.godot/imported/Camille sprite 1.png-a8fb8d5d1dd80efef124311e49904b93.ctex"]
+source_file="res://Assets/Character/FINAL Camille sprite 2.png"
+dest_files=["res://.godot/imported/FINAL Camille sprite 2.png-2799ecabd4a063c6574f69a6ef71a8b6.ctex"]
 
 [params]
 

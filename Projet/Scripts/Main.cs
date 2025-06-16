@@ -30,20 +30,28 @@ namespace Com.IsartDigital.ProjectName
 
 		[Export] TextureButton firstChoiceButton, secondChoiceButton, thirdChoiceButton;
 
+		[Export] Button restartButton;
+
 		[Export] Label firstChoice, secondChoice, thirdChoice, characterName;
 
 		[Export] Sprite2D characterSprite;
 
-		[Export] Label contextLabel;
+		[Export] Label contextLabel, yearCount;
 
 		[Export] Node itemSpriteList;
 
 		[Export] Sprite2D itemNeeded;
 
+		[Export] TextureRect background, backgroundChoice;
+
+		[Export] ColorRect transitionPanel;
+
 		private int nbDilemma;
 		private int nbDilemmaDone;
 		private Dilemma currentDilemma;
 		private PlayerProfiles currentPlayer;
+
+		private List<Texture2D> backgrounds = new List<Texture2D>();
 
 
 		RandomNumberGenerator rand = new RandomNumberGenerator();
@@ -68,18 +76,31 @@ namespace Com.IsartDigital.ProjectName
 
 			characterSprite.Texture = PlayerSelec.currentCharacterSprite.Texture;
 
-			ResetDilemma();
+			backgrounds.Add((Texture2D)GD.Load("res://Assets/Background/PAYSAGE_1_STAGE_1.png"));
+			backgrounds.Add((Texture2D)GD.Load("res://Assets/Background/PAYSAGE_1_STAGE_2.png"));
+			backgrounds.Add((Texture2D)GD.Load("res://Assets/Background/PAYSAGE_1_STAGE_3.png"));
+			backgrounds.Add((Texture2D)GD.Load("res://Assets/Background/fondbus.png"));
+			backgrounds.Add((Texture2D)GD.Load("res://Assets/Background/fondbus2.png"));
+			backgrounds.Add((Texture2D)GD.Load("res://Assets/Background/Hackathon3.1.png"));
+			backgrounds.Add((Texture2D)GD.Load("res://Assets/Background/Fond3.3.png"));
+
+            ResetDilemma(-1);
 			currentPlayer = PlayerSelec.currentPlayer;
-			
 
             firstChoiceButton.Pressed += FirstChoiceButtonPressed;
             secondChoiceButton.Pressed += SecondChoiceButtonPressed;
             thirdChoiceButton.Pressed += ThirdChoiceButtonPressed;
+			restartButton.Pressed += RestartButtonPressed;
 
 			UpdateBalancebar(currentPlayer);
 			UpdateItemsVisible(currentPlayer);
 
 			characterName.Text = PlayerSelec.characterName;
+		}
+
+		private void RestartButtonPressed()
+		{
+			GetTree().ChangeSceneToFile(Path.PLAYER_SELEC);
 		}
 
         private void FirstChoiceButtonPressed()
@@ -92,11 +113,9 @@ namespace Com.IsartDigital.ProjectName
 				{
 					if (currentPlayer.itemsList[i].owned)
 					{
-						UpdatePlayerStat(currentPlayer, 0);
-
 						currentPlayer.itemsList[i].owned = false;
 						UpdateItemsVisible(currentPlayer);
-						ResetDilemma();
+						ResetDilemma(0);
 
                     }
 					else break;
@@ -113,8 +132,7 @@ namespace Com.IsartDigital.ProjectName
 				{
 					if (currentPlayer.purchasingPower >= currentDilemma.choices[1].purchasingPowerNeeded)
 					{
-						UpdatePlayerStat(currentPlayer, 1);
-						ResetDilemma();
+						ResetDilemma(1);
                     }
 				}
 			}
@@ -123,8 +141,7 @@ namespace Com.IsartDigital.ProjectName
 
         private void ThirdChoiceButtonPressed()
         {
-			UpdatePlayerStat(currentPlayer, 2);
-			ResetDilemma();
+			ResetDilemma(2);
         }
 
 		private void UpdateItemsVisible(PlayerProfiles pPlayer)
@@ -152,12 +169,13 @@ namespace Com.IsartDigital.ProjectName
 			UpdateBalancebar(pPlayer);
         }
 
-        public void ResetDilemma()
+        public void ResetDilemma(int pChoiceIndex)
 		{
-			nbDilemmaDone++;
+            nbDilemmaDone++;
             currentDilemma = dilemma[rand.RandiRange(0, dilemma.Count-1)];
 
-			if(nbDilemmaDone < nbDilemma)
+
+            if (nbDilemmaDone < nbDilemma)
 			{
 				if (currentDilemma.done)
 				{
@@ -169,15 +187,48 @@ namespace Com.IsartDigital.ProjectName
 			}
 			else
 			{
-				GetTree().Quit();
+				backgroundChoice.Hide();
+				firstChoiceButton.Hide();
+				secondChoiceButton.Hide();
+				thirdChoiceButton.Hide();
+				contextLabel.Hide();
+				characterName.Hide();
+				firstChoice.Hide(); secondChoice.Hide(); thirdChoice.Hide();
+				itemNeeded.Hide();
+				restartButton.Show();
 			}
+			transitionPanel.Show();
+			Tween tween = CreateTween();
+			tween.TweenProperty(transitionPanel, "modulate", new Color(1, 1, 1, 1), 0.5f);
+			tween.Finished += () => transitionFinished(pChoiceIndex);
 
-			foreach (Items item in itemSpriteList.GetChildren())
+            currentDilemma.done = true;
+        }
+
+		private void transitionFinished(int pChoiceIndex)
+		{
+            yearCount.Text = "Année :   " + (2050 + nbDilemmaDone) + "  /  2061";
+            if (nbDilemmaDone < backgrounds.Count + 1) background.Texture = backgrounds[nbDilemmaDone - 1];
+
+			if (pChoiceIndex>=0)
 			{
-				string lItem = char.ToLower(item.Name.ToString()[0]) + item.Name.ToString().Substring(1);
-
-				if (lItem == currentDilemma.choices[0].item) itemNeeded.Texture = item.TextureNormal;
+				UpdatePlayerStat(currentPlayer, pChoiceIndex);
 			}
+
+			Tween tween = CreateTween();
+			tween.TweenProperty(transitionPanel, "modulate", new Color(1, 1, 1, 0), 2f);
+			tween.Finished += transitionPanel.Hide;
+
+            Tween lTween = CreateTween();
+            lTween.TweenProperty(contextLabel, "visible_ratio", 1, 3).From(0);
+            lTween.Finished += lTween.Kill;
+
+            foreach (Items item in itemSpriteList.GetChildren())
+            {
+                string lItem = char.ToLower(item.Name.ToString()[0]) + item.Name.ToString().Substring(1);
+
+                if (lItem == currentDilemma.choices[0].item) itemNeeded.Texture = item.TextureNormal;
+            }
 
             contextLabel.Text = currentDilemma.dilemma;
 
@@ -190,7 +241,6 @@ namespace Com.IsartDigital.ProjectName
             if (currentDilemma.choices[1].purchasingPowerNeeded != -5) secondChoice.Text += currentDilemma.choices[1].purchasingPowerNeeded + " Pouvoir d'achat";
 
             thirdChoice.Text = currentDilemma.choices[2].name;
-
         }
 
         protected override void Dispose(bool pDisposing)

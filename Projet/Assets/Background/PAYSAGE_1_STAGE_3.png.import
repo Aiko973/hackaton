@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://busitbh44fuha"
-path="res://.godot/imported/Claude sprite 1.png-68537070d4b305edeaa15d9d36255065.ctex"
+uid="uid://xftuyp55vcvp"
+path="res://.godot/imported/PAYSAGE_1_STAGE_3.png-3a9eda1737de314f5bd92a85976002f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character/Claude sprite 1.png"
-dest_files=["res://.godot/imported/Claude sprite 1.png-68537070d4b305edeaa15d9d36255065.ctex"]
+source_file="res://Assets/Background/PAYSAGE_1_STAGE_3.png"
+dest_files=["res://.godot/imported/PAYSAGE_1_STAGE_3.png-3a9eda1737de314f5bd92a85976002f1.ctex"]
 
 [params]
 

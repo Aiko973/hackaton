@@ -1,18 +1,20 @@
-[gd_scene load_steps=41 format=3 uid="uid://cnut1g6cr53uq"]
+[gd_scene load_steps=44 format=3 uid="uid://r2o2a80wcaxb"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerSelec.cs" id="1_yh66s"]
 [ext_resource type="Texture2D" uid="uid://dhatlptnuajeo" path="res://Assets/UI/ITEM_CONTOUR.png" id="2_fg3ko"]
-[ext_resource type="LabelSettings" uid="uid://cxd12wj72agrg" path="res://fontBarr.tres" id="2_nr5jq"]
-[ext_resource type="Texture2D" uid="uid://dyt5vyridv7al" path="res://Assets/Character/Camille sprite 1.png" id="3_10eyt"]
-[ext_resource type="Texture2D" uid="uid://busitbh44fuha" path="res://Assets/Character/Claude sprite 1.png" id="4_hstai"]
+[ext_resource type="Texture2D" uid="uid://c4fstf4cfhc3u" path="res://Assets/Background/Fond neutre.png" id="2_nnxua"]
+[ext_resource type="LabelSettings" uid="uid://dvhttupb55uqw" path="res://fontBarr.tres" id="2_nr5jq"]
 [ext_resource type="Texture2D" uid="uid://d05csnrdsrrgh" path="res://Assets/UI/arrow.png" id="5_qm7ps"]
 [ext_resource type="Texture2D" uid="uid://bbct71yhmqryx" path="res://Assets/UI/arrow pressed.png" id="6_l4e0o"]
 [ext_resource type="Texture2D" uid="uid://c6hnndourgqmj" path="res://Assets/UI/Bar/BARRE_VIDE_LIEN_SOCIAL.png" id="7_4ublw"]
 [ext_resource type="Texture2D" uid="uid://svu01bq7y1tt" path="res://Assets/UI/Bar/BARRE_PLEINE_LIEN_SOCIAL.png" id="8_a7by4"]
 [ext_resource type="Script" path="res://Scripts/Utils/BarInformation.cs" id="9_1qf40"]
+[ext_resource type="Texture2D" uid="uid://cocuitbdqtybb" path="res://Assets/Character/FINAL Camille sprite 2.png" id="10_8426r"]
 [ext_resource type="Texture2D" uid="uid://cwycnp6v2qlbb" path="res://Assets/UI/Bar/BARRE_VIDE_CONDITION_VIE.png" id="10_j7xxi"]
+[ext_resource type="Texture2D" uid="uid://dteb1dclu3fmt" path="res://Assets/Character/FINAL Claude sprite 2.png" id="11_5uf8x"]
 [ext_resource type="Texture2D" uid="uid://dxsrnoiew0a70" path="res://Assets/UI/Bar/BARRE_PLEINE_CONDITION_VIE.png" id="11_xr0lu"]
 [ext_resource type="Texture2D" uid="uid://dqptdhg8adaue" path="res://Assets/UI/Bar/BARRE_VIDE_POUVOIR_ACHAT.png" id="12_gtgsu"]
+[ext_resource type="Texture2D" uid="uid://d2we3vragr4t7" path="res://Assets/Character/FINAL Amira sprite 2.png" id="12_nygjh"]
 [ext_resource type="Texture2D" uid="uid://ce5b3r1qy743h" path="res://Assets/UI/Bar/BARRE_PLEINE_POUVOIR_ACHAT.png" id="13_mx5s2"]
 [ext_resource type="Texture2D" uid="uid://dpabw7d3hxo7f" path="res://Assets/UI/CHOIX_DIALOGUE.png" id="14_dahdn"]
 [ext_resource type="Script" path="res://Scripts/Items/Meds.cs" id="16_wbnjf"]
@@ -20,6 +22,7 @@
 [ext_resource type="Script" path="res://Scripts/Items/CreditCard.cs" id="17_oys36"]
 [ext_resource type="Texture2D" uid="uid://d2rs5f2x21mlf" path="res://Assets/Items/icon03.png" id="18_7y1sh"]
 [ext_resource type="Script" path="res://Scripts/Items/Tent.cs" id="18_hirqt"]
+[ext_resource type="Script" path="res://Scripts/Utils/ItemButton.cs" id="19_1cp03"]
 [ext_resource type="Script" path="res://Scripts/Items/Clothes.cs" id="19_4d30y"]
 [ext_resource type="Texture2D" uid="uid://dp2u1pmq45b8h" path="res://Assets/Items/icon00.png" id="20_n00uy"]
 [ext_resource type="Script" path="res://Scripts/Items/Passport.cs" id="20_ubyv1"]
@@ -32,6 +35,13 @@
 [ext_resource type="Texture2D" uid="uid://h8q3w0h3iyb4" path="res://Assets/Items/icon06.png" id="28_f7nvn"]
 [ext_resource type="Texture2D" uid="uid://htjud7y1vt8w" path="res://Assets/Items/icon01.png" id="30_tiryx"]
 [ext_resource type="Texture2D" uid="uid://bg4vt6sjtcyy3" path="res://Assets/Items/icon02.png" id="33_oc7eo"]
+
+[sub_resource type="Gradient" id="Gradient_30hc8"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.194349, 0.194349, 0.194349, 0.360784)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tklqu"]
+gradient = SubResource("Gradient_30hc8")
 
 [sub_resource type="LabelSettings" id="LabelSettings_6kme5"]
 font_size = 36
@@ -48,13 +58,6 @@ font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lo8pt"]
 
-[sub_resource type="Gradient" id="Gradient_30hc8"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(0.194349, 0.194349, 0.194349, 0.360784)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_tklqu"]
-gradient = SubResource("Gradient_30hc8")
-
 [node name="PlayerSelec" type="Control" node_paths=PackedStringArray("takenObjects", "itemsButtons", "items", "rightArrow", "leftArrow", "playButton", "P1", "P2", "P3", "socialBar", "lifeBar", "moneyBar", "characterNameLabel")]
 layout_mode = 3
 anchors_preset = 15
@@ -63,425 +66,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yh66s")
-takenObjects = [NodePath("BackGround/inventaire/slot/renderSelected"), NodePath("BackGround/inventaire/slot2/renderSelected2"), NodePath("BackGround/inventaire/slot3/renderSelected"), NodePath("BackGround/inventaire/slot4/renderSelected2")]
+takenObjects = [NodePath("inventaire/slot/renderSelected"), NodePath("inventaire/slot2/renderSelected2"), NodePath("inventaire/slot3/renderSelected"), NodePath("inventaire/slot4/renderSelected2")]
 itemsButtons = [NodePath("VBoxContainer/HBoxContainer2/Meds/TextureButton"), NodePath("VBoxContainer/HBoxContainer2/Creditcard/TextureButton"), NodePath("VBoxContainer/HBoxContainer2/Tent/TextureButton"), NodePath("VBoxContainer/HBoxContainer2/Clothes/TextureButton"), NodePath("VBoxContainer/HBoxContainer3/Passport/TextureButton"), NodePath("VBoxContainer/HBoxContainer3/Phone/TextureButton"), NodePath("VBoxContainer/HBoxContainer3/Food/TextureButton"), NodePath("VBoxContainer/HBoxContainer3/Axe/TextureButton")]
 items = [NodePath("VBoxContainer/HBoxContainer2/Meds"), NodePath("VBoxContainer/HBoxContainer2/Creditcard"), NodePath("VBoxContainer/HBoxContainer2/Tent"), NodePath("VBoxContainer/HBoxContainer2/Clothes"), NodePath("VBoxContainer/HBoxContainer3/Passport"), NodePath("VBoxContainer/HBoxContainer3/Phone"), NodePath("VBoxContainer/HBoxContainer3/Food"), NodePath("VBoxContainer/HBoxContainer3/Axe")]
-rightArrow = NodePath("BackGround/Arrow/RightArrow")
-leftArrow = NodePath("BackGround/Arrow/LeftArrow")
-playButton = NodePath("BackGround/PlayButton")
-P1 = NodePath("BackGround/Character/Character1")
-P2 = NodePath("BackGround/Character/Character2")
-P3 = NodePath("BackGround/Character/Character3")
-socialBar = NodePath("BackGround/stats/Social/SocialTiesBar")
-lifeBar = NodePath("BackGround/stats/life/LifeConBar")
-moneyBar = NodePath("BackGround/stats/money/PurchasePowBar")
-characterNameLabel = NodePath("BackGround/Control/Name")
+rightArrow = NodePath("Arrow/RightArrow")
+leftArrow = NodePath("Arrow/LeftArrow")
+playButton = NodePath("PlayButton")
+P1 = NodePath("Character/Character1")
+P2 = NodePath("Character/Character2")
+P3 = NodePath("Character/Character3")
+socialBar = NodePath("stats/Social/SocialTiesBar")
+lifeBar = NodePath("stats/life/LifeConBar")
+moneyBar = NodePath("stats/money/PurchasePowBar")
+characterNameLabel = NodePath("Control/Name")
 
-[node name="BackGround" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -768.0
-offset_top = -432.0
-offset_right = 768.0
-offset_bottom = 432.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.470076, 0.470076, 0.470076, 1)
-
-[node name="stats" type="VBoxContainer" parent="BackGround"]
-layout_mode = 0
-offset_left = 868.0
-offset_top = 41.0
-offset_right = 1540.0
-offset_bottom = 472.0
-scale = Vector2(0.9, 0.9)
-theme_override_constants/separation = 25
-
-[node name="Social" type="VBoxContainer" parent="BackGround/stats"]
-layout_mode = 2
-
-[node name="SocialLabel" type="Label" parent="BackGround/stats/Social"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 21
-text = "Lien Social"
-label_settings = ExtResource("2_nr5jq")
-horizontal_alignment = 1
-
-[node name="SocialTiesBar" type="TextureProgressBar" parent="BackGround/stats/Social" node_paths=PackedStringArray("barValue")]
-layout_mode = 2
-min_value = -5.0
-max_value = 5.0
-texture_under = ExtResource("7_4ublw")
-texture_progress = ExtResource("8_a7by4")
-script = ExtResource("9_1qf40")
-barValue = NodePath("Label")
-
-[node name="Label" type="Label" parent="BackGround/stats/Social/SocialTiesBar"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -96.5
-offset_right = 80.0
-offset_bottom = 96.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 141
-text = "0"
-label_settings = SubResource("LabelSettings_6kme5")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="life" type="VBoxContainer" parent="BackGround/stats"]
-layout_mode = 2
-
-[node name="LifeLabel" type="Label" parent="BackGround/stats/life"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 21
-text = "Condition de Vie"
-label_settings = ExtResource("2_nr5jq")
-horizontal_alignment = 1
-
-[node name="LifeConBar" type="TextureProgressBar" parent="BackGround/stats/life" node_paths=PackedStringArray("barValue")]
-layout_mode = 2
-min_value = -5.0
-max_value = 5.0
-texture_under = ExtResource("10_j7xxi")
-texture_progress = ExtResource("11_xr0lu")
-script = ExtResource("9_1qf40")
-barValue = NodePath("Label")
-
-[node name="Label" type="Label" parent="BackGround/stats/life/LifeConBar"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -96.5
-offset_right = 80.0
-offset_bottom = 96.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 141
-text = "0"
-label_settings = SubResource("LabelSettings_6kme5")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="money" type="VBoxContainer" parent="BackGround/stats"]
-layout_mode = 2
-
-[node name="MoneyLabel" type="Label" parent="BackGround/stats/money"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 21
-text = "Pouvoir d'achat"
-label_settings = ExtResource("2_nr5jq")
-horizontal_alignment = 1
-
-[node name="PurchasePowBar" type="TextureProgressBar" parent="BackGround/stats/money" node_paths=PackedStringArray("barValue")]
-layout_mode = 2
-min_value = -5.0
-max_value = 5.0
-texture_under = ExtResource("12_gtgsu")
-texture_progress = ExtResource("13_mx5s2")
-script = ExtResource("9_1qf40")
-barValue = NodePath("Label")
-
-[node name="Label" type="Label" parent="BackGround/stats/money/PurchasePowBar"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -96.5
-offset_right = 80.0
-offset_bottom = 96.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 141
-text = "0"
-label_settings = SubResource("LabelSettings_6kme5")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Character" type="Control" parent="BackGround"]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -1.0
-offset_bottom = -1.0
+offset_left = -3.0
+offset_top = -5.0
+offset_right = 2017.0
+offset_bottom = 1075.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.9, 0.9)
-mouse_filter = 2
-
-[node name="Character1" type="TextureRect" parent="BackGround/Character"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -710.222
-offset_top = -434.222
-offset_right = 1004.78
-offset_bottom = 2365.78
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_10eyt")
-
-[node name="Character2" type="TextureRect" parent="BackGround/Character"]
-visible = false
-layout_mode = 0
-offset_left = 132.222
-offset_top = 37.7778
-offset_right = 1707.22
-offset_bottom = 2837.78
-scale = Vector2(0.28, 0.28)
-texture = ExtResource("4_hstai")
-
-[node name="Character3" type="TextureRect" parent="BackGround/Character"]
-visible = false
-layout_mode = 0
-offset_left = 232.0
-offset_top = 506.0
-offset_right = 232.0
-offset_bottom = 506.0
-scale = Vector2(0.268222, 0.268222)
-
-[node name="Arrow" type="HBoxContainer" parent="BackGround"]
-layout_mode = 0
-offset_left = 35.0
-offset_top = 429.0
-offset_right = 653.0
-offset_bottom = 513.0
-theme_override_constants/separation = 420
-
-[node name="LeftArrow" type="TextureButton" parent="BackGround/Arrow"]
-custom_minimum_size = Vector2(84, 84)
-layout_mode = 2
-texture_normal = ExtResource("5_qm7ps")
-texture_pressed = ExtResource("6_l4e0o")
-ignore_texture_size = true
-stretch_mode = 0
-flip_h = true
-
-[node name="RightArrow" type="TextureButton" parent="BackGround/Arrow"]
-custom_minimum_size = Vector2(84, 84)
-layout_mode = 2
-texture_normal = ExtResource("5_qm7ps")
-texture_pressed = ExtResource("6_l4e0o")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="PlayButton" type="Button" parent="BackGround"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -465.0
-offset_top = -124.0
-offset_right = -276.0
-offset_bottom = -33.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 60
-text = "JOUER"
-
-[node name="Control" type="Control" parent="BackGround"]
-anchors_preset = 0
-offset_left = 319.0
-offset_top = 768.0
-offset_right = 319.0
-offset_bottom = 768.0
-scale = Vector2(0.9, 0.9)
-
-[node name="TextureRect" type="TextureRect" parent="BackGround/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1949.0
-offset_top = -713.0
-offset_right = 1949.0
-offset_bottom = 713.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.1, 0.1)
-pivot_offset = Vector2(1949, 713)
-texture = ExtResource("14_dahdn")
-
-[node name="Name" type="Label" parent="BackGround/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -90.0
-offset_top = -34.5
-offset_right = 90.0
-offset_bottom = 34.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Camille"
-label_settings = SubResource("LabelSettings_2emjh")
-
-[node name="inventaire" type="VBoxContainer" parent="BackGround"]
-layout_mode = 0
-offset_left = 667.0
-offset_top = 97.0
-offset_right = 860.0
-offset_bottom = 945.0
-scale = Vector2(0.8, 0.8)
-
-[node name="slot" type="TextureRect" parent="BackGround/inventaire"]
-layout_mode = 2
-texture = ExtResource("2_fg3ko")
-
-[node name="renderSelected" type="TextureRect" parent="BackGround/inventaire/slot"]
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -71.5
-offset_top = -57.75
-offset_right = 56.5
-offset_bottom = 70.25
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Button" type="Button" parent="BackGround/inventaire/slot"]
-layout_mode = 0
-offset_left = -1.25
-offset_top = 11.25
-offset_right = 176.75
-offset_bottom = 202.25
-theme_override_styles/normal = SubResource("StyleBoxEmpty_cpwyh")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_aje1d")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_y8vl3")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_lo8pt")
-script = ExtResource("16_y41hj")
-
-[node name="slot2" type="TextureRect" parent="BackGround/inventaire"]
-layout_mode = 2
-texture = ExtResource("2_fg3ko")
-
-[node name="Button2" type="Button" parent="BackGround/inventaire/slot2"]
-layout_mode = 0
-offset_left = -1.25
-offset_top = 11.25
-offset_right = 176.75
-offset_bottom = 202.25
-theme_override_styles/normal = SubResource("StyleBoxEmpty_cpwyh")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_aje1d")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_y8vl3")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_lo8pt")
-script = ExtResource("16_y41hj")
-index = 1
-
-[node name="renderSelected2" type="TextureRect" parent="BackGround/inventaire/slot2"]
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -71.5
-offset_top = -57.75
-offset_right = 56.5
-offset_bottom = 70.25
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="slot3" type="TextureRect" parent="BackGround/inventaire"]
-layout_mode = 2
-texture = ExtResource("2_fg3ko")
-
-[node name="Button2" type="Button" parent="BackGround/inventaire/slot3"]
-layout_mode = 0
-offset_left = -1.25
-offset_top = 11.25
-offset_right = 176.75
-offset_bottom = 202.25
-theme_override_styles/normal = SubResource("StyleBoxEmpty_cpwyh")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_aje1d")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_y8vl3")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_lo8pt")
-script = ExtResource("16_y41hj")
-index = 2
-
-[node name="renderSelected" type="TextureRect" parent="BackGround/inventaire/slot3"]
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -71.5
-offset_top = -57.75
-offset_right = 56.5
-offset_bottom = 70.25
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="slot4" type="TextureRect" parent="BackGround/inventaire"]
-layout_mode = 2
-texture = ExtResource("2_fg3ko")
-
-[node name="Button2" type="Button" parent="BackGround/inventaire/slot4"]
-layout_mode = 0
-offset_left = -1.25
-offset_top = 11.25
-offset_right = 176.75
-offset_bottom = 202.25
-theme_override_styles/normal = SubResource("StyleBoxEmpty_cpwyh")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_aje1d")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_y8vl3")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_lo8pt")
-script = ExtResource("16_y41hj")
-index = 3
-
-[node name="renderSelected2" type="TextureRect" parent="BackGround/inventaire/slot4"]
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -71.5
-offset_top = -57.75
-offset_right = 56.5
-offset_bottom = 70.25
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+scale = Vector2(0.49, 0.505)
+texture = ExtResource("2_nnxua")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -511,6 +122,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 disabled = true
+script = ExtResource("19_1cp03")
 
 [node name="Creditcard" type="TextureButton" parent="VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("textTexture")]
 layout_mode = 2
@@ -527,6 +139,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 disabled = true
+script = ExtResource("19_1cp03")
 
 [node name="Tent" type="TextureButton" parent="VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("textTexture")]
 layout_mode = 2
@@ -543,6 +156,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 disabled = true
+script = ExtResource("19_1cp03")
 
 [node name="Clothes" type="TextureButton" parent="VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("textTexture")]
 layout_mode = 2
@@ -559,6 +173,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 disabled = true
+script = ExtResource("19_1cp03")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -579,6 +194,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 disabled = true
+script = ExtResource("19_1cp03")
 
 [node name="Phone" type="TextureButton" parent="VBoxContainer/HBoxContainer3" node_paths=PackedStringArray("textTexture")]
 layout_mode = 2
@@ -595,6 +211,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 disabled = true
+script = ExtResource("19_1cp03")
 
 [node name="Food" type="TextureButton" parent="VBoxContainer/HBoxContainer3" node_paths=PackedStringArray("textTexture")]
 layout_mode = 2
@@ -611,6 +228,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 disabled = true
+script = ExtResource("19_1cp03")
 
 [node name="Axe" type="TextureButton" parent="VBoxContainer/HBoxContainer3" node_paths=PackedStringArray("textTexture")]
 layout_mode = 2
@@ -627,6 +245,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 disabled = true
+script = ExtResource("19_1cp03")
 
 [node name="ItemsDescription" type="Node" parent="."]
 
@@ -845,3 +464,397 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 text = "Hache"
+
+[node name="stats" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1060.0
+offset_top = 149.0
+offset_right = 1732.0
+offset_bottom = 580.0
+scale = Vector2(0.9, 0.9)
+theme_override_constants/separation = 25
+
+[node name="Social" type="VBoxContainer" parent="stats"]
+layout_mode = 2
+
+[node name="SocialLabel" type="Label" parent="stats/Social"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Lien Social"
+label_settings = ExtResource("2_nr5jq")
+horizontal_alignment = 1
+
+[node name="SocialTiesBar" type="TextureProgressBar" parent="stats/Social" node_paths=PackedStringArray("barValue")]
+layout_mode = 2
+min_value = -5.0
+max_value = 5.0
+texture_under = ExtResource("7_4ublw")
+texture_progress = ExtResource("8_a7by4")
+script = ExtResource("9_1qf40")
+barValue = NodePath("Label")
+
+[node name="Label" type="Label" parent="stats/Social/SocialTiesBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -96.5
+offset_right = 80.0
+offset_bottom = 96.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 141
+text = "0"
+label_settings = SubResource("LabelSettings_6kme5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="life" type="VBoxContainer" parent="stats"]
+layout_mode = 2
+
+[node name="LifeLabel" type="Label" parent="stats/life"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Condition de Vie"
+label_settings = ExtResource("2_nr5jq")
+horizontal_alignment = 1
+
+[node name="LifeConBar" type="TextureProgressBar" parent="stats/life" node_paths=PackedStringArray("barValue")]
+layout_mode = 2
+min_value = -5.0
+max_value = 5.0
+texture_under = ExtResource("10_j7xxi")
+texture_progress = ExtResource("11_xr0lu")
+script = ExtResource("9_1qf40")
+barValue = NodePath("Label")
+
+[node name="Label" type="Label" parent="stats/life/LifeConBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -96.5
+offset_right = 80.0
+offset_bottom = 96.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 141
+text = "0"
+label_settings = SubResource("LabelSettings_6kme5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="money" type="VBoxContainer" parent="stats"]
+layout_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="stats/money"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Pouvoir d'achat"
+label_settings = ExtResource("2_nr5jq")
+horizontal_alignment = 1
+
+[node name="PurchasePowBar" type="TextureProgressBar" parent="stats/money" node_paths=PackedStringArray("barValue")]
+layout_mode = 2
+min_value = -5.0
+max_value = 5.0
+texture_under = ExtResource("12_gtgsu")
+texture_progress = ExtResource("13_mx5s2")
+script = ExtResource("9_1qf40")
+barValue = NodePath("Label")
+
+[node name="Label" type="Label" parent="stats/money/PurchasePowBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -96.5
+offset_right = 80.0
+offset_bottom = 96.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 141
+text = "0"
+label_settings = SubResource("LabelSettings_6kme5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Character" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 192.0
+offset_top = 107.0
+offset_right = 192.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+mouse_filter = 2
+
+[node name="Character1" type="TextureRect" parent="Character"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -768.889
+offset_top = -452.222
+offset_right = 266.111
+offset_bottom = 2063.78
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.295, 0.295)
+texture = ExtResource("10_8426r")
+
+[node name="Character2" type="TextureRect" parent="Character"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 238.889
+offset_top = 58.889
+offset_right = 1737.89
+offset_bottom = 2745.89
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("11_5uf8x")
+
+[node name="Character3" type="TextureRect" parent="Character"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 208.889
+offset_top = 86.667
+offset_right = 1669.89
+offset_bottom = 2508.67
+scale = Vector2(0.305, 0.305)
+texture = ExtResource("12_nygjh")
+
+[node name="Arrow" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 537.0
+offset_right = 845.0
+offset_bottom = 621.0
+theme_override_constants/separation = 420
+
+[node name="LeftArrow" type="TextureButton" parent="Arrow"]
+custom_minimum_size = Vector2(84, 84)
+layout_mode = 2
+texture_normal = ExtResource("5_qm7ps")
+texture_pressed = ExtResource("6_l4e0o")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[node name="RightArrow" type="TextureButton" parent="Arrow"]
+custom_minimum_size = Vector2(84, 84)
+layout_mode = 2
+texture_normal = ExtResource("5_qm7ps")
+texture_pressed = ExtResource("6_l4e0o")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -657.0
+offset_top = -232.0
+offset_right = -468.0
+offset_bottom = -141.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 60
+text = "JOUER"
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 511.0
+offset_top = 876.0
+offset_right = 511.0
+offset_bottom = 876.0
+scale = Vector2(0.9, 0.9)
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1949.0
+offset_top = -713.0
+offset_right = 1949.0
+offset_bottom = 713.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(1949, 713)
+texture = ExtResource("14_dahdn")
+
+[node name="Name" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -34.5
+offset_right = 90.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Camille"
+label_settings = SubResource("LabelSettings_2emjh")
+
+[node name="inventaire" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 859.0
+offset_top = 205.0
+offset_right = 1052.0
+offset_bottom = 1053.0
+scale = Vector2(0.8, 0.8)
+
+[node name="slot" type="TextureRect" parent="inventaire"]
+layout_mode = 2
+texture = ExtResource("2_fg3ko")
+
+[node name="renderSelected" type="TextureRect" parent="inventaire/slot"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -57.75
+offset_right = 56.5
+offset_bottom = 70.25
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Button" type="Button" parent="inventaire/slot"]
+layout_mode = 0
+offset_left = -1.25
+offset_top = 11.25
+offset_right = 176.75
+offset_bottom = 202.25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cpwyh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_aje1d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y8vl3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lo8pt")
+script = ExtResource("16_y41hj")
+
+[node name="slot2" type="TextureRect" parent="inventaire"]
+layout_mode = 2
+texture = ExtResource("2_fg3ko")
+
+[node name="Button2" type="Button" parent="inventaire/slot2"]
+layout_mode = 0
+offset_left = -1.25
+offset_top = 11.25
+offset_right = 176.75
+offset_bottom = 202.25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cpwyh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_aje1d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y8vl3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lo8pt")
+script = ExtResource("16_y41hj")
+index = 1
+
+[node name="renderSelected2" type="TextureRect" parent="inventaire/slot2"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -57.75
+offset_right = 56.5
+offset_bottom = 70.25
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="slot3" type="TextureRect" parent="inventaire"]
+layout_mode = 2
+texture = ExtResource("2_fg3ko")
+
+[node name="Button2" type="Button" parent="inventaire/slot3"]
+layout_mode = 0
+offset_left = -1.25
+offset_top = 11.25
+offset_right = 176.75
+offset_bottom = 202.25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cpwyh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_aje1d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y8vl3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lo8pt")
+script = ExtResource("16_y41hj")
+index = 2
+
+[node name="renderSelected" type="TextureRect" parent="inventaire/slot3"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -57.75
+offset_right = 56.5
+offset_bottom = 70.25
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="slot4" type="TextureRect" parent="inventaire"]
+layout_mode = 2
+texture = ExtResource("2_fg3ko")
+
+[node name="Button2" type="Button" parent="inventaire/slot4"]
+layout_mode = 0
+offset_left = -1.25
+offset_top = 11.25
+offset_right = 176.75
+offset_bottom = 202.25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cpwyh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_aje1d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y8vl3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lo8pt")
+script = ExtResource("16_y41hj")
+index = 3
+
+[node name="renderSelected2" type="TextureRect" parent="inventaire/slot4"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -57.75
+offset_right = 56.5
+offset_bottom = 70.25
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
